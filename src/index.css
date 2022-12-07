@@ -6,6 +6,9 @@
   --orange: #EF8456;
   --pink: #EA7472;
   --beige: #FBF3E8;
+  --title-font: font-family: 'Poppins', sans-serif;
+  --subtitle-font: font-family: 'Roboto', sans-serif;
+  --text-font: font-family: 'Montserrat', sans-serif;
 }
 
 *{
@@ -24,8 +27,7 @@ body {
 /* fin del mejorado de uso de los rem */
 
 body {
-  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: var(--text-font);
 }
 
 a {
