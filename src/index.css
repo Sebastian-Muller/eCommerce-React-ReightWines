@@ -1,13 +1,37 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --dark: #252827;
+  --green: #75A971;
+  --violet: #9073A9;
+  --yellow: #E4BD52;
+  --orange: #EF8456;
+  --pink: #EA7472;
+  --beige: #FBF3E8;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* sirve para mejorara el uso de los rem  1rem = 10px */
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 16px;
+}
+/* fin del mejorado de uso de los rem */
+
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.none {
+  display: none;
 }
