@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import "../styles/cardsStyles.css";
 
 const images = require.context("../assets/images", true);
 
@@ -61,7 +62,6 @@ const vinos = [
         image: images('./altaVista.webp'),
     },
 ];
-
 
 const CardList = () => {
 return (
