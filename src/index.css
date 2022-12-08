@@ -6,9 +6,9 @@
   --orange: #EF8456;
   --pink: #EA7472;
   --beige: #FBF3E8;
-  --title-font: font-family: 'Poppins', sans-serif;
-  --subtitle-font: font-family: 'Roboto', sans-serif;
-  --text-font: font-family: 'Montserrat', sans-serif;
+  --title-font: 'Poppins', sans-serif;
+  --subtitle-font: 'Roboto', sans-serif;
+  --text-font: 'Montserrat', sans-serif;
 }
 
 *{
