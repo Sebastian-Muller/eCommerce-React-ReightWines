@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import logo from "../assets/images/logoLetrasBlancas.webp"
 import location from "../assets/icons/maps.svg"
@@ -16,72 +17,134 @@ import amex from "../assets/icons/american.webp"
 
 
 const Footer = () => {
-
-    const footer__container = {
-        backgroundColor: "#252827",
-        color: "#fff",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: "2rem"
-    }
+    
+    const ContainerFooter = styled.div`
+        background-color: var(--dark);
+        color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+    `;
 
     const logoFooter = {
         width: "25rem"
     }
+    const LogoFooter = styled.img`
+        width: 25rem;
+    `;
 
     const box = {
         margin: "1.5rem 0",
         width: "25rem"
     }
+    const BoxFooter = styled.div`
+        margin: 1.5rem 0;
+        width: 25rem;
+    `;
     const anchor = {
         color: "#fff",
         textDecoration: "none"
     }
+    const Anchor = styled.a`
+        color: #fff;
+        textDecoration: "none";
+
+        &:hover{
+            text-decoration: underline;
+        }
+    `;
 
     const footer__contact = {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center"
     }
+    const FooterContact = styled.div`
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    `;
     const box__title = {
         fontFamily: "var(--title-font)",
         borderBottom: "1px solid",
         marginBottom: "2rem"
     }
+    const BoxTitle = styled.div`
+        font-family: var(--title-font);
+        border-bottom: 1px solid;
+        margin-bottom: 2rem;
+    `;
     const box__content = {
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
         gap: "1.3rem"
     }
+    const BoxContent = styled.div`
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.3rem;
+    `;
     const box__text = {
         display: "flex",
         alignItems: "center"
     }
+    const BoxText = styled.div`
+        display: flex;
+        align-items: center;
+    `;
     const box__img = {
         width: "2rem",
         marginRight: "1rem"
     }
+    const BoxImg = styled.div`
+        background-image: ${(props) => props.background};
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-right: 1rem;
+        width: 2rem;
+        height: 2rem;
+    `;
 
     const content__payment = {
         display: "grid",
         gridTemplateColumns: "repeat(3, 1fr)",
         gap: "1rem"
     }
+    const ContentPayment = styled.div`
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    
+    `;
     const pay__img = {
         width: "7rem"
     }
+    const PayImg = styled.img`
+        width: 7rem;
+    `;
 
 
   return (
     <footer>
-        <div style={footer__container} className="footer__container">
+        <ContainerFooter>
 
             <div className="footer__img">
                 <img style={logoFooter} src={logo} alt="logo reight" />
             </div>
-
+            <BoxFooter>
+                <BoxTitle><h3>Atencion al Cliente</h3></BoxTitle>
+                <BoxContent>
+                    {footerList.map(({background, text, href, target}, index) => (
+                        <BoxText key={index}>
+                            <BoxImg background={background}></BoxImg>
+                            <Anchor href={href} target={target}>{text}</Anchor>
+                        </BoxText>
+                    )) }
+                </BoxContent>
+            </BoxFooter>
             <div style={box} className="footer__contact">
                 <div style={box__title} className="contact__title">
                     <h3>Atencion al Cliente</h3>
@@ -159,10 +222,41 @@ const Footer = () => {
 
             </div>
 
-        </div>
+        </ContainerFooter>
 
     </footer>
   )
 }
+
+const footerList = [
+    {
+        id: "1",
+        background: `url(${location})`,
+        text: "Av. Las Heras 2440 - C.A.B.A",
+        href: "#",
+        target: ""
+    },
+    {
+        id: "2",
+        background: `url(${phone})`,
+        text: "4803 - 6587",
+        href: "tel:+5491148036587",
+        target: ""
+    },
+    {
+        id: "3",
+        background: `url(${wsp})`,
+        text: "+54 9 11-5629-8468",
+        href: "https://wa.me/+5491156298468?text=¡Me+encanto+su+proyecto...+Quiero+sumarme!",
+        target: "_blank"
+    },
+    {
+        id: "4",
+        background: `url(${mail})`,
+        text: "reight@gmail.com",
+        href: "mailto:reight@gmail.com",
+        target: ""
+    },
+]
 
 export default Footer
