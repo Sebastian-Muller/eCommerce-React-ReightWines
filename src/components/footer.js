@@ -13,6 +13,7 @@ import mPago from "../assets/icons/mercadopago.webp"
 import visa from "../assets/icons/visa.webp"
 import mc from "../assets/icons/mastercard.webp"
 import amex from "../assets/icons/american.webp"
+import SocialsBar from './SocialsBar'
 
 
 
@@ -97,6 +98,7 @@ const Footer = () => {
 
   return (
     <footer>
+        <SocialsBar/>
         <ContainerFooter>
 
             <div className="footer__img">
