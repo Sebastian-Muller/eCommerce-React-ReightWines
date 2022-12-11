@@ -7,7 +7,7 @@
 
 const Contactos = () => {
   return (
-    <h1>Contactos</h1>
+    <h2>Contactos</h2>
   )
 }
 

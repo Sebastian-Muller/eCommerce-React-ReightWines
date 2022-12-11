@@ -8,7 +8,7 @@
 
 const Bebidas = () => {
   return (
-    <h1>Bebidas</h1>
+    <h2>Bebidas</h2>
   )
 }
 

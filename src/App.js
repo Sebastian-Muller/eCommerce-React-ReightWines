@@ -1,24 +1,14 @@
-<<<<<<< Updated upstream
 import React from "react"
+import NavBar from "./components/NavBar.js";
 
 
 function App() {
 
   return (
     <section>
-
+      <NavBar/>
     </section>
   );
-=======
-import DesktopCarrousel from "./components/DesktopCarrousel"
-import Rutas from "./routes/Rutas"
-
-
-
-
-function App() {
-  return <Rutas />
->>>>>>> Stashed changes
 }
 
 export default App;
