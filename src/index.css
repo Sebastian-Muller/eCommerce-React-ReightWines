@@ -40,21 +40,38 @@ a {
 
 .navegacion{
   background-color: var(--orange);
-  display: flex;
   width:100%;
   height:15vh;
+  display: flex;
   justify-content:space-evenly;
   align-items:center;
+  
+}
+
+.links{
+  display: flex;
+  justify-content:space-evenly;
+  align-items:center;
+
 }
 
 .navItem{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   text-decoration: none;
   font-weight:bold;
   color: var(--beige);
   text-align:center;
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .fa-solid{
   color: var(--dark);
+  font-size: 2rem;
 }
+ 
+  @media (min-width: 768px){
+    .hamburguesa{
+      display: none;
+  }}
