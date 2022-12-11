@@ -8,7 +8,7 @@
 
 const Bebidas = () => {
   return (
-    <h1>Bebidas</h1>
+    <h1 style={{textAlign:"center"}}>Bebidas</h1>
   )
 }
 

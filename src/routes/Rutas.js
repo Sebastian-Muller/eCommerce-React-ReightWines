@@ -19,7 +19,8 @@ const Rutas = () => {
 
     return (
         <Router>
-            <Navegacion />
+            <Navegacion style={{
+        textAlign:"center"}}/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/bebidas" element={<Bebidas/>}/>

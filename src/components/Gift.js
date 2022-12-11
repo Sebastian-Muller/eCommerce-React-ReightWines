@@ -7,7 +7,7 @@
 
 const Gift = () => {
   return (
-    <h1>Gift</h1>
+    <h1 style={{textAlign:"center"}}>Gift</h1>
   )
 }
 

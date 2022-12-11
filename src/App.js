@@ -1,24 +1,11 @@
-<<<<<<< Updated upstream
-import React from "react"
+import DesktopCarrousel from "./components/DesktopCarrousel";
+import Rutas from "./routes/Rutas";
 
 
 function App() {
-
-  return (
-    <section>
-
-    </section>
-  );
-=======
-import DesktopCarrousel from "./components/DesktopCarrousel"
-import Rutas from "./routes/Rutas"
-
-
-
-
-function App() {
-  return <Rutas />
->>>>>>> Stashed changes
+  return <>
+  <Rutas />
+  </>
 }
 
 export default App;

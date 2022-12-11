@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom"
-
+import logoNav from "../assets/images/logoNav.webp"
 
 
 
@@ -8,20 +8,15 @@ import { Link, NavLink } from "react-router-dom"
 
 const Navegacion = () => {
   return (
-    <nav style={{
-        display: "flex",
-        width:"100%",
-        height:"20vh",
-        justifyContent:"space-evenly",
-        alignItems:"center"
-    }}>
-        <NavLink to="/">Inicio</NavLink>
-        <NavLink to="/bebidas">Bebidas</NavLink>
-        <NavLink to="/nosotros">Nosotros</NavLink>
-        <NavLink to="/gift">Gift</NavLink>
-        <NavLink to="/contacto">Contacto</NavLink>
-        <NavLink to="/carro">Carro</NavLink>
-        <NavLink to="/login">Login</NavLink>
+    <nav className="navegacion">
+        <img src={logoNav} alt="aaa" height="80px" width="90px"/>
+        <NavLink to="/" className="navItem">Inicio</NavLink>
+        <NavLink to="/bebidas" className="navItem">Bebidas</NavLink>
+        <NavLink to="/nosotros" className="navItem">Nosotros</NavLink>
+        <NavLink to="/gift" className="navItem">Gift</NavLink>
+        <NavLink to="/contacto" className="navItem">Contacto</NavLink>
+        <NavLink to="/carro"><i class="fa-solid fa-cart-shopping"></i></NavLink>
+        <NavLink to="/login"><i class="fa-solid fa-user"></i></NavLink>
     </nav>
   )
 }

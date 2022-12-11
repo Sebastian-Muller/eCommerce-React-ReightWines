@@ -7,7 +7,7 @@
 
 const Carro = () => {
   return (
-    <h1>Carro</h1>
+    <h1 style={{textAlign:"center"}}>Carro</h1>
   )
 }
 
