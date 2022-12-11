@@ -1,6 +1,6 @@
 import React from "react";
 
-const Button = () => {
+const Button = ({openCardsModal}) => {
   return (
     <>
         <button style={{
@@ -12,7 +12,7 @@ const Button = () => {
                     fontSize: '2rem',
                     textTransform: 'uppercase', 
                     width:'70%',
-                    }} >
+                    }} onClick={openCardsModal}>
             Comprar
         </button>
     </>

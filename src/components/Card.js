@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button"
 
-const Card = ({vinos}) => {
+const Card = ({vinos, openCardsModal}) => {
 
     const {nombre, tipo, precio, image} = vinos
 
@@ -27,7 +27,7 @@ const Card = ({vinos}) => {
             <p>{tipo}</p>
             <p style={{color:'var(--orange)'}}>${precio}.-</p>
         </figcaption>
-            <Button></Button>
+            <Button openCardsModal={openCardsModal}></Button>
         </figure>
     )
 }

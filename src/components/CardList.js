@@ -1,9 +1,11 @@
 import React from "react";
 import Card from "./Card";
+import CardsModal from "./CardsModal";
 import "../styles/cardsStyles.css";
+import { useState } from "react";
+
 
 const images = require.context("../assets/images", true);
-
 const vinos = [
     {
         id: 1,
@@ -63,15 +65,25 @@ const vinos = [
     },
 ];
 
+const initialState = true;
+
 const CardList = () => {
+
+    const [cardsModalOpen, setCardsModalOpen] = useState(initialState);
+
+    const openCardsModal = () => setCardsModalOpen(true);
+
+    const closeCardsModal = () => setCardsModalOpen(false);
+
 return (
     <section style={{
         display: 'flex',
         flexWrap: 'wrap',
         width:'150rem',
     }}>
+        <CardsModal cardsModalOpen={cardsModalOpen} closeCardsModal={closeCardsModal}></CardsModal>
         {vinos.map((vino) => (
-        <Card key={vino.id} vinos={vino}></Card>))}
+        <Card key={vino.id} vinos={vino} openCardsModal={openCardsModal} ></Card>))}
     </section>
 )
 }
