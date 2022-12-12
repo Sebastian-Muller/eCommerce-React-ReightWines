@@ -12,7 +12,7 @@ const Button = () => {
                     fontSize: '2rem',
                     textTransform: 'uppercase', 
                     width:'70%',
-                    }} >
+                    }} className='button'>
             Comprar
         </button>
     </>

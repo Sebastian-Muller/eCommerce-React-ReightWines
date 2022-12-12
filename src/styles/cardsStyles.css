@@ -36,12 +36,10 @@ figure:hover .favorite{
 } 
 .favorite:active {
     fill: transparent !important;
-    transition: fill 5s;
     background-image: url(../assets/icons/favorite.svg);
     background-repeat: no-repeat;
     background-position-y: 7.5px;
     background-size:36.2px 36px;
 }
-
 
 /* Fin Estilos para icono Favorito */
