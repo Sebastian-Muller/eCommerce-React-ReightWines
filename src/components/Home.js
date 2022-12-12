@@ -1,15 +1,11 @@
 
-import videoHome from "../assets/images/videoHome.mp4"
-
-
-
-
+import videoReight from "../assets/images/videoReight.mp4"
 
 
 const Home = () => {
   return (
   <div>
-    <video src={videoHome} controls autoPlay width="100%" header="80%"></video>
+    <video src={videoReight} controls autoPlay width="100%" header="80%"></video>
   </div>
 
 
