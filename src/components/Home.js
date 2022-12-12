@@ -1,4 +1,5 @@
 
+import videoHome from "../assets/images/videoHome.mp4"
 
 
 
@@ -7,8 +8,13 @@
 
 const Home = () => {
   return (
-    <h1 style={{textAlign:"center"}}>Home</h1>
+  <div>
+    <video src={videoHome} controls autoPlay width="100%" header="80%"></video>
+  </div>
+
+
   )
 }
 
 export default Home
+
