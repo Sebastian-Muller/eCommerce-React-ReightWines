@@ -16,3 +16,32 @@ button:active {
     transform: translateY(4px);
 }
 /* fin de estilos para el boton*/
+
+    /* Estilos para icono Favorito */
+.favorite {
+    fill: transparent; 
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+    padding-top: 10px;
+    position: relative;
+    left: 90px;
+    top: 30px;
+    z-index: 2;
+}
+
+figure:hover .favorite{
+    fill: var(--orange);
+	transition: fill .8s;
+} 
+.favorite:active {
+    fill: transparent !important;
+    transition: fill 5s;
+    background-image: url(../assets/icons/favorite.svg);
+    background-repeat: no-repeat;
+    background-position-y: 7.5px;
+    background-size:36.2px 36px;
+}
+
+
+/* Fin Estilos para icono Favorito */
