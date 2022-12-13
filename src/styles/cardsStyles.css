@@ -1,16 +1,16 @@
 /* estilos para el boton */
-button {
+.button {
     box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2), 0 6px 12px 0 rgba(0,0,0,0.19);
 }
 
 @media screen and (min-width: 1024px){
 
-    button:hover{
+    .button:hover{
         background-color: var(--pink) !important;
     }
 }
 
-button:active {
+.button:active {
     background-color: var(--pink) !important;
     box-shadow: none;
     transform: translateY(4px);
