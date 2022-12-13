@@ -7,8 +7,8 @@ const Card = ({vinos, openCardsModal}) => {
     const {nombre, tipo, precio, image} = vinos;
 
     return (
-        <figure style={{width:'27rem',
-                        height:'43rem',
+        <figure style={{width:'28rem',
+                        height:'45rem',
                         border: '0.15rem solid var(--orange)',
                         boxSizing: 'border-box',
                         textAlign:'center',
@@ -19,7 +19,8 @@ const Card = ({vinos, openCardsModal}) => {
                         borderRadius:'1rem',
                         overflow:'hidden',
                         margin:'4rem',
-                        paddingBottom:'1rem',
+                        paddingTop: '1rem',
+                        paddingBottom:'4rem',
                         boxShadow: 'rgba(0, 0, 0, 0.3) 6px 8px 5px',
                         }}>
 
@@ -29,7 +30,7 @@ const Card = ({vinos, openCardsModal}) => {
                 </svg>
             </div>
             <div className="heart"></div>
-            <figcaption style={{position:'relative', top:'-20px',width:'100%', display: 'flex', flexDirection:'column', alignItems:'center', fontWeight:'bold', paddingBottom:'1rem'}}>
+            <figcaption onClick={openCardsModal} style={{position:'relative', top:'-20px',width:'100%', display: 'flex', flexDirection:'column', alignItems:'center', fontWeight:'bold', paddingBottom:'0.1rem'}}>
             <img src={image} alt="Vino" style={{width:'100%'}}/>
                 <h3 style={{color:'var(--dark)'}}>{nombre}</h3>
                 <p>{tipo}</p>
