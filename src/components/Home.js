@@ -1,8 +1,6 @@
 import styled from "styled-components"
 import VideoHome from "./VideoHome"
 
-import videoReight from "../assets/images/videoReight.mp4"
-
 
 const Home = () => {
   return (
