@@ -31,6 +31,7 @@ const Rutas = () => {
                 <Route path="/login" element={<Login/>}/>
                 <Route path="*" element={<Error404/>}/>
             </Routes>
+        <></>
         </Router>
     )
 }

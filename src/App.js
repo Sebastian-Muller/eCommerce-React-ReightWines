@@ -1,11 +1,17 @@
-import DesktopCarrousel from "./components/DesktopCarrousel";
-import Rutas from "./routes/Rutas";
+import Rutas from "./routes/Rutas"
+
+
+
+
 
 
 function App() {
-  return <>
-  <Rutas />
-  </>
+
+
+
+  return (
+    <><Rutas /></>
+  )
 }
 
 export default App;
