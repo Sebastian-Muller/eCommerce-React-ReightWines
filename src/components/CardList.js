@@ -66,7 +66,7 @@ const vinos = [
     },
 ];
 
-const initialState = true;
+const initialState = false;
 
 const CardList = () => {
 

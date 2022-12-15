@@ -36,7 +36,7 @@ const Card = ({vinos, openCardsModal}) => {
                 <p>{tipo}</p>
                 <p style={{color:'var(--orange)'}}>${precio}.-</p>
             </figcaption>
-            <Button openCardsModal={openCardsModal}></Button>
+            {/* <Button openCardsModal={openCardsModal}></Button> */}
         </figure>
     )
 }
