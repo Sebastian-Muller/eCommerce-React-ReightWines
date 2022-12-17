@@ -1,17 +1,14 @@
-import Rutas from "./routes/Rutas"
-
-
-
-
-
+import React from "react"
+import Footer from "./components/Footer";
+import SocialsBar from "./components/SocialsBar";
 
 function App() {
 
-
-
   return (
-    <><Rutas /></>
-  )
+    <section>
+
+    </section>
+  );
 }
 
 export default App;
