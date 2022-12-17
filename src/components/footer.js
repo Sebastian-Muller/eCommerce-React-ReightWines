@@ -71,6 +71,10 @@ const Footer = () => {
     const BoxText = styled.div`
         display: flex;
         align-items: center;
+
+        .payText{
+            line-height: 3rem;
+        }
     `;
     const BoxImg = styled.div`
         background-image: ${(props) => props.background};
@@ -131,7 +135,7 @@ const Footer = () => {
                 <BoxTitle><h3>Sitio Seguro</h3></BoxTitle>
                 <BoxContent>
                     <BoxText>
-                    <p>A través de todos los medios de pago y promociones bancarias de Mercado Pago</p>
+                    <p className='payText'>A través de todos los medios de pago y promociones bancarias de Mercado Pago</p>
                     </BoxText>
                     <ContentPayment>
                         {paySecure.map(({background}, index) => (
