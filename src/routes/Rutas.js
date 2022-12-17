@@ -8,6 +8,8 @@ import Contacto from "../components/Contacto"
 import Carro from "../components/Carro"
 import Login from "../components/Login"
 import Error404 from "../components/Error404"
+import ShoppingCart from "../components/shopping/ShoppingCart"
+import Footer from "../components/Footer/Footer"
 
 
 
@@ -31,7 +33,8 @@ const Rutas = () => {
                 <Route path="/login" element={<Login/>}/>
                 <Route path="*" element={<Error404/>}/>
             </Routes>
-        <></>
+            <ShoppingCart />
+            <Footer />
         </Router>
     )
 }

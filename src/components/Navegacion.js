@@ -8,7 +8,7 @@ import BotonHamburguesa from "./BotonHamburguesa"
 
 const Navegacion = () => {
 
-  const [clicked, setClicked] = useState (false)
+  const [clicked, setClicked] = useState(false)
 
 
   return (
@@ -18,17 +18,17 @@ const Navegacion = () => {
         <NavLink to="/" className="navItem"><img src={logoNav} alt="Reight" height="90px" width="100px" /></NavLink>
       </LogoContenedor>
 
-      <LinksContenedor open={setClicked}> 
-          <NavLink to="/bebidas" className="navItem">Bebidas</NavLink>
-          <NavLink to="/nosotros" className="navItem">Nosotros</NavLink>
-          <NavLink to="/gift" className="navItem">Gift</NavLink>
-          <NavLink to="/contacto" className="navItem">Contacto</NavLink>
+      <LinksContenedor open={setClicked}>
+        <NavLink to="/bebidas" className="navItem">Bebidas</NavLink>
+        <NavLink to="/nosotros" className="navItem">Nosotros</NavLink>
+        <NavLink to="/gift" className="navItem">Gift</NavLink>
+        <NavLink to="/contacto" className="navItem">Contacto</NavLink>
       </LinksContenedor>
 
       <IconosContenedor>
         <NavLink to="/login"><i class="fa-solid fa-user"></i></NavLink>
         <NavLink to="/carro"><i class="fa-solid fa-cart-shopping"></i></NavLink>
-        <BotonHamburguesa onClick={()=>setClicked(!clicked)}/>
+        <BotonHamburguesa onClick={() => setClicked(!clicked)} />
       </IconosContenedor>
 
     </NavContenedor>
@@ -58,7 +58,7 @@ const LinksContenedor = styled.div`
     background-color: var(--orange);
     position: absolute;
     top: 15vh;
-    left: ${({open}) => (open ? "0" : "-200%")};
+    left: ${({ open }) => (open ? "0" : "-200%")};
     width: 100%;
     height: 85vh;
     display: flex;
@@ -69,7 +69,6 @@ const LinksContenedor = styled.div`
     gap:10px;
     padding: 10% 0;
     
-
     @media screen and (min-width: 768px){
       position: initial;
       height: 15vh;
@@ -82,7 +81,7 @@ const LinksContenedor = styled.div`
     }
   `
 
-  const IconosContenedor = styled.div`
+const IconosContenedor = styled.div`
   display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -99,5 +98,4 @@ height:20vh;
 display:flex;
 justify-content: space-evenly;
 align-items:center;
-
 `
