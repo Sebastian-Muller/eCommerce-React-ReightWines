@@ -10,7 +10,7 @@ import styled from "styled-components"
 const VideoHome = () => {
     return (
         <VideoHomeContainer>
-            <video src="#" alt="Cómo abrir un espumoso" width="100%" height="100%" controls autoplay />
+            <video src="../assets/images/videoReight.mp4" alt="Cómo abrir un espumoso" width="100%" height="100%" controls autoplay />
         </VideoHomeContainer>
     )
 }
