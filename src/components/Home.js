@@ -5,7 +5,7 @@ import VideoHome from "./VideoHome"
 const Home = () => {
   return (
     <HomeSection>
-      <VideoHome />
+      <VideoHome/>
     </HomeSection>
   )
 }
