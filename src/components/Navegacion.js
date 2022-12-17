@@ -58,7 +58,7 @@ const LinksContenedor = styled.div`
     background-color: var(--orange);
     position: absolute;
     top: 15vh;
-    left: 0;
+    left: ${({open}) => (open ? "0" : "-200%")};
     width: 100%;
     height: 85vh;
     display: flex;

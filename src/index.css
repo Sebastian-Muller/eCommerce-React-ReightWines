@@ -55,8 +55,6 @@ a {
     transition: 0.5s all ease;
   }
 
-
-
   :hover{
     color: var(--dark);
     transition: 0.5s all ease;
