@@ -64,4 +64,9 @@ const Hamburguesa = styled.div`
   }
   .nav-icon-7.open span:nth-child(3){
     top: 13PX;
-  }`;
+  }
+  
+  
+  @media screen and (min-width: 768px) {
+      display: none}
+    `;
