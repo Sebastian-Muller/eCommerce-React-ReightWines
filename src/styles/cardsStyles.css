@@ -1,0 +1,45 @@
+/* estilos para el boton */
+.button {
+    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2), 0 6px 12px 0 rgba(0,0,0,0.19);
+}
+
+@media screen and (min-width: 1024px){
+
+    .button:hover{
+        background-color: var(--pink) !important;
+    }
+}
+
+.button:active {
+    background-color: var(--pink) !important;
+    box-shadow: none;
+    transform: translateY(4px);
+}
+/* fin de estilos para el boton*/
+
+    /* Estilos para icono Favorito */
+.favorite {
+    fill: transparent; 
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+    padding-top: 10px;
+    position: relative;
+    left: 90px;
+    top: 30px;
+    z-index: 2;
+}
+
+figure:hover .favorite{
+    fill: var(--orange);
+	transition: fill .8s;
+} 
+.favorite:active {
+    fill: transparent !important;
+    background-image: url(../assets/icons/favorite.svg);
+    background-repeat: no-repeat;
+    background-position-y: 7.5px;
+    background-size:36.2px 36px;
+}
+
+/* Fin Estilos para icono Favorito */
