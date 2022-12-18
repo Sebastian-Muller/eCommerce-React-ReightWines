@@ -11,7 +11,18 @@ import Error404 from "../components/Error404"
 import ShoppingCart from "../components/shopping/ShoppingCart"
 import Footer from "../components/Footer/Footer"
 
-
+/***********
+ * USAR EL CONTEXTO
+ * 1 - IMPORTAR EL CONTEXT Y EL HOOK:
+ * import { ProductsContext } from "../context/ProductsProvider"
+ * import { useContext } from "react"
+ * 
+ * 2 - EJECUTAR EL CONTEXTO Y EXTRAER LA PROP (dentro del componente)
+ * const data = useContext(ProductsContext)
+ * 
+ * 3 - DESTRUCTURAR LA PROP
+ * const [let1, let2,let3, let4] = data;
+************/
 
 
 

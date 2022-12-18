@@ -1,5 +1,8 @@
 
+import { useContext } from "react";
+import ProductsProvider from "../context/ProductsProvider";
 import Rutas from "./routes/Rutas"
+
 
 
 
@@ -10,10 +13,9 @@ import Rutas from "./routes/Rutas"
 function App() {
 
   return (
-    <section>
+    <ProductsProvider>
       <Rutas />
-      
-  </section>
+    </ProductsProvider>
   );
 }
 
