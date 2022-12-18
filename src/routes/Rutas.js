@@ -25,8 +25,6 @@ import Footer from "../components/Footer/Footer"
 ************/
 
 
-
-
 const Rutas = () => {
 
 
