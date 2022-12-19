@@ -69,7 +69,7 @@ export const reducer = (state, action) => {
             };
         }
         case TYPES.CLEAR_CART: {
-            return shoppingInitialState;
+            return initialState;
         }
 
         default:
