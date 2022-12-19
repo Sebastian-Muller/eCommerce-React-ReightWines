@@ -4,7 +4,7 @@ AQUÍ DEBERIAN AGREGAR TODOS LOS CASOS NECESARIOS PARA SUS COMPONENTES
 DESPUES IMPORTAN EL ESTADO INICIAL Y EL REDUCTOR EN SUS COMPONENTES CON
 import { initialState, reducer } from "../reducer/reducer";
 */
-
+import { TYPES } from "../actions/shoppingActions";
 
 
 
