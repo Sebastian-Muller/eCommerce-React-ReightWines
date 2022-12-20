@@ -38,11 +38,10 @@ const Rutas = () => {
                 <Route path="/nosotros" element={<Nosotros/>}/>
                 <Route path="/gift" element={<Gift/>}/>
                 <Route path="/contacto" element={<Contacto/>}/>
-                <Route path="/carro" element={<Carro/>}/>
+                <Route path="/carro" element={<ShoppingCart/>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="*" element={<Error404/>}/>
             </Routes>
-            <ShoppingCart />
             <Footer />
         </Router>
     )

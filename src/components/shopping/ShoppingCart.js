@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect } from 'react'
-import { TYPES } from '../../actions/shoppingActions'
+import { TYPES } from '../../actions/actions'
 import axios from 'axios'
-import { shoppingInitialState, shoppingReducer } from '../../reducer/shoppingReducer'
+import { initialState, reducer } from '../../reducer/reducer'
 import CartItem from './CartItem'
 import { Product } from './Product'
 
@@ -9,7 +9,7 @@ import { Product } from './Product'
 
 const ShoppingCart = () => {
   
-  const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState)
+  const [state, dispatch] = useReducer(reducer, initialState)
   
   const {products, cart} = state;
 
