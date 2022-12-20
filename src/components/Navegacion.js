@@ -77,6 +77,7 @@ const LinksContenedor = styled.div`
     gap:10px;
     padding: 10% 0;
     transition: 0.5s all ease;
+    z-index:9999;
     
     @media screen and (min-width: 768px){
       position: initial;

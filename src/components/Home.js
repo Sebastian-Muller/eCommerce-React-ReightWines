@@ -20,6 +20,7 @@ export default Home
 
 const HomeSection = styled.div`
 width: 100%;
-max-width: 100vw;
-display:flex;
+  height: 100%;
+  max-height: 85vh;
+  overflow-y: hidden
 `

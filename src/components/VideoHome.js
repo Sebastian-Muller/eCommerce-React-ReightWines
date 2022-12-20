@@ -7,7 +7,7 @@ import video from "../assets/video/videoHome.mp4"
 const VideoHome = () => {
     return (
         <VideoHomeContainer>
-            <video src={video} alt="Reight" width="100%" height="100%" controls autoplay loop volumnen="0.5" />
+            <video src={video} alt="Reight" width="100%" height="100%" controls autoPlay loop volumnen="0.5" />
         </VideoHomeContainer>
     )
 }
@@ -16,8 +16,11 @@ export default VideoHome
 
 
 const VideoHomeContainer = styled.div`
-width: 100%;
-max-height: 100vh; 
+width: inherit;
+height: inherit; 
+max-height: inherit;
+position: relative;
+botton: 100px;
 `
 
 
