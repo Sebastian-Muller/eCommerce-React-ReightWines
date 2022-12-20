@@ -1,8 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
+
 const BotonHamburguesa = () => {
   return (
+
+
     <Hamburguesa>
     <div className="icon nav-icon-7">
         <span></span>
@@ -14,7 +17,6 @@ const BotonHamburguesa = () => {
 }
 
 export default BotonHamburguesa
-
 
 const Hamburguesa = styled.div`
 .nav-icon-7{
@@ -69,4 +71,4 @@ const Hamburguesa = styled.div`
   
   @media screen and (min-width: 768px) {
       display: none}
-    `;
+    `;  

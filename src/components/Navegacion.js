@@ -7,30 +7,38 @@ import BotonHamburguesa from "./BotonHamburguesa"
 
 
 const Navegacion = () => {
-
-  const [clicked, setClicked] = useState(false)
+  
+  const [expand, setExpand] = useState(false)
+ 
 
 
   return (
     <NavContenedor>
 
       <LogoContenedor>
-        <NavLink to="/" className="navItem"><img src={logoNav} alt="Reight" height="90px" width="100px" /></NavLink>
+        <NavLink to="/" className="navItem" onClick={()=> setExpand (!expand)}>
+          <img src={logoNav} alt="Reight" height="90px" width="100px" /></NavLink>
       </LogoContenedor>
+      
+      <LinksContenedor open={expand}>
+        <NavLink to="/bebidas" className="navItem" onClick={()=> setExpand (!expand)}>Bebidas</NavLink>
+        <NavLink to="/nosotros" className="navItem" onClick={()=> setExpand (!expand)}>Nosotros</NavLink>
+        <NavLink to="/gift" className="navItem" onClick={()=> setExpand (!expand)}>Gift</NavLink>
+        <NavLink to="/contacto" className="navItem" onClick={()=> setExpand (!expand)}>Contacto</NavLink>
 
-      <LinksContenedor open={setClicked}>
-        <NavLink to="/bebidas" className="navItem">Bebidas</NavLink>
-        <NavLink to="/nosotros" className="navItem">Nosotros</NavLink>
-        <NavLink to="/gift" className="navItem">Gift</NavLink>
-        <NavLink to="/contacto" className="navItem">Contacto</NavLink>
       </LinksContenedor>
+  
 
-      <IconosContenedor>
+      <IconosContenedor >
         <NavLink to="/login"><i class="fa-solid fa-user"></i></NavLink>
         <NavLink to="/carro"><i class="fa-solid fa-cart-shopping"></i></NavLink>
-        <BotonHamburguesa onClick={() => setClicked(!clicked)} />
-      </IconosContenedor>
 
+        <div onClick={()=> setExpand (!expand)}>
+
+          <BotonHamburguesa />
+        </div>
+      </IconosContenedor>
+      
     </NavContenedor>
   )
 }
@@ -58,7 +66,7 @@ const LinksContenedor = styled.div`
     background-color: var(--orange);
     position: absolute;
     top: 15vh;
-    left: ${({ open }) => (open ? "0" : "-200%")};
+    left: ${({open}) => (open ? "0" : "-100%")};
     width: 100%;
     height: 85vh;
     display: flex;
@@ -68,6 +76,7 @@ const LinksContenedor = styled.div`
     text-align: center;
     gap:10px;
     padding: 10% 0;
+    transition: 0.5s all ease;
     
     @media screen and (min-width: 768px){
       position: initial;

@@ -7,7 +7,7 @@ import video from "../assets/video/videoHome.mp4"
 const VideoHome = () => {
     return (
         <VideoHomeContainer>
-            <video src={video} alt="Reight" width="100%" height="100%" autoplay loop volumnen="0.5" />
+            <video src={video} alt="Reight" width="100%" height="100%" controls autoplay loop volumnen="0.5" />
         </VideoHomeContainer>
     )
 }
