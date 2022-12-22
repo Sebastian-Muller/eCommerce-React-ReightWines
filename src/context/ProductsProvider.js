@@ -1,6 +1,6 @@
 import { createContext } from "react"
-import { TYPES } from "../actions/actions";
-import { initialState, reducer } from "../reducer/reducer";
+import { TYPES } from "../actions/shoppingActions";
+import { shoppingInitialState, shoppingReducer } from "../reducer/shoppingReducer";
 
 
 const data = [

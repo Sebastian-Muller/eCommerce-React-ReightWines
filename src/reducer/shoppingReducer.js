@@ -1,24 +1,18 @@
-/*
-ESTE REDUCTOR SOLO TIENE EL DATO DE LA CLASE DE REDUCTOR, OSEA DEL CONTADOR
-AQUÍ DEBERIAN AGREGAR TODOS LOS CASOS NECESARIOS PARA SUS COMPONENTES
-DESPUES IMPORTAN EL ESTADO INICIAL Y EL REDUCTOR EN SUS COMPONENTES CON
-import { initialState, reducer } from "../reducer/reducer";
-*/
-import { TYPES } from "../actions/actions"
+import { TYPES } from "../actions/shoppingActions";
+
+
+export const shoppingInitialState = {
+    products: [],
+    cart: [],
+};
 
 
 
-export const initialState = {
-    contador: 0,
-    loaded: true
-}
-
-
-export const reducer = (state, action) => {
+export const shoppingReducer = (state, action) => {
     switch (action.type) {
         case TYPES.READ_STATE: {
             return {
-                ...state,
+                ...state,  
                 products: action.payload[0],
                 cart: action.payload[1]
             };
@@ -28,7 +22,9 @@ export const reducer = (state, action) => {
             const newItem = state.products.find(
                 (product) => product.id === action.payload
             );
+
             const itemInCart = state.cart.find((item) => item.id === newItem.id);
+
             return itemInCart
                 ? {
                     ...state,
@@ -69,7 +65,7 @@ export const reducer = (state, action) => {
             };
         }
         case TYPES.CLEAR_CART: {
-            return initialState;
+            return shoppingInitialState;
         }
 
         default:
