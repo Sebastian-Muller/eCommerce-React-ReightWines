@@ -29,8 +29,7 @@ const Rutas = () => {
 
     return (
         <Router>
-            <Navegacion style={{
-        textAlign:"center"}}/>
+            <Navegacion />
             <Routes>
                 <Route path="/" element={<Main />}/>
                 <Route path="/bebidas" element={<Bebidas/>}/>
