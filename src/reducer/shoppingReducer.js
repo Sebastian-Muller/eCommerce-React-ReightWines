@@ -12,7 +12,7 @@ export const shoppingReducer = (state, action) => {
     switch (action.type) {
         case TYPES.READ_STATE: {
             return {
-                ...state,  
+                ...state,
                 products: action.payload[0],
                 cart: action.payload[1]
             };
@@ -65,7 +65,10 @@ export const shoppingReducer = (state, action) => {
             };
         }
         case TYPES.CLEAR_CART: {
-            return shoppingInitialState;
+            return {
+                ...state,
+                cart: []
+            };
         }
 
         default:
