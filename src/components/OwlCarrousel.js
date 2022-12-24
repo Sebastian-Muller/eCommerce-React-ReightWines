@@ -2,6 +2,7 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import '../owl.css';
+import { useState } from 'react';
 
 
 
@@ -10,6 +11,11 @@ import '../owl.css';
 
 const OwlCarrousel = () => {
 
+    const initialState = 1;
+    const [items, setItems] = useState(initialState);
+
+
+    
 
 
 
@@ -23,7 +29,7 @@ const OwlCarrousel = () => {
                 </div>
             </div>
             <div class='container-fluid' >
-                <OwlCarousel items={2}
+                <OwlCarousel items={5}
                     className="owl-theme"
                     loop
                     nav
