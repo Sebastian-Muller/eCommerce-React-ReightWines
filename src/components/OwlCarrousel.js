@@ -54,7 +54,7 @@ const OwlCarrousel = () => {
             <div class='container-fluid' >
                 <div className="row title" style={{ marginBottom: "20px" }} >
                     <div class="col-sm-12 btn btn-info">
-                        GIFT
+                        <h2>GIFT</h2>
                     </div>
                 </div>
             </div>

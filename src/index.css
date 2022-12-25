@@ -85,10 +85,10 @@ FIN ESTILOS OWL-CAROUSEL  */
     transition: 0.5s all ease;
   }
 
-  :hover{
+  /* :hover{
     color: var(--dark);
     transition: 0.5s all ease;
-  }
+  } */
   
   .fa-solid {
     color: var(--dark);

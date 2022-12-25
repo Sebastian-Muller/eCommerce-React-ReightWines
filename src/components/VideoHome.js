@@ -15,8 +15,9 @@ const VideoHome = () => {
 export default VideoHome
 
 
-const VideoHomeContainer = styled.div`
+const VideoHomeContainer = styled.section`
 width: inherit;
+max-width:100vw;
 height: inherit; 
 max-height: inherit;
 position: relative;

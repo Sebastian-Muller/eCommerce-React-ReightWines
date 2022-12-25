@@ -3,6 +3,7 @@ import Card from "./Card";
 import CardsModal from "./CardsModal";
 import "../styles/cardsStyles.css";
 import { useState } from "react";
+import styled from "styled-components";
 
 
 
@@ -77,16 +78,23 @@ const CardList = () => {
     const closeCardsModal = () => setCardsModalOpen(false);
 
 return (
-    <section style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        width:'150rem',
-    }}>
+    <CardsSection>
         <CardsModal cardsModalOpen={cardsModalOpen} closeCardsModal={closeCardsModal}></CardsModal>
         {vinos.map((vino) => (
         <Card key={vino.id} vinos={vino} openCardsModal={openCardsModal} ></Card>))}
-    </section>
+    </CardsSection>
 )
 }
 
 export default CardList
+
+
+
+
+
+const CardsSection = styled.section`
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+    justify-content: center;
+`
