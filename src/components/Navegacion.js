@@ -57,7 +57,7 @@ const NavContenedor = styled.nav`
 `
 
 const LogoContenedor = styled.div`
-padding-top: 1%;
+padding: 1%;
 width:15%;
 `
 
@@ -87,7 +87,6 @@ const LinksContenedor = styled.div`
       top: 0vh;
     }
     
-    }
   `
 
 const IconosContenedor = styled.div`

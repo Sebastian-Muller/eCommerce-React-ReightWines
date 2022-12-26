@@ -4,11 +4,7 @@ import { shoppingInitialState, shoppingReducer } from "../reducer/shoppingReduce
 
 
 const data = [
-  /*
-  AQUÍ GUARDAR LOS TYPES, ESTADO INICIAL, REDUCER, DB.JSON UNA VEZ IMPORTADOS
-  PARA PASARLOS COMO PROP AL PROVEEDOR DEL CONTEXTO Y DESTRUCTURAR EN CADA
-  COMPONENTE, SEGÚN NECESITEN
-  */
+  shoppingInitialState, shoppingReducer, TYPES,
 ];
 
 
