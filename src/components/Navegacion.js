@@ -65,6 +65,7 @@ const LinksContenedor = styled.div`
 
     background-color: var(--orange);
     position: absolute;
+    top: 15vh;
     left: ${({open}) => (open ? "0" : "-100%")};
     width: 100%;
     height: 85vh;
@@ -92,7 +93,7 @@ const LinksContenedor = styled.div`
 const IconosContenedor = styled.div`
   width: 25%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   color: var(--dark);
   `

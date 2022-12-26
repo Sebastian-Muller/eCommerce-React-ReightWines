@@ -6,5 +6,63 @@
 .img  
 {  
         height: 260px;
-        width:100%  
+        width:100%;
+        object-fit: contain; 
 }  
+
+.owl-carousel .owl-stage-outer{
+        margin-top: 3rem;
+}
+
+.owl-nav button{
+        position: absolute;
+        top: 50%;
+        background-color: #000;
+        
+        margin: 0;
+        transition: all .3s ease-in-out;
+}
+.owl-nav button.owl-prev{
+        left: 0;
+}
+.owl-nav button.owl-next{
+        right: 0;
+}
+.owl-nav button.owl-next:hover,
+.owl-nav button.owl-next:hover{
+        background-color: #000;
+}
+
+.owl-dots button.owl-dot.span{
+        text-align: center;
+        padding-top: 15px;
+}
+.owl-dots button.owl-dot.span{
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        display: inline-block;
+        background-color: #CCC;
+        margin: 0 3px;
+}
+.owl-dots button.owl-dot.span.active{
+        background-color: #000;
+}
+.owl-dots button.owl-dot.span:active{
+        outline: none;
+}
+
+.owl-nav button{
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        
+}
+span{
+        font-size: 70px;
+        position: relative;
+        top: -5px;
+}
+.owl-nav button:focus{
+        outline: none;
+}
