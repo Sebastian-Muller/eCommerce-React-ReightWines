@@ -6,6 +6,7 @@ import BotonHamburguesa from "./BotonHamburguesa"
 
 
 
+
 const Navegacion = () => {
   
   const [expand, setExpand] = useState(false)
@@ -21,10 +22,18 @@ const Navegacion = () => {
       </LogoContenedor>
       
       <LinksContenedor open={expand}>
-        <NavLink to="/bebidas" className="navItem" onClick={()=> setExpand (!expand)}>Bebidas</NavLink>
-        <NavLink to="/nosotros" className="navItem" onClick={()=> setExpand (!expand)}>Nosotros</NavLink>
-        <NavLink to="/gift" className="navItem" onClick={()=> setExpand (!expand)}>Gift</NavLink>
-        <NavLink to="/contacto" className="navItem" onClick={()=> setExpand (!expand)}>Contacto</NavLink>
+  
+          <NavLink to="/bebidas" className="navItem" onClick={()=> setExpand (!expand)}>
+           Bebidas</NavLink>
+
+          <NavLink to="/nosotros" className="navItem" onClick={()=> setExpand (!expand)}>
+           Nosotros</NavLink>
+      
+          <NavLink to="/gift" className="navItem" onClick={()=> setExpand (!expand)}>
+           Gift</NavLink>
+
+          <NavLink to="/contacto" className="navItem" onClick={()=> setExpand (!expand)}>
+           Contacto</NavLink>
 
       </LinksContenedor>
   
@@ -34,7 +43,6 @@ const Navegacion = () => {
         <NavLink to="/carro"><i class="fa-solid fa-cart-shopping"></i></NavLink>
 
         <div onClick={()=> setExpand (!expand)}>
-
           <BotonHamburguesa />
         </div>
       </IconosContenedor>
@@ -74,7 +82,7 @@ const LinksContenedor = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap:10px;
+    gap: 15px;
     padding: 10% 0;
     transition: 0.5s all ease;
     z-index:9999;
@@ -86,10 +94,10 @@ const LinksContenedor = styled.div`
       justify-content: space-evenly;
       padding: 1rem;
       top: 0vh;
-     
-    
     }
   `
+
+
 
 const IconosContenedor = styled.div`
   display: flex;
@@ -98,14 +106,3 @@ const IconosContenedor = styled.div`
     align-items: center;
     gap: 60px;
   `
-
-
-
-
-const LinksDiv = styled.div`
-width:75%;
-height:20vh;
-display:flex;
-justify-content: space-evenly;
-align-items:center;
-`
