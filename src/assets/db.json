@@ -1,28 +1,52 @@
 {
     "products": [
-        {"id": 1,
-        "name": "Producto 1",
-        "price": 100
+        {
+            "id": 1,
+            "nombre": "Sexy Fish",
+            "tipo": "Malbec",
+            "precio": 2100
         },
-        {"id": 2,
-        "name": "Producto 2",
-        "price": 200
+        {
+            "id": 2,
+            "nombre": "Pedriel",
+            "tipo": "Rosado de Malbec",
+            "precio": 3600
         },
-        {"id": 3,
-        "name": "Producto 3",
-        "price": 300
+        {
+            "id": 3,
+            "nombre": "Antigal Uno",
+            "tipo": "Sauvignon Blanc",
+            "precio": 3000
         },
-        {"id": 4,
-        "name": "Producto 4",
-        "price": 400
+        {
+            "id": 4,
+            "nombre": "Jonnie Walker",
+            "tipo": "Double Black Whisky",
+            "precio": 11300
         },
-        {"id": 5,
-        "name": "Producto 5",
-        "price": 500
+        {
+            "id": 5,
+            "nombre": "Chivas Regal 12",
+            "tipo": "Blended Scotch Whisky",
+            "precio": 11000
         },
-        {"id": 6,
-        "name": "Producto 6",
-        "price": 600
+        {
+            "id": 6,
+            "nombre": "Veuve Clicquot",
+            "tipo": "Champagne Rosé",
+            "precio": 45900
+        },
+        {
+            "id": 7,
+            "nombre": "G. H. Mumm Cordon",
+            "tipo": "Champagne Rouge Brut",
+            "precio": 12800
+        },
+        {
+            "id": 8,
+            "nombre": "Atemporal G. Elevage",
+            "tipo": "Champagne Brut Nature",
+            "precio": 15600
         }
     ],
     "cart": []
