@@ -1,12 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import { useReducer } from "react";
+import TYPES from "../actions/shoppingActions"
 
 
 
 const Card = ({key, nombre, tipo, precio, src, modalOpen, setModalOpen}) => {
 
-
+    // const handleModal = () => {dispatch({type: TYPES.OPEN_MODAL})}
     return (
+
+        
 
         <CardContenedor key={key}>
             <Favorito>
@@ -15,7 +19,7 @@ const Card = ({key, nombre, tipo, precio, src, modalOpen, setModalOpen}) => {
                 </svg>
             </Favorito>
             
-            <CardFigcaption onClick={()=>setModalOpen(!modalOpen)}>
+            <CardFigcaption onClick={"ACA AGREGA EL USESTATE POR AHORA HASTA QUE HAGAS BIEN EL REDUCTOR"}>
                 <img src={src} alt={tipo} style={{width:'100%'}}/>
                 <Nombre>{nombre}</Nombre>
                 <Tipo>{tipo}</Tipo>

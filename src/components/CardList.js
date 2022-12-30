@@ -3,6 +3,7 @@ import CardsModal from "./CardsModal";
 import "../styles/cardsStyles.css";
 import { useState } from "react";
 import styled from "styled-components";
+import axios from "axios"
 
 import Fish from "../assets/images/malbec.webp"
 import Ros from "../assets/images/rosado.webp"
@@ -85,6 +86,22 @@ const vinos = [
 
 
 const CardList = () => {
+
+
+
+
+
+
+
+
+    // const productsList = async () =>{
+    //     const productsEndpoint = "http://localhost:5000/products"
+    //     const endpointCall = await axios.get(productsEndpoint)
+    //     const winesList = await endpointCall.data
+    //     return winesList
+    // }
+
+    // const [id, nombre, tipo, precio] = productsList();
 
     const [modalOpen, setModalOpen] = useState(false);
 

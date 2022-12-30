@@ -4,7 +4,8 @@
             "id": 1,
             "nombre": "Sexy Fish",
             "tipo": "Malbec",
-            "precio": 2100
+            "precio": 2100,
+            "image": ""
         },
         {
             "id": 2,
@@ -22,7 +23,8 @@
             "id": 4,
             "nombre": "Jonnie Walker",
             "tipo": "Double Black Whisky",
-            "precio": 11300
+            "precio": 11300,
+            "image": "src\\assets\\images\\jonniewalker.webp"
         },
         {
             "id": 5,
