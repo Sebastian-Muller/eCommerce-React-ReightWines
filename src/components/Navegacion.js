@@ -3,6 +3,7 @@ import { useState } from "react"
 import styled from "styled-components"
 import logoNav from "../assets/images/logoNav.webp"
 import BotonHamburguesa from "./BotonHamburguesa"
+import "../index.css"
 
 
 
@@ -21,10 +22,10 @@ const Navegacion = () => {
       </LogoContenedor>
       
       <LinksContenedor open={expand}>
-        <NavLink to="/bebidas" className="navItem" onClick={()=> setExpand (!expand)}>Bebidas</NavLink>
-        <NavLink to="/nosotros" className="navItem" onClick={()=> setExpand (!expand)}>Nosotros</NavLink>
-        <NavLink to="/gift" className="navItem" onClick={()=> setExpand (!expand)}>Gift</NavLink>
-        <NavLink to="/contacto" className="navItem" onClick={()=> setExpand (!expand)}>Contacto</NavLink>
+        <NavLink exact to="/bebidas" className="navItem" activeClassName="active" onClick={()=> setExpand (!expand)}>Bebidas</NavLink>
+        <NavLink exact to="/nosotros" className="navItem" activeClassName="active" onClick={()=> setExpand (!expand)}>Nosotros</NavLink>
+        <NavLink exact to="/gift" className="navItem" activeClassName="active" onClick={()=> setExpand (!expand)}>Gift</NavLink>
+        <NavLink exact to="/contacto" className="navItem" activeClassName="active" onClick={()=> setExpand (!expand)}>Contacto</NavLink>
 
       </LinksContenedor>
   
@@ -45,23 +46,23 @@ const Navegacion = () => {
 
 export default Navegacion
 
-const NavContenedor = styled.nav`
-  background-color: var(--orange);
-  width: 100%;
-  height: 15vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1%;
-  position: relative;
-`
+  const NavContenedor = styled.nav`
+    background-color: var(--orange);
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+    position: relative;
+  `;
 
-const LogoContenedor = styled.div`
-padding: 1%;
-width:15%;
-`
+  const LogoContenedor = styled.div`
+    padding: 1%;
+    width:15%;
+  `;
 
-const LinksContenedor = styled.div`
+  const LinksContenedor = styled.div`
 
     background-color: var(--orange);
     position: absolute;
@@ -88,12 +89,14 @@ const LinksContenedor = styled.div`
       top: 0vh;
     }
     
-  `
+  `;
 
-const IconosContenedor = styled.div`
-  width: 25%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  color: var(--dark);
-  `
+  const IconosContenedor = styled.div`
+    width: 25%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--dark);
+    gap: 2rem;
+    margin-right: 3rem;
+  `;

@@ -27,12 +27,16 @@ const Footer = () => {
         flex-direction: column;
         align-items: center;
         padding: 2rem;
+        font-size: 1.2rem;
+
 
         @media (min-width:1024px){
             flex-direction: row;
-            gap: 2rem;
+            gap: 5rem;
             align-items:flex-start;
             justify-content: center;
+            font-size: 1.5rem;
+
         }
     `;
 
@@ -46,9 +50,10 @@ const Footer = () => {
     `;
     const Anchor = styled.a`
         color: #fff;
-        textDecoration: "none";
+        text-decoration: none;
 
         &:hover{
+            color: #fff;
             text-decoration: underline;
         }
     `;

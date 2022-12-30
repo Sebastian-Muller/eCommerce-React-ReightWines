@@ -3,7 +3,8 @@ import { TYPES } from '../../actions/shoppingActions'
 import axios from 'axios'
 import { shoppingInitialState, shoppingReducer } from '../../reducer/shoppingReducer'
 import CartItem from './CartItem'
-import { Product } from './Product'
+
+
 
 const ShoppingCart = () => {
   
@@ -18,10 +19,10 @@ const ShoppingCart = () => {
     }
     const resProducts = await axios.get(ENDPOINT.products),
       resCart = await axios.get(ENDPOINT.cart);
-
+  
     const productsList= resProducts.data,
     cartItems = resCart.data
-
+  
       dispatch({type: TYPES.READ_STATE, payload: [productsList, cartItems]})
   }
 
@@ -50,19 +51,6 @@ const ShoppingCart = () => {
   return (
     <>
     <h2>Carrito de compras</h2>
-    <br/>
-    <h3>Productos - solo ejemplo, luego se borra</h3>
-    <br/>
-    <div style={{
-      height:"100px",
-      width:"100vw",
-      display:"flex",
-      alignContent:"space-around",
-      justifyContent:"center",
-      flexFlow:"column wrap",
-      backgroundColor:"lightgreen"
-    }}>{products.map((product)=> <Product key={product.id} product={product} addToCart={addToCart}/>)}</div>
-    <h3 >Carrito</h3>
     <br/>
   <div style={{
       width:"100vw",
