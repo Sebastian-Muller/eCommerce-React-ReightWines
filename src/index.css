@@ -1,10 +1,12 @@
 :root {
   --dark: #252827;
   --dark80: #252827CC;
+  --dark25: #26292840;
   --green: #75A971;
   --violet: #9073A9;
   --yellow: #E4BD52;
   --orange: #EF8456;
+  --orange75: #ef8557bf;
   --pink: #EA7472;
   --beige: #FBF3E8;
   --title-font: 'Poppins', sans-serif;

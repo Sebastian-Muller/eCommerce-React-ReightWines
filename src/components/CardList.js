@@ -5,94 +5,104 @@ import "../styles/cardsStyles.css";
 import { useState } from "react";
 import styled from "styled-components";
 
+import Fish from "../assets/images/malbec.webp"
+import Ros from "../assets/images/rosado.webp"
+import Sauv from "../assets/images/sauvBlanc.webp"
+import Walker from "../assets/images/jonniewalker.webp"
+import Chivas from "../assets/images/chivas.webp"
+import Veuve from "../assets/images/veuveClicquot.webp"
+import Mumm from "../assets/images/ghMumm.webp"
+import Vista from "../assets/images/altaVista.webp"
 
 
-const images = require.context("../assets/images", true);
+
 const vinos = [
     {
-        id: 1,
         nombre: "Sexy Fish",
         tipo: "Malbec",
         precio: 2100,
-        image: images('./malbec.webp'),
+        src: `${Fish}`,
+        href: "#",
+        target: "_blank",
     },
     {
-        id: 2,
         nombre: "Pedriel",
         tipo: "Rosado de Malbec",
         precio: 3600,
-        image: images('./rosado.webp'),
+        src: `${Ros}`,
+        href: "#",
+        target: "_blank",
     },
     {
-        id: 3,
         nombre: "Antigal Uno",
         tipo: "Sauvignon Blanc",
         precio: 3000,
-        image: images('./sauvBlanc.webp'),
+        src: `${Sauv}`,
+        href: "#",
+        target: "_blank",
     },
     {
-        id: 4,
         nombre: "Jonnie Walker",
         tipo: "Double Black Whisky",
         precio: 11300,
-        image: images('./jonniewalker.webp'),
+        src: `${Walker}`,
+        href: "#",
+        target: "_blank",
     },
     {
-        id: 5,
         nombre: "Chivas Regal 12",
         tipo: "Blended Scotch Whisky",
         precio: 11000,
-        image: images('./chivas.webp'),
+        src: `${Chivas}` ,
+        href: "#",
+        target: "_blank",
     },
     {
-        id: 6,
         nombre: "Veuve Clicquot",
         tipo: "Champagne Rosé",
         precio: 45900,
-        image: images('./veuveClicquot.webp'),
+        src: `${Veuve}`,
+        href: "#",
+        target: "_blank",
     },
     {
-        id: 7,
         nombre: "G. H. Mumm Cordon",
         tipo: "Champagne Rouge Brut",
         precio: 12800,
-        image: images('./ghMumm.webp'),
+        src: `${Mumm}`,
+        href: "#",
+        target: "_blank",
     },
     {
-        id: 8,
         nombre: "Atemporal G. Elevage",
         tipo: "Champagne Brut Nature",
         precio: 15600,
-        image: images('./altaVista.webp'),
+        src: `${Vista}`,
+        href: "#",
+        target: "_blank",
+        
     },
 ];
 
-const initialState = false;
 
 const CardList = () => {
 
-    const [cardsModalOpen, setCardsModalOpen] = useState(initialState);
+    const [modalOpen, setModalOpen] = useState(false);
 
-    const openCardsModal = () => setCardsModalOpen(true);
-
-    const closeCardsModal = () => setCardsModalOpen(false);
-
-return (
-    <CardsSection>
-        <CardsModal cardsModalOpen={cardsModalOpen} closeCardsModal={closeCardsModal}></CardsModal>
-        {vinos.map((vino) => (
-        <Card key={vino.id} vinos={vino} openCardsModal={openCardsModal} ></Card>))}
-    </CardsSection>
-)
-}
+    return (
+    <CardsContainer>
+        {vinos.map(({nombre, tipo, precio, src, href, target}, index) => (
+        <CardsModal key={index} nombre={nombre} tipo={tipo} precio={precio} src={src} href={href} target={target} modalOpen={modalOpen} setModalOpen={setModalOpen}></CardsModal>))}
+        
+        {vinos.map(({nombre, tipo, precio, src}, index) => (
+        <Card key={index} nombre={nombre} tipo={tipo} precio={precio} src={src} modalOpen={modalOpen} setModalOpen={setModalOpen} ></Card>))}
+    </CardsContainer>
+)}
 
 export default CardList
 
 
-
-
-
-const CardsSection = styled.section`
+const CardsContainer = styled.section`
     display: flex;
     flex-wrap: wrap;
     width:100%;
