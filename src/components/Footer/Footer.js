@@ -30,7 +30,18 @@ const Footer = () => {
         font-size: 1.2rem;
 
 
-        @media (min-width:1024px){
+        @media (min-width:768px){
+            display: grid;
+            grid-template-columns: repeat(2, 300px);
+            grid-gap: 20px;
+            padding: 10px;
+            align-items: start;
+            justify-content: center;
+            justify-items: center;
+
+        }
+        @media (min-width:1200px){
+            display: flex;
             flex-direction: row;
             gap: 5rem;
             align-items:flex-start;

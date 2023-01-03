@@ -101,11 +101,18 @@ export default Navegacion
 
 
 const IconosContenedor = styled.div`
-  width: 25%;
+  width: 18rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   color: var(--dark);
+
+  i{
+    color: var(--dark);
+    font-size: 2.8rem;
+    
+  }
+
   `
 
 

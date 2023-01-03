@@ -27,20 +27,20 @@ const OwlCarrousel = () => {
         responsiveClass: true,
         nav: true,
         autoplay: true,
-        dots: true,
+        dots: false,
         autoWidth:false,
         smartSpeed: 700,
         responsive: {
             0: {
                 items: 1,
             },
-            400: {
+            576: {
                 items: 1,
             },
-            785: {
+            768: {
                 items: 3,
             },
-            1000: {
+            1200: {
                 items: 5,
     
             }

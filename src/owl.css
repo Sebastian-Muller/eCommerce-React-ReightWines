@@ -28,28 +28,9 @@
 .owl-nav button.owl-next{
         right: 0;
 }
-.owl-nav button.owl-next:hover,
+.owl-nav button.owl-prev:hover,
 .owl-nav button.owl-next:hover{
         background-color: #000;
-}
-
-.owl-dots button.owl-dot.span{
-        text-align: center;
-        padding-top: 15px;
-}
-.owl-dots button.owl-dot.span{
-        width: 15px;
-        height: 15px;
-        border-radius: 50%;
-        display: inline-block;
-        background-color: #CCC;
-        margin: 0 3px;
-}
-.owl-dots button.owl-dot.span.active{
-        background-color: #000;
-}
-.owl-dots button.owl-dot.span:active{
-        outline: none;
 }
 
 .owl-nav button{
