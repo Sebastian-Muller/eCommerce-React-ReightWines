@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Navegacion from "../components/Navegacion"
-import Home from "../components/Home"
+import Main from "../components/Main"
 import Bebidas from "../components/Bebidas"
 import Nosotros from "../components/Nosotros"
 import Gift from "../components/Gift"
 import Contacto from "../components/Contacto"
+import ShoppingCart from "../components/shopping/ShoppingCart"
 import Login from "../components/Login"
 import Error404 from "../components/Error404"
-import ShoppingCart from "../components/shopping/ShoppingCart"
 import Footer from "../components/Footer/Footer"
 
 /***********
@@ -29,10 +29,9 @@ const Rutas = () => {
 
     return (
         <Router>
-            <Navegacion style={{
-        textAlign:"center"}}/>
+            <Navegacion />
             <Routes>
-                <Route path="/" element={<Home/>}/>
+                <Route path="/" element={<Main />}/>
                 <Route path="/bebidas" element={<Bebidas/>}/>
                 <Route path="/nosotros" element={<Nosotros/>}/>
                 <Route path="/gift" element={<Gift/>}/>

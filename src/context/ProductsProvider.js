@@ -1,14 +1,10 @@
 import { createContext } from "react"
-import { TYPES } from "../actions/actions";
-import { initialState, reducer } from "../reducer/reducer";
+import { TYPES } from "../actions/shoppingActions";
+import { shoppingInitialState, shoppingReducer } from "../reducer/shoppingReducer";
 
 
 const data = [
-  /*
-  AQUÍ GUARDAR LOS TYPES, ESTADO INICIAL, REDUCER, DB.JSON UNA VEZ IMPORTADOS
-  PARA PASARLOS COMO PROP AL PROVEEDOR DEL CONTEXTO Y DESTRUCTURAR EN CADA
-  COMPONENTE, SEGÚN NECESITEN
-  */
+  shoppingInitialState, shoppingReducer, TYPES,
 ];
 
 
