@@ -1,10 +1,13 @@
-import Card from "./Card";
-import CardsModal from "./CardsModal";
-import "../styles/cardsStyles.css";
-import { useState } from "react";
-import styled from "styled-components";
-import axios from "axios"
+import "../styles/cardsStyles.css"
+import styled from "styled-components"
+import { useState } from "react"
 
+
+
+
+
+import Card from "./Card"
+import CardsModal from "./CardsModal"
 import Fish from "../assets/images/malbec.webp"
 import Ros from "../assets/images/rosado.webp"
 import Sauv from "../assets/images/sauvBlanc.webp"
@@ -85,13 +88,8 @@ const vinos = [
 ];
 
 
+
 const CardList = () => {
-
-
-
-
-
-
 
 
     // const productsList = async () =>{

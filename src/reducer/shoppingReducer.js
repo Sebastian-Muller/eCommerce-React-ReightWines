@@ -8,7 +8,6 @@ export const shoppingInitialState = {
 };
 
 
-
 export const shoppingReducer = (state, action) => {
     switch (action.type) {
         case TYPES.READ_STATE: {

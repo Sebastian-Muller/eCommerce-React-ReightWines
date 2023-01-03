@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect } from 'react'
 import { TYPES } from '../../actions/shoppingActions'
-import axios from 'axios'
 import { shoppingInitialState, shoppingReducer } from '../../reducer/shoppingReducer'
+import axios from 'axios'
 import CartItem from './CartItem'
 
 
