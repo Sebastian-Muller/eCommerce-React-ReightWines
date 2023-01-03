@@ -27,7 +27,7 @@ const OwlCarrousel = () => {
         responsiveClass: true,
         nav: true,
         autoplay: true,
-        dots: false,
+        dots: true,
         autoWidth:false,
         smartSpeed: 700,
         responsive: {
@@ -37,11 +37,11 @@ const OwlCarrousel = () => {
             400: {
                 items: 1,
             },
-            600: {
-                items: 2,
+            785: {
+                items: 3,
             },
             1000: {
-                items: 3,
+                items: 5,
     
             }
     
@@ -51,13 +51,6 @@ const OwlCarrousel = () => {
 
     return (
         <div>
-            <div class='container-fluid' >
-                <div className="row title" style={{ marginBottom: "20px" }} >
-                    <div class="col-sm-12 btn btn-info">
-                        <h2>GIFT</h2>
-                    </div>
-                </div>
-            </div>
             <div class='container-fluid' >
                 <OwlCarousel
                     className="owl-theme"

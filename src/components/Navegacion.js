@@ -53,26 +53,27 @@ const Navegacion = () => {
 
 export default Navegacion
 
-const NavContenedor = styled.nav`
-  background-color: var(--orange);
-  width: 100%;
-  height: 15vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1%;
-  position: relative;
-`
+  const NavContenedor = styled.nav`
+    background-color: var(--orange);
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+    position: relative;
+  `;
 
-const LogoContenedor = styled.div`
-padding: 1%;
-width:15%;
-`
+  const LogoContenedor = styled.div`
+    padding: 1%;
+    width:15%;
+  `;
 
-const LinksContenedor = styled.div`
+  const LinksContenedor = styled.div`
 
     background-color: var(--orange);
     position: absolute;
+    top: 15vh;
     left: ${({open}) => (open ? "0" : "-100%")};
     width: 100%;
     height: 85vh;
@@ -95,7 +96,7 @@ const LinksContenedor = styled.div`
       top: 0vh;
     }
     
-  `
+  `;
 
 
 

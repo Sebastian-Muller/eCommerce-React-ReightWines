@@ -4,7 +4,7 @@ import { shoppingInitialState, shoppingReducer } from "../reducer/shoppingReduce
 
 
 const data = [
-  shoppingInitialState, shoppingReducer, TYPES,
+  shoppingInitialState, shoppingReducer, TYPES
 ];
 
 
