@@ -1,23 +1,20 @@
-import "../styles/cardsStyles.css"
-import styled from "styled-components"
-import { useState } from "react"
+import "../styles/cardsStyles.css";
+import styled from "styled-components";
 
-
-
-
-
-import Card from "./Card"
-import CardsModal from "./CardsModal"
-import Fish from "../assets/images/malbec.webp"
-import Ros from "../assets/images/rosado.webp"
-import Sauv from "../assets/images/sauvBlanc.webp"
-import Walker from "../assets/images/jonniewalker.webp"
-import Chivas from "../assets/images/chivas.webp"
-import Veuve from "../assets/images/veuveClicquot.webp"
-import Mumm from "../assets/images/ghMumm.webp"
-import Vista from "../assets/images/altaVista.webp"
-
-
+import Card from "./Card";
+import CardsModal from "./CardsModal";
+import Fish from "../assets/images/malbec.webp";
+import Ros from "../assets/images/rosado.webp";
+import Sauv from "../assets/images/sauvBlanc.webp";
+import Walker from "../assets/images/jonniewalker.webp";
+import Chivas from "../assets/images/chivas.webp";
+import Veuve from "../assets/images/veuveClicquot.webp";
+import Mumm from "../assets/images/ghMumm.webp";
+import Vista from "../assets/images/altaVista.webp";
+import axios from "axios";
+import { useReducer, useEffect } from "react";
+import { TYPES } from "../actions/shoppingActions";
+import { shoppingInitialState, shoppingReducer } from "../reducer/shoppingReducer";
 
 const vinos = [
     {
@@ -56,7 +53,7 @@ const vinos = [
         nombre: "Chivas Regal 12",
         tipo: "Blended Scotch Whisky",
         precio: 11000,
-        src: `${Chivas}` ,
+        src: `${Chivas}`,
         href: "#",
         target: "_blank",
     },
@@ -83,42 +80,73 @@ const vinos = [
         src: `${Vista}`,
         href: "#",
         target: "_blank",
-        
     },
 ];
 
-
-
 const CardList = () => {
 
+    const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
-    // const productsList = async () =>{
-    //     const productsEndpoint = "http://localhost:5000/products"
-    //     const endpointCall = await axios.get(productsEndpoint)
-    //     const winesList = await endpointCall.data
-    //     return winesList
-    // }
+    const { products, cart } = state;
 
-    // const [id, nombre, tipo, precio] = productsList();
+    const updateState = async () => {
+        const ENDPOINT = {
+            products: "http://localhost:5000/products",
+            cart: "http://localhost:5000/cart",
+        };
+        const resProducts = await axios.get(ENDPOINT.products),
+            resCart = await axios.get(ENDPOINT.cart);
 
-    const [modalOpen, setModalOpen] = useState(false);
+        const productsList = resProducts.data,
+            cartItems = resCart.data;
+
+        dispatch({ type: TYPES.READ_STATE, payload: [productsList, cartItems] });
+    };
+
+    useEffect(() => {
+        updateState();
+    }, []);
+
+    const addToCart = (id) => {
+        dispatch({ type: TYPES.ADD_TO_CART, payload: id });
+    };
 
     return (
-    <CardsContainer>
-        {vinos.map(({nombre, tipo, precio, src, href, target}, index) => (
-        <CardsModal key={index} nombre={nombre} tipo={tipo} precio={precio} src={src} href={href} target={target} modalOpen={modalOpen} setModalOpen={setModalOpen}></CardsModal>))}
-        
-        {vinos.map(({nombre, tipo, precio, src}, index) => (
-        <Card key={index} nombre={nombre} tipo={tipo} precio={precio} src={src} modalOpen={modalOpen} setModalOpen={setModalOpen} ></Card>))}
-    </CardsContainer>
-)}
+        <CardsContainer>
+            {products.map(({ nombre, tipo, precio, src, href, target }, index) => (
+                <CardsModal
+                    key={index}
+                    nombre={nombre}
+                    tipo={tipo}
+                    precio={precio}
+                    src={src}
+                    href={href}
+                    target={target}
+                    addToCart={addToCart}
+                    products={products}
+                ></CardsModal>
+            ))}
 
-export default CardList
+            {products.map(({ nombre, tipo, precio, src }, index) => (
+                <Card
+                    key={index}
+                    nombre={nombre}
+                    tipo={tipo}
+                    precio={precio}
+                    src={src}
+                    addToCart={addToCart}
+                    products={products}
+                ></Card>
+            ))}
+        </CardsContainer>
+    );
+};
 
+export default CardList;
 
 const CardsContainer = styled.section`
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
 `;

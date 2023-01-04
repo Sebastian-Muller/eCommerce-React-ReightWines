@@ -3,8 +3,7 @@ import { TYPES } from "../actions/shoppingActions";
 
 export const shoppingInitialState = {
     products: [],
-    cart: [],
-    isOpen: false
+    cart: []
 };
 
 
@@ -70,9 +69,6 @@ export const shoppingReducer = (state, action) => {
                 cart: []
             };
         }
-        // case TYPES.OPEN_MODAL:{
-        //     return openModal
-        // }
 
         default:
             return state;
