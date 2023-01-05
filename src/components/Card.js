@@ -5,7 +5,9 @@ import TYPES from "../actions/shoppingActions"
 
 
 
-const Card = ({key, nombre, tipo, precio, src, modalOpen, setModalOpen}) => {
+const Card = ({key, nombre, tipo, precio, image, modalOpen, setModalOpen}) => {
+
+    const imagenes = require.context("../assets/images", true);
 
     // const handleModal = () => {dispatch({type: TYPES.OPEN_MODAL})}
     return (
@@ -20,7 +22,7 @@ const Card = ({key, nombre, tipo, precio, src, modalOpen, setModalOpen}) => {
             </Favorito>
             
             <CardFigcaption onClick={"ACA AGREGA EL USESTATE POR AHORA HASTA QUE HAGAS BIEN EL REDUCTOR"}>
-                <img src={src} alt={tipo} style={{width:'100%'}}/>
+                <img src={imagenes(`./${image}`)} alt={tipo} style={{width:'100%'}}/>
                 <Nombre>{nombre}</Nombre>
                 <Tipo>{tipo}</Tipo>
                 <Precio>${precio}</Precio>
