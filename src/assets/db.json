@@ -5,50 +5,72 @@
             "nombre": "Sexy Fish",
             "tipo": "Malbec",
             "precio": 2100,
+            "href": "#",
+            "target": "_blank",
             "image": ""
         },
         {
             "id": 2,
             "nombre": "Pedriel",
             "tipo": "Rosado de Malbec",
-            "precio": 3600
+            "precio": 3600,
+            "href": "#",
+            "target": "_blank",
+            "image": ""
         },
         {
             "id": 3,
             "nombre": "Antigal Uno",
             "tipo": "Sauvignon Blanc",
-            "precio": 3000
+            "precio": 3000,
+            "href": "#",
+            "target": "_blank",
+            "image": ""
         },
         {
             "id": 4,
             "nombre": "Jonnie Walker",
             "tipo": "Double Black Whisky",
             "precio": 11300,
-            "image": "src\\assets\\images\\jonniewalker.webp"
+            "href": "#",
+            "target": "_blank",
+            "image": ""
         },
         {
             "id": 5,
             "nombre": "Chivas Regal 12",
             "tipo": "Blended Scotch Whisky",
-            "precio": 11000
+            "precio": 11000,
+            "href": "#",
+            "target": "_blank",
+            "image": ""
         },
         {
             "id": 6,
             "nombre": "Veuve Clicquot",
             "tipo": "Champagne Rosé",
-            "precio": 45900
+            "precio": 45900,
+            "href": "#",
+            "target": "_blank",
+            "image": ""
         },
         {
             "id": 7,
             "nombre": "G. H. Mumm Cordon",
             "tipo": "Champagne Rouge Brut",
-            "precio": 12800
+            "precio": 12800,
+            "href": "#",
+            "target": "_blank",
+            "image": ""
         },
         {
             "id": 8,
             "nombre": "Atemporal G. Elevage",
             "tipo": "Champagne Brut Nature",
-            "precio": 15600
+            "precio": 15600,
+            "href": "#",
+            "target": "_blank",
+            "image": ""
         }
     ],
     "cart": []

@@ -14,7 +14,10 @@ import Vista from "../assets/images/altaVista.webp";
 import axios from "axios";
 import { useReducer, useEffect } from "react";
 import { TYPES } from "../actions/shoppingActions";
-import { shoppingInitialState, shoppingReducer } from "../reducer/shoppingReducer";
+import {
+    shoppingInitialState,
+    shoppingReducer,
+} from "../reducer/shoppingReducer";
 
 const vinos = [
     {
@@ -84,7 +87,6 @@ const vinos = [
 ];
 
 const CardList = () => {
-
     const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
     const { products, cart } = state;
@@ -145,8 +147,8 @@ const CardList = () => {
 export default CardList;
 
 const CardsContainer = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
 `;
