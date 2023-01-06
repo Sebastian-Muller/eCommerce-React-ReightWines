@@ -1,15 +1,19 @@
 import React from "react";
+import Button from "./Button";
 import styled from "styled-components";
 import { useReducer } from "react";
-import TYPES from "../actions/shoppingActions"
+import { TYPES } from "../actions/shoppingActions";
+import { shoppingInitialState, shoppingReducer } from "../reducer/shoppingReducer";
 
 
 
-const Card = ({key, nombre, tipo, precio, image, modalOpen, setModalOpen}) => {
+const Card = ({key, nombre, tipo, precio, image, modalOpen, }) => {
 
     const imagenes = require.context("../assets/images", true);
 
-    // const handleModal = () => {dispatch({type: TYPES.OPEN_MODAL})}
+    const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState)
+    const handleModalOpen = () => {dispatch({type: TYPES.OPEN_CARD_MODAL})};
+    const handleModalClose = () => {dispatch({type: TYPES.CLOSE_CARD_MODAL})}
     return (
 
         
@@ -21,19 +25,32 @@ const Card = ({key, nombre, tipo, precio, image, modalOpen, setModalOpen}) => {
                 </svg>
             </Favorito>
             
-            <CardFigcaption onClick={"ACA AGREGA EL USESTATE POR AHORA HASTA QUE HAGAS BIEN EL REDUCTOR"}>
+            <CardFigcaption onClick={handleModalOpen}>
                 <img src={imagenes(`./${image}`)} alt={tipo} style={{width:'100%'}}/>
                 <Nombre>{nombre}</Nombre>
                 <Tipo>{tipo}</Tipo>
                 <Precio>${precio}</Precio>
             </CardFigcaption>
-            {/* <Button openCardsModal={openCardsModal}></Button> */}
+            
+            <ModalArticle className={`modal ${state.openCardModal && "is-open"}`}>
+                <ModalContainer key={key} /*style={{ backgroundColor:{bgColor} }}*/ >
+                    <ModalClose onClick={handleModalClose}>X</ModalClose>
+                    <Img src={imagenes(`./${image}`)} alt={tipo} />
+                    <h3>{nombre}</h3>
+                    <p>{tipo}</p>
+                    <PrecioModS>$ {precio}</PrecioModS> 
+                    <h3>Viñedos</h3>
+                    <p>Edad: 15 años<br/> Rendimiento: 120 qq/ha<br/>Fermentacion: Tanques de acero inoxidable<br/> Conservación : En vasijas de concreto.</p>
+                    <Button /*href={href}*/></Button>
+                </ModalContainer>
+            </ModalArticle>
         </CardContenedor>
     )
 }
 export default Card
 
 
+/**** Styles Cards ****/
 const CardContenedor= styled.figure`
     width:28rem;
     height:45rem;
@@ -99,3 +116,72 @@ const Precio = styled.p`
     color: var(--orange);
     font-size: 20px;
 `
+
+
+/**** Styles Modal *****/
+const ModalArticle = styled.article`
+    position: fixed;
+    z-index: 999;
+    /* top: 0; */
+    /* left: 0; */
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--dark25);
+    display: none;
+    justify-content: center;
+    align-items: center;
+`
+
+const ModalContainer = styled.div`
+    position: relative;
+    background-color: white;
+    box-sizing: content-box;
+    width: 35rem;
+    height: 80vh;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.15rem solid var(--orange);
+    border-radius: 1rem;
+    justify-content: space-evenly;
+    
+`
+
+const ModalClose = styled.button`
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    border-radius: 5px;
+    border-color: var(--orange75);
+    color: var(--orange75);
+    font-weight: bold;
+`
+const Img = styled.img`
+    width: 300px;
+    height: 70%;
+
+`
+const PrecioModS = styled.p`
+    color: var(--orange);
+    font-family: var(--title-font);
+    font-weight: 600;
+    font-size: 20px;
+    padding-top: 10px;
+    /* display: flex;
+    align-items: center; */
+`
+// const PrecioMod = styled.p`
+//     color: var(--orange);
+//     font-family: var(--price-font);
+//     font-weight: 600;
+//     font-size: 30px;
+//     padding-top: 10px;
+//     display: flex;
+//     align-items: center;
+
+// `

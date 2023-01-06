@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 import Card from "./Card";
-import CardsModal from "./CardsModal";
 
 import axios from "axios";
 import { useReducer, useEffect } from "react";
@@ -39,20 +38,6 @@ const CardList = () => {
 
     return (
         <CardsContainer>
-            {products.map(({ nombre, tipo, precio, src, href, target }, index) => (
-                <CardsModal
-                    key={index}
-                    nombre={nombre}
-                    tipo={tipo}
-                    precio={precio}
-                    src={src}
-                    href={href}
-                    target={target}
-                    addToCart={addToCart}
-                    products={products}
-                ></CardsModal>
-            ))}
-
             {products.map(({ nombre, tipo, precio, image }, index) => (
                 <Card
                     key={index}

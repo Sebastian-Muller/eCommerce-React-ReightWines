@@ -78,3 +78,10 @@ FIN ESTILOS OWL-CAROUSEL  */
     }
   }
   
+  
+/*  Estilo para Abrir el CardsModal */
+
+.modal.is-open {
+  display: flex;
+}
+/*************** Fin ****************/
