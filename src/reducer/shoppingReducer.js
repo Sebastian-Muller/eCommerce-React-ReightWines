@@ -3,7 +3,8 @@ import { TYPES } from "../actions/shoppingActions";
 
 export const shoppingInitialState = {
     products: [],
-    cart: []
+    cart: [],
+    openCardModal: false,
 };
 
 
@@ -68,6 +69,17 @@ export const shoppingReducer = (state, action) => {
                 ...state,
                 cart: []
             };
+        }
+
+        case TYPES.OPEN_CARD_MODAL: {
+            return state.openCardModal === false
+                ?{openCardModal: state.openCardModal = true}
+                : {...state} ;
+        }
+        case TYPES.CLOSE_CARD_MODAL: {
+            return state.openCardModal === true
+                ?{openCardModal: state.openCardModal = false}
+                : {...state} ;
         }
 
         default:
