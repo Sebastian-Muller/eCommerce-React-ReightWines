@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
 :root {
   --dark: #252827;
   --dark80: #252827CC;
@@ -12,6 +17,7 @@
   --title-font: 'Poppins', sans-serif;
   --subtitle-font: 'Roboto', sans-serif;
   --text-font: 'Montserrat', sans-serif;
+
 }
 
 * {

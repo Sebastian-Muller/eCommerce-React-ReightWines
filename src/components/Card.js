@@ -7,52 +7,52 @@ import { shoppingInitialState, shoppingReducer } from "../reducer/shoppingReduce
 
 
 
-const Card = ({key, nombre, tipo, precio, image, modalOpen, }) => {
+const Card = ({key, nombre, tipo, precio, image, info, bgColor }) => {
 
     const imagenes = require.context("../assets/images", true);
 
     const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState)
     const handleModalOpen = () => {dispatch({type: TYPES.OPEN_CARD_MODAL})};
     const handleModalClose = () => {dispatch({type: TYPES.CLOSE_CARD_MODAL})}
+
+    const addToCart = (id) => {dispatch({ type: TYPES.ADD_TO_CART, payload: id })};
+
     return (
 
-        
-
-        <CardContenedor key={key}>
+        <CardContainer key={key}>
             <Favorito>
                 <svg>
                     <path d="M30.4 16q1.5-1.3 2-2.6t.6-3q0-1.4-.7-3T30.6 5q-1.4-1.2-2.4-1.6T25.8 3q-1.5 0-3 .6t-2.6 2l-2 2-2.3-2q-1.8-1.4-3-2T10.2 3t-2.6.4T5.3 5q-1 .7-1.6 2.4t-.7 3q0 1.4.6 3T5.4 16L18 28l12.4-12zM0 10.5q0-1.7.8-4t2.6-3.8Q5 1.2 6.7.7t3.6-.7q2 0 3.8.8t4 2.7q2-2 4-2.7t4-.8 3.4.6 3.3 2Q34.3 4 35 6.3t1 4-.6 4-3 4L18 32 3.4 18.2Q1 16 .4 13.7T0 10.4z" ></path>
                 </svg>
             </Favorito>
-            
+
             <CardFigcaption onClick={handleModalOpen}>
                 <img src={imagenes(`./${image}`)} alt={tipo} style={{width:'100%'}}/>
                 <Nombre>{nombre}</Nombre>
                 <Tipo>{tipo}</Tipo>
-                <Precio>${precio}</Precio>
+                <PrecioS>$ <Precio>{precio}</Precio></PrecioS>
             </CardFigcaption>
-            
+
             <ModalArticle className={`modal ${state.openCardModal && "is-open"}`}>
-                <ModalContainer key={key} /*style={{ backgroundColor:{bgColor} }}*/ >
+                <ModalContainer key={key} bgColor={bgColor} >
                     <ModalClose onClick={handleModalClose}>X</ModalClose>
                     <Img src={imagenes(`./${image}`)} alt={tipo} />
-                    <h3>{nombre}</h3>
-                    <p>{tipo}</p>
-                    <PrecioModS>$ {precio}</PrecioModS> 
-                    <h3>Viñedos</h3>
-                    <p>Edad: 15 años<br/> Rendimiento: 120 qq/ha<br/>Fermentacion: Tanques de acero inoxidable<br/> Conservación : En vasijas de concreto.</p>
-                    <Button /*href={href}*/></Button>
+                    <Nombre>{nombre}</Nombre>
+                    <Tipo>{tipo}</Tipo>
+                    <PrecioS>$ <Precio>{precio}</Precio></PrecioS>
+                    <Info>{info}</Info>
+                    <Button onClick={addToCart}></Button>
                 </ModalContainer>
             </ModalArticle>
-        </CardContenedor>
+        </CardContainer>
     )
 }
 export default Card
 
 
-/**** Styles Cards ****/
-const CardContenedor= styled.figure`
-    width:28rem;
+/**** Styles Container ****/
+const CardContainer= styled.figure`
+    width:26rem;
     height:45rem;
     border: 0.15rem solid var(--orange);
     box-sizing: border-box;
@@ -63,16 +63,18 @@ const CardContenedor= styled.figure`
     align-items:center;
     border-radius:1rem;
     overflow:hidden;
-    margin:4rem;
+    margin:3rem;
     padding-top: 1rem;
     padding-bottom:4rem;
     box-shadow:rgba(0, 0, 0, 0.3) 6px 8px 5px;
-`
+    `
 
+/**** Styles Cards ****/
 const CardFigcaption = styled.figcaption`
 position: relative;
 top:-20px;
 width:100%;
+height: 35rem;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -93,7 +95,7 @@ const Favorito = styled.div`
     :hover {
         fill: var(--orange);
         transition: fill .2s;}
-        
+
     :active {
         transform: scale(1.25, 1.25);
         transition: transform .2s;
@@ -102,28 +104,41 @@ const Favorito = styled.div`
 const Nombre = styled.h3`
     padding-top: 25px;
     color: var(--dark);
-    font-family: var(--title-font);
-    font-weight: bold;
-    font-size: 20px;
+    font-family: 'Carter One', cursive;
+    font-size: 21px;
 `
 const Tipo = styled.p`
     color: var(--dark);
-    font-family: var(--title-font);
+    font-family:'Satisfy', cursive;
+    font-size: 18px;
+    font-weight: 200;
+`
+const PrecioS = styled.p`
+    color: var(--orange);
+    font-family: 'Righteous', cursive;
     font-size: 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: -10px;
 `
 
 const Precio = styled.p`
     color: var(--orange);
-    font-size: 20px;
+    font-family: 'Righteous', cursive;
+    font-weight: 600;
+    font-size: 28px;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
 `
-
 
 /**** Styles Modal *****/
 const ModalArticle = styled.article`
     position: fixed;
     z-index: 999;
-    /* top: 0; */
-    /* left: 0; */
+    top: 0;
+    left: 0;
     width: 100%;
     min-height: 100vh;
     background-color: var(--dark25);
@@ -137,7 +152,7 @@ const ModalContainer = styled.div`
     background-color: white;
     box-sizing: content-box;
     width: 35rem;
-    height: 80vh;
+    height: 83vh;
     padding: 1rem;
     text-align: center;
     display: flex;
@@ -146,7 +161,7 @@ const ModalContainer = styled.div`
     border: 0.15rem solid var(--orange);
     border-radius: 1rem;
     justify-content: space-evenly;
-    
+    /* background-color: ${props => props.bgColor}; */
 `
 
 const ModalClose = styled.button`
@@ -162,26 +177,12 @@ const ModalClose = styled.button`
     font-weight: bold;
 `
 const Img = styled.img`
-    width: 300px;
-    height: 70%;
-
+    width: 250px;
 `
-const PrecioModS = styled.p`
-    color: var(--orange);
-    font-family: var(--title-font);
-    font-weight: 600;
-    font-size: 20px;
-    padding-top: 10px;
-    /* display: flex;
-    align-items: center; */
+const Info = styled.p`
+    position: relative;
+    top: -30px;
+    font-size: 16px;
+    font-family: 'Satisfy', cursive;
+    margin: 0px 30px;
 `
-// const PrecioMod = styled.p`
-//     color: var(--orange);
-//     font-family: var(--price-font);
-//     font-weight: 600;
-//     font-size: 30px;
-//     padding-top: 10px;
-//     display: flex;
-//     align-items: center;
-
-// `
