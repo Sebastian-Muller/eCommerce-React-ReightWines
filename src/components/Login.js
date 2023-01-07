@@ -56,6 +56,18 @@ border-radius: 10px;
 border-color: aqua;
 display: flex;
 flex-direction: column;
+justify-content: center;
+align-items: center;
+color: rgb(0, 0, 0);
+backdrop-filter: blur(8.5px);
+gap: 15px;
+position: absolute;
+
+`;
+
+const InputContainer = styled.div`
+display: flex;
+flex-direction: column;
 justify-content: space-evenly;
 align-items: center;
 z-index: 9999;
