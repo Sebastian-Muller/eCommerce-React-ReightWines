@@ -26,7 +26,7 @@ const Footer = () => {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 2rem;
+        padding-top: 3rem;
         font-size: 1.2rem;
 
 
@@ -34,7 +34,7 @@ const Footer = () => {
             display: grid;
             grid-template-columns: repeat(2, 300px);
             grid-gap: 20px;
-            padding: 10px;
+            padding-top: 35px;
             align-items: start;
             justify-content: center;
             justify-items: center;
