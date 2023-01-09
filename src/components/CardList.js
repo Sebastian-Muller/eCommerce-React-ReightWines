@@ -5,10 +5,7 @@ import Card from "./Card";
 import axios from "axios";
 import { useReducer, useEffect } from "react";
 import { TYPES } from "../actions/shoppingActions";
-import {
-    shoppingInitialState,
-    shoppingReducer,
-} from "../reducer/shoppingReducer";
+import {shoppingInitialState, shoppingReducer} from "../reducer/shoppingReducer";
 
 
 const CardList = () => {
@@ -40,7 +37,7 @@ const CardList = () => {
 
     return (
         <CardsContainer>
-            {products.map(({ nombre, tipo, precio, image }, index) => (
+            {products.map(({ nombre, tipo, precio, image, info,bgColor }, index) => (
                 <Card
                     key={index}
                     nombre={nombre}
@@ -49,6 +46,8 @@ const CardList = () => {
                     image={image}
                     addToCart={addToCart}
                     products={products}
+                    info={info}
+                    bgColor={bgColor}
                 ></Card>
             ))}
         </CardsContainer>
