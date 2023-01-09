@@ -18,6 +18,7 @@ height: 5rem;
 border: none;
 color: rgb(251,243,232);
 border-radius: 2rem;
+font-family: var(--text-font);
 cursor: pointer;
 
 

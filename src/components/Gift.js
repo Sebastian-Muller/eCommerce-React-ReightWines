@@ -5,6 +5,7 @@ import '../owl.css';
 import { useState } from 'react';
 import Oportunidades from './Oportunidades';
 
+
 import img1 from '../assets/carousel/img1.webp';
 import img2 from '../assets/carousel/img2.webp';
 import img3 from '../assets/carousel/img3.webp';
@@ -82,4 +83,3 @@ const OwlCarrousel = () => {
 }
 
 export default OwlCarrousel
-
