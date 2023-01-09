@@ -3,6 +3,7 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import '../owl.css';
 import { useState } from 'react';
+import Oportunidades from './Oportunidades';
 
 import img1 from '../assets/carousel/img1.webp';
 import img2 from '../assets/carousel/img2.webp';
@@ -73,6 +74,7 @@ const OwlCarrousel = () => {
                     <div ><img className="img" src={img9} /></div>
                     <div ><img className="img" src={img10} /></div>
                 </OwlCarousel>
+                <Oportunidades/>
             </div>
 
         </div>

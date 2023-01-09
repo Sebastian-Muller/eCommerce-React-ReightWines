@@ -5,7 +5,7 @@ const Button = () => {
 
   return (
     <>
-      <BotonCard>Comprar</BotonCard>
+      <BotonCard>Agregar al Carrito</BotonCard>
     </>
   )
 }
@@ -18,7 +18,7 @@ const BotonCard = styled.button`
   padding: 1rem 2rem;
   border-radius: 0.5rem;
   border: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   width:70%;
   box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2), 0 6px 12px 0 rgba(0,0,0,0.19);

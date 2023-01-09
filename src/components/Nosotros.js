@@ -44,10 +44,6 @@ gap: 30px;
     height: 70vh;
     gap: 80px;
   }
-
-  @media screen and (min-width: 1200px){
-    gap: 110px;
-}
 `
 
 const Logo = styled.div`
@@ -77,12 +73,8 @@ border-radius: 10px;
     height: 20%;
     }
 
-    @media screen and (min-width: 1024x){
-      width: 80%;
-    }
-
     @media screen and (min-width: 1200px){
-      width: 70%;
+      width: 65%;
     }
 
   p{
@@ -98,13 +90,6 @@ border-radius: 10px;
       margin-top: 7px;
     }
     }
-
-    @media screen and (min-width: 1024px){
-    p{
-      font-size: 1.8rem;
-      margin-top: 6px;
-    }
-  }
 
     @media screen and (min-width: 1200px){
     p{
