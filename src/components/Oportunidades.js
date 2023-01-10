@@ -123,7 +123,7 @@ align-items: center;
     flex-direction: row;
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1200px){
     gap: 80px;
 }
 `
@@ -141,7 +141,6 @@ align-items: center;
 border-radius: 1rem;
 overflow:hidden;
 margin: 4rem;
-padding-top: 1rem;
 box-shadow: rgba(0, 0, 0, 0.3) 6px 8px 5px;
 `
 
@@ -157,24 +156,24 @@ padding-bottom:'0.1rem';
 text-align: center;
 
     h3{
-    color: var(--dark);
-    font-size: 2rem;
-    font-family: var(--subtitle-font);
-    text-align: center;
-    text-decoration: underline;
-    font-weight: bold;
+        color: var(--dark);
+        font-family: 'Carter One', cursive;
+        font-size: 21px;
+        text-align: center;
+        text-decoration: underline;
+        font-weight: 300;
 
     }
 
     p{
-    color: var(--dark);
-    font-size: 1.2rem;
-    font-family: var(--text-font);
-    text-align: center;
+        color: var(--dark);
+        font-size: 17px;
+        font-family:'Satisfy', cursive;
+        text-align: center;
+        padding-top: 2px;
     }
 
     .precio{
-        
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -182,17 +181,18 @@ text-align: center;
     }
 
     .precioTachado p{
-        font-family: var(--text-font);
+        font-family: 'Righteous', cursive;
         text-decoration: line-through;
         padding-top: 2px;
         color: grey;
     }
 
     .precioOferta p{
-        font-family: var(--text-font);
-        font-size: 1.5rem;
+        font-family: 'Righteous', cursive;
+        font-size: 1.8rem;
         font-weight: bold;
-        color: rgb(251, 7, 3)
+        color: rgb(251, 7, 3);
+        padding-bottom: 18px;
     }
 `
 
