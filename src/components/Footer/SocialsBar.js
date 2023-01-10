@@ -1,22 +1,35 @@
+
 import styled from 'styled-components'
+import facebook from "../../assets/icons/footerFb.png"
+import instagram from "../../assets/icons/footerIg.png"
+import twit from "../../assets/icons/footerTwitter.png"
+import link from "../../assets/icons/footerLink.png"
+import Line from "../../assets/icons/lineRedes.png"
 
 
+/*
 import Fb from "../../assets/icons/facebook.svg"
 import Ig from "../../assets/icons/instagram.svg"
 import LinkedIn from "../../assets/icons/linkedin.svg"
-import Twitter from "../../assets/icons/twitter.svg"
+import Twitter from "../../assets/icons/twitter.svg"*/
 
 const SocialsContainer = styled.div`
-    background-color: var(--yellow);
-    padding: 2rem;
+    background-color: var(--dark);
+    padding: 3rem;
     display: flex;
+    align-items: center;
     justify-content: space-around;
+    border-bottom: 1px solid;
+    margin-bottom: 0.1rem;
+    padding-bottom: 3rem;
 `;
 
 const SocialIcon = styled.div`
-    width: 3.5rem;
-    height:3.5rem;
+    width: 1rem;
+    height: 4rem;
 `;
+
+
 
 
 const SocialsBar = () => {
@@ -29,6 +42,7 @@ const SocialsBar = () => {
                 </SocialIcon>
             ))} 
         </SocialsContainer>
+    
     </div>
   )
 }
@@ -37,27 +51,30 @@ const ListSocialsIcon = [
     {
         href: "#",
         target: "_blank",
-        src: `${Fb}`,
+        src: `${facebook}`,
         alt: "facebook.img",
     },
     {
         href: "#",
         target: "_blank",
-        src: `${Ig}`,
+        src: `${twit}`,
         alt: "instagram.img",
     },
     {
         href: "#",
         target: "_blank",
-        src: `${LinkedIn}`,
+        src: `${link}`,
         alt: "linkedin.img",
     },
     {
         href: "#",
         target: "_blank",
-        src: `${Twitter}`,
+        src: `${instagram}`,
         alt: "twitter.img",
     },
-]
+];
+
+
 
 export default SocialsBar
+

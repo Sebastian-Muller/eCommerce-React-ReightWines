@@ -73,12 +73,12 @@ export const shoppingReducer = (state, action) => {
 
         case TYPES.OPEN_CARD_MODAL: {
             return state.openCardModal === false
-                ?{openCardModal: state.openCardModal = true}
+                ? {openCardModal: state.openCardModal = true}
                 : {...state} ;
         }
         case TYPES.CLOSE_CARD_MODAL: {
             return state.openCardModal === true
-                ?{openCardModal: state.openCardModal = false}
+                ? {openCardModal: state.openCardModal = false}
                 : {...state} ;
         }
 

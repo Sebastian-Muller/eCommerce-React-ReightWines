@@ -3,6 +3,8 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import '../owl.css';
 import { useState } from 'react';
+import Oportunidades from './Oportunidades';
+
 
 import img1 from '../assets/carousel/img1.webp';
 import img2 from '../assets/carousel/img2.webp';
@@ -50,14 +52,10 @@ const OwlCarrousel = () => {
 
 
     return (
+
+        
         <div>
-            <div class='container-fluid' >
-                <div className="row title" style={{ marginBottom: "20px" }} >
-                    <div class="col-sm-12 btn btn-info">
-                        <h2>GIFT</h2>
-                    </div>
-                </div>
-            </div>
+           
             <div class='container-fluid' >
                 <OwlCarousel
                     className="owl-theme"
@@ -73,6 +71,7 @@ const OwlCarrousel = () => {
                     <div ><img className="img" src={img9} /></div>
                     <div ><img className="img" src={img10} /></div>
                 </OwlCarousel>
+                <Oportunidades/>
             </div>
 
         </div>
@@ -80,4 +79,5 @@ const OwlCarrousel = () => {
 }
 
 export default OwlCarrousel
+
 
