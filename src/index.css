@@ -6,7 +6,7 @@
 :root {
   --dark: #252827;
   --dark80: #252827CC;
-  --dark25: #26292840;
+  --dark35: #2629285a;
   --green: #75A971;
   --violet: #9073A9;
   --yellow: #E4BD52;
@@ -17,8 +17,7 @@
   --title-font: 'Poppins', sans-serif;
   --subtitle-font: 'Roboto', sans-serif;
   --text-font: 'Montserrat', sans-serif;
-
-}
+  }
 
 * {
   margin: 0;

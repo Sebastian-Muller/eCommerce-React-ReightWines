@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 import Card from "./Card";
 
 import axios from "axios";
@@ -21,35 +20,22 @@ const CardList = () => {
         const resProducts = await axios.get(ENDPOINT.products),
             resCart = await axios.get(ENDPOINT.cart);
 
-        const productsList = resProducts.data,
-            cartItems = resCart.data;
+        const productsList = await resProducts.data,
+            cartItems = await resCart.data;
 
-        dispatch({ type: TYPES.READ_STATE, payload: [productsList, cartItems] });
+        dispatch({type: TYPES.READ_STATE, payload: [productsList, cartItems] });
     };
 
     useEffect(() => {
         updateState();
     }, []);
 
-    const addToCart = (id) => {
-        dispatch({ type: TYPES.ADD_TO_CART, payload: id });
-    };
-
+    
+    
     return (
         <CardsContainer>
-            {products.map(({ nombre, tipo, precio, image, info,bgColor }, index) => (
-                <Card
-                    key={index}
-                    nombre={nombre}
-                    tipo={tipo}
-                    precio={precio}
-                    image={image}
-                    addToCart={addToCart}
-                    products={products}
-                    info={info}
-                    bgColor={bgColor}
-                ></Card>
-            ))}
+            {products.map((product) =>(
+            <Card key={product.id} product={product} /> ))}
         </CardsContainer>
     );
 };

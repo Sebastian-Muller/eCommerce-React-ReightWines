@@ -21,8 +21,8 @@ const ShoppingCart = () => {
     const resProducts = await axios.get(ENDPOINT.products),
       resCart = await axios.get(ENDPOINT.cart);
   
-    const productsList= resProducts.data,
-    cartItems = resCart.data
+    const productsList= await resProducts.data,
+    cartItems = await resCart.data;
   
       dispatch({type: TYPES.READ_STATE, payload: [productsList, cartItems]})
   }
@@ -53,6 +53,7 @@ const clearCart = () => {
   return (
     <>
     <h2>Carrito de compras</h2>
+    
     <br/>
   <div style={{
       width:"100vw",

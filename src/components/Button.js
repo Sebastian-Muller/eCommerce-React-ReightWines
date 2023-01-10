@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { ProductsContext } from "../context/ProductsProvider";
 
-const Button = () => {
+
+
+const Button = ({id, bgColorBoton}) => {
+
+  const {addToCart} = useContext(ProductsContext)
+
+
 
   return (
     <>
-      <BotonCard>Agregar al Carrito</BotonCard>
+      <BotonCard bgColorBoton={bgColorBoton} onClick={()=> addToCart(id)}>
+        Agregar al Carrito
+      </BotonCard>
     </>
   )
 }
@@ -14,7 +23,7 @@ export default Button
 
 const BotonCard = styled.button`
   color:white;
-  background-color: var(--orange);
+  background-color: ${props => props.bgColorBoton};
   padding: 1rem 2rem;
   position: relative;
   top: -10px;
@@ -27,10 +36,10 @@ const BotonCard = styled.button`
   box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2), 0 6px 12px 0 rgba(0,0,0,0.19);
 
   @media screen and (min-width: 1024px){
-  &:hover{background-color: var(--pink) !important;}}
+  &:hover{background-color: #999898 !important;}}
 
   &:active {
-    background-color: var(--pink) !important;
+    background-color: var(--orange) !important;
     box-shadow: none;
     transform: translateY(4px);}
 `

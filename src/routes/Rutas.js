@@ -9,6 +9,7 @@ import ShoppingCart from "../components/shopping/ShoppingCart"
 import Login from "../components/Login"
 import Error404 from "../components/Error404"
 import Footer from "../components/Footer/Footer"
+import CardList from "../components/CardList"
 
 /***********
  * USAR EL CONTEXTO
