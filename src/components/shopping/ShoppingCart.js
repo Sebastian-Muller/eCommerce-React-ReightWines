@@ -53,23 +53,6 @@ const clearCart = () => {
 
 
   return (
-<<<<<<< HEAD
-    <>
-    <h2>Carrito de compras</h2>
-    
-    <br/>
-  <div style={{
-      width:"100vw",
-      minHeight:"100px",
-      display:"flex",
-      justifyContent:"space-around",
-      flexFlow:"column wrap",
-      backgroundColor:"#EF8456"
-    }}>{cart.map((item, i) => <CartItem key={i} item={item} delFromCart={delFromCart} />)}</div>
-    <br/>
-  <button onClick={clearCart}>Limpiar carrito</button>
-  </>
-=======
     <CarritoContainer>
         <FondoBlanco>
           <Titulo>
@@ -117,7 +100,6 @@ const clearCart = () => {
             
         </FondoBlanco>
       </CarritoContainer>
->>>>>>> 959f222412506c13cc1976a4d90714565cd05368
   )
 }
 
