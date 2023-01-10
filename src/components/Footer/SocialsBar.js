@@ -15,10 +15,13 @@ import Twitter from "../../assets/icons/twitter.svg"*/
 
 const SocialsContainer = styled.div`
     background-color: var(--dark);
-    padding: 2rem;
+    padding: 3rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    border-bottom: 1px solid;
+    margin-bottom: 0.1rem;
+    padding-bottom: 3rem;
 `;
 
 const SocialIcon = styled.div`

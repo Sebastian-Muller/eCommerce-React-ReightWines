@@ -42,7 +42,7 @@ const FondoColor = styled.div`
 width: 80vw;
 height: 90vh;
 background: rgb(239,132, 86);
-box-shadow: 0 8px 32 px 0 rgba(31, 38, 135, 0.37);
+box-shadow: 0 3px 5px 0 rgba(31, 38, 135, 0.37);
 border-radius: 10px;
 border-color: aqua;
 display: flex;
@@ -79,7 +79,7 @@ const Titulo = styled.h1`
 
 const Input = styled.input`
 background: rgb(251, 243, 232);
-box-shadow: 0 6px 32px 0 rgba(31, 38, 135, 0.37);
+box-shadow: 0 3px 5px 0 rgba(31, 38, 135, 0.37);
 border-radius: 2rem;
 width: 80%;
 height: 6rem;
@@ -104,7 +104,7 @@ font-weight: 100;
 
 const Textarea = styled.textarea`
 background:  rgb(251, 243, 232);
-box-shadow: 0 6px 32px 0 rgba(31, 38, 135, 0.37);
+box-shadow: 0 3px 5px 0 rgba(31, 38, 135, 0.37);
 border-radius: 2rem;
 width: 80%;
 height: 36rem;
@@ -152,7 +152,7 @@ height: 5rem;
 border: none;
 color: rgb(37,40,39);
 border-radius: 2rem;
-box-shadow: 0 6px 32px 0 rgba(31, 38, 135, 0.37);
+box-shadow: 0 3px 5px 0 rgba(31, 38, 135, 0.37);
 cursor: pointer;
 
 

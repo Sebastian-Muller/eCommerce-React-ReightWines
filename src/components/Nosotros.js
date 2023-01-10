@@ -63,7 +63,7 @@ height: 200px;
 
 const FraseContainer = styled.div`
 width: 98%;
-height: 32%;
+height: 35%;
 background: rgb(251, 243, 232, 51%);
 border-radius: 10px;
 
@@ -83,18 +83,20 @@ border-radius: 10px;
     font-size: 1.6rem;
     font-family: var(--text-font);
     font-weight: 600;
+    padding: 1rem;
+  
   }
     @media screen and (min-width: 768px){
     p{
       font-size: 1.6rem;
-      margin-top: 7px;
+
     }
     }
 
     @media screen and (min-width: 1200px){
     p{
       font-size: 1.8rem;
-      margin-top: 9px;
+      padding: 0.5rem;
     }
   }
   `

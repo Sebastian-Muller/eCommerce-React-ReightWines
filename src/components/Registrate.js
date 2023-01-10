@@ -60,7 +60,7 @@ const FondoBlanco = styled.div`
 width: 80vw;
 height: 80vh;
 background: rgb(251,243,232, 60%);
-box-shadow: 0 8px 32 px 0 rgba(31, 38, 135, 0.37);
+box-shadow: 0 3px 5px 0 rgba(31, 38, 135, 0.37);
 border-radius: 10px;
 border-color: aqua;
 display: flex;
@@ -99,7 +99,7 @@ padding-top: 5%;
 
 const Input = styled.input`
 background: rgb(2, 2, 2, 20%);
-box-shadow: 0 6px 32px 0 rgba(31, 38, 135, 0.37);
+box-shadow: 0 3px 5px 0 rgba(31, 38, 135, 0.37);
 border-radius: 2rem;
 width: 80%;
 height: 6rem;

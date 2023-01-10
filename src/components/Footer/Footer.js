@@ -26,7 +26,7 @@ const Footer = () => {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 3rem;
+        padding-top: 1em;
         font-size: 1.2rem;
 
 
