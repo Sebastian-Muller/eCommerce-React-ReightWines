@@ -1,9 +1,10 @@
 import React from "react";
 import Button from "./Button";
 import styled from "styled-components";
-import { useReducer } from "react";
+import { useReducer, useContext } from "react";
 import { TYPES } from "../actions/shoppingActions";
 import { shoppingInitialState, shoppingReducer } from "../reducer/shoppingReducer";
+import {ProductsContext} from "../context/ProductsProvider"
 
 
 
@@ -12,13 +13,14 @@ const Card = ({product}) => {
     const {id, nombre, tipo, precio, image, info, bgColor, colorPrecio, bgColorBoton} = product;
     const imagenes = require.context("../assets/images", true);
 
-    const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState)
-    const handleModalOpen = () => {dispatch({type: TYPES.OPEN_CARD_MODAL})};
-    const handleModalClose = () => {dispatch({type: TYPES.CLOSE_CARD_MODAL})}
 
+    const handleModalClose = () => {dispatch({type: TYPES.CLOSE_CARD_MODAL})}
+    const handelModalContainerClick = (e) => e.stopPropagation();
+
+    const {dispatch, state, handleModalOpen, addToCart} = useContext(ProductsContext);
 
     return (
-
+        <>
         <CardContainer>
             
 
@@ -34,18 +36,20 @@ const Card = ({product}) => {
                 <PrecioS>$ <Precio>{precio}</Precio></PrecioS>
             </CardFigcaption>
 
-            <ModalArticle className={`modal ${state.openCardModal && "is-open"}`}>
-                <ModalContainer key={id} bgColor={bgColor} >
+        </CardContainer>
+            
+            <ModalArticle className={`modal ${state.openCardModal && "is-open"}`} onClick={handleModalClose}>
+                <ModalContainer key={id} bgColor={bgColor} onClick={handelModalContainerClick}>
                     <ModalClose onClick={handleModalClose}>X</ModalClose>
                     <Img src={imagenes(`./${image}`)} alt={tipo} />
                     <Nombre>{nombre}</Nombre>
                     <Tipo>{tipo}</Tipo>
                     <PrecioModS colorPrecio={colorPrecio} >$ <Precio>{precio}</Precio></PrecioModS>
                     <Info>{info}</Info>
-                    <Button id={id} bgColorBoton={bgColorBoton} ></Button>
+                    <Button id={id} bgColorBoton={bgColorBoton} onClick={addToCart} ></Button>
                 </ModalContainer>
             </ModalArticle>
-        </CardContainer>
+        </>
     )
 }
 export default Card

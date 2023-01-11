@@ -1,37 +1,19 @@
 import styled from "styled-components";
 import Card from "./Card";
 
-import axios from "axios";
-import { useReducer, useEffect } from "react";
-import { TYPES } from "../actions/shoppingActions";
-import {shoppingInitialState, shoppingReducer} from "../reducer/shoppingReducer";
+
+
+import { useContext } from "react";
+
+import {ProductsContext} from "../context/ProductsProvider"
 
 
 const CardList = () => {
-    const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
-    const { products, cart } = state;
+    const {products} = useContext(ProductsContext);
 
-    const updateState = async () => {
-        const ENDPOINT = {
-            products: "http://localhost:5000/products",
-            cart: "http://localhost:5000/cart",
-        };
-        const resProducts = await axios.get(ENDPOINT.products),
-            resCart = await axios.get(ENDPOINT.cart);
-
-        const productsList = await resProducts.data,
-            cartItems = await resCart.data;
-
-        dispatch({type: TYPES.READ_STATE, payload: [productsList, cartItems] });
-    };
-
-    useEffect(() => {
-        updateState();
-    }, []);
-
-    
-    
+  
+   
     return (
         <CardsContainer>
             {products.map((product) =>(

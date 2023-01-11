@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Navegacion from "../components/Navegacion"
 import Main from "../components/Main"
-import Bebidas from "../components/Bebidas"
 import Nosotros from "../components/Nosotros"
 import Gift from "../components/Gift"
 import Contacto from "../components/Contacto"
@@ -33,7 +32,7 @@ const Rutas = () => {
             <Navegacion />
             <Routes>
                 <Route path="/" element={<Main />}/>
-                <Route path="/bebidas" element={<Bebidas/>}/>
+                <Route path="/bebidas" element={<CardList/>}/>
                 <Route path="/nosotros" element={<Nosotros/>}/>
                 <Route path="/gift" element={<Gift/>}/>
                 <Route path="/contacto" element={<Contacto/>}/>
