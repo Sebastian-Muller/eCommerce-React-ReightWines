@@ -27,6 +27,11 @@ const SocialsContainer = styled.div`
 const SocialIcon = styled.div`
     width: 1rem;
     height: 4rem;
+    transition: all 300ms;
+
+    &:hover{
+        transform: translateY(-5px);
+    }
 `;
 
 

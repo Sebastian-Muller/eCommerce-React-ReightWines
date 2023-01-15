@@ -108,7 +108,7 @@ const IconosContenedor = styled.div`
   color: var(--dark);
 
   i{
-    color: var(--dark);
+    color: var(--beige);
     font-size: 2.8rem;
     
   }
