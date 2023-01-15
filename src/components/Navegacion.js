@@ -40,7 +40,10 @@ const Navegacion = () => {
 
       <IconosContenedor >
         <NavLink to="/login"><i class="fa-solid fa-user"></i></NavLink>
+        <div>
         <NavLink to="/carro"><i class="fa-solid fa-cart-shopping"></i></NavLink>
+          <div className="badge">0</div>
+        </div>
 
         <div onClick={()=> setExpand (!expand)}>
           <BotonHamburguesa />
