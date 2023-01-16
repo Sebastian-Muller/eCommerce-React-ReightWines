@@ -116,6 +116,19 @@ const IconosContenedor = styled.div`
     
   }
 
+  .badge{
+    position: relative;
+    top: -20px;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: black;
+    padding: .5rem;
+    font-size: 1rem;
+    right: 10px;
+    // visibility: hidden;
+  }
+
   `
 
 
