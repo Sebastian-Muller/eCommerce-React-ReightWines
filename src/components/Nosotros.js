@@ -9,6 +9,7 @@ import logo from "../assets/images/logoGrandeConFondo.webp"
 
 const Nosotros = () => {
   return (
+    <>
     <NosotrosContenedor>
       <Logo>
         <img src={logo} alt="Reight" width="100%" height="100%" />
@@ -21,6 +22,29 @@ const Nosotros = () => {
       </FraseContainer>
       
     </NosotrosContenedor>
+    <TeamSection>
+
+      {
+        person.map(({imagen, nombre, info, linkedin, github}, index) => (
+          <TeamCard key={index}>
+            <div className="img-box">
+              <img className="person-img" src={imagen} alt="team.jpg" />
+            </div>
+            <div className="card-content-box">
+              <p className="text person-name">{nombre}</p>
+              <p className="text person-info">{info}</p>
+              <div className="person-contact">
+                <a href={linkedin} target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href={github} target="_blank"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+          </TeamCard>
+        ))
+      }
+
+
+    </TeamSection>
+    </>
     )
   }
 
@@ -100,3 +124,133 @@ border-radius: 10px;
     }
   }
   `
+
+  /************ TEAM SECTION ************/
+  const TeamSection = styled.div`
+    padding: 3rem;
+    display:flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    align-items: center;
+
+    @media screen and (min-width: 768px){
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  `
+
+  const TeamCard = styled.div`
+    padding: 16px;
+    border-radius: 20px;
+    box-shadow: rgb(0 0 0 / 30%) 6px 8px 5px;;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 350px;
+    border: 0.15rem solid var(--orange);
+    
+
+    &:hover .person-img{
+      scale:1.1;
+    }
+
+    .img-box{
+      width: 100%;
+      height: 100%;
+      margin-right: 4rem;
+      border-radius: 20px;
+      overflow: hidden;
+
+      .person-img{
+        width: 100%;
+        height: 100%;
+        object-fit:contain;
+        background-color: #000;
+        transition: 300ms all;
+      }
+    }
+
+    .card-content-box{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .person-name{
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: .5rem;
+      }
+      .person-info{
+        font-size: 1.6rem;
+        line-heigt: 1.5rem;
+      }
+
+      .person-contact{
+        display: flex;
+        justify-content: space-around;
+
+        a{
+          font-size: 3rem;
+          color: var(--dark);
+          transition: 300ms all;
+        }
+        a:hover{
+          color: var(--pink);
+        }
+      }
+    }
+
+  `
+
+  const person = [
+    {
+      id: "1",
+      imagen: `${logo}` ,
+      nombre: "Nombre Apellido" ,
+      info: "Web Developer" ,
+      linkedin: "https://ar.linkedin.com/" ,
+      github: "https://github.com/"
+    },
+    {
+      id: "2",
+      imagen: `${logo}` ,
+      nombre: "Nombre Apellido" ,
+      info: "Web Developer" ,
+      linkedin: "https://ar.linkedin.com/" ,
+      github: "https://github.com/"
+    },
+    {
+      id: "3",
+      imagen: `${logo}` ,
+      nombre: "Nombre Apellido" ,
+      info: "Web Developer" ,
+      linkedin: "https://ar.linkedin.com/" ,
+      github: "https://github.com/"
+    },
+    {
+      id: "4",
+      imagen: `${logo}` ,
+      nombre: "Nombre Apellido" ,
+      info: "Web Developer" ,
+      linkedin: "https://ar.linkedin.com/" ,
+      github: "https://github.com/"
+    },
+    {
+      id: "5",
+      imagen: `${logo}` ,
+      nombre: "Nombre Apellido" ,
+      info: "Web Developer" ,
+      linkedin: "https://ar.linkedin.com/" ,
+      github: "https://github.com/"
+    },
+    {
+      id: "6",
+      imagen: `${logo}` ,
+      nombre: "Nombre Apellido" ,
+      info: "Web Developer" ,
+      linkedin: "https://ar.linkedin.com/" ,
+      github: "https://github.com/"
+    },
+    
+  ]
