@@ -2,20 +2,19 @@ import React from "react";
 import Button from "./Button";
 import styled from "styled-components";
 import { useContext, useState, useEffect } from "react";
-import { TYPES } from "../actions/shoppingActions";
-import {ProductsContext} from "../context/ProductsProvider"
+import { ProductsContext } from "../context/ProductsProvider"
 
 
 
-const Card = ({product}) => {
+const Card = ({ product }) => {
 
-    const {id, nombre, tipo, precio, image, info, bgColor, colorPrecio, bgColorBoton} = product;
+    const { id, nombre, tipo, precio, image, info, bgColor, colorPrecio, bgColorBoton } = product;
     const imagenes = require.context("../assets/images", true);
 
 
     const handelModalContainerClick = (e) => e.stopPropagation();
 
-    const {dispatch, state, addToCart} = useContext(ProductsContext);
+    const {addToCart } = useContext(ProductsContext);
 
     const [isOpen, setIsOpen] = useState(false)
     const openModal = () => setIsOpen(true)
@@ -24,27 +23,27 @@ const Card = ({product}) => {
 
     useEffect(() => {
         if (isOpen === true) {
-          document.body.style.overflow = 'hidden'
+            document.body.style.overflow = 'hidden'
         } else if (isOpen === false) {
             document.body.style.overflow = 'auto'
-          }
-      }, [isOpen])
+        }
+    }, [isOpen])
 
     return (
         <>
-        <CardContainer onClick={openModal}>
-            <CardFigcaption >
-            <Favorito>
-                <svg>
-                    <path d="M30.4 16q1.5-1.3 2-2.6t.6-3q0-1.4-.7-3T30.6 5q-1.4-1.2-2.4-1.6T25.8 3q-1.5 0-3 .6t-2.6 2l-2 2-2.3-2q-1.8-1.4-3-2T10.2 3t-2.6.4T5.3 5q-1 .7-1.6 2.4t-.7 3q0 1.4.6 3T5.4 16L18 28l12.4-12zM0 10.5q0-1.7.8-4t2.6-3.8Q5 1.2 6.7.7t3.6-.7q2 0 3.8.8t4 2.7q2-2 4-2.7t4-.8 3.4.6 3.3 2Q34.3 4 35 6.3t1 4-.6 4-3 4L18 32 3.4 18.2Q1 16 .4 13.7T0 10.4z" ></path>
-                </svg>
-            </Favorito>
-                <img src={imagenes(`./${image}`)} alt={tipo} style={{width:'100%'}}/>
-                <Nombre>{nombre}</Nombre>
-                <Tipo>{tipo}</Tipo>
-                <PrecioS>$ <Precio>{precio}</Precio></PrecioS>
-            </CardFigcaption>
-        </CardContainer>
+            <CardContainer onClick={openModal}>
+                <CardFigcaption >
+                    <Favorito>
+                        <svg>
+                            <path d="M30.4 16q1.5-1.3 2-2.6t.6-3q0-1.4-.7-3T30.6 5q-1.4-1.2-2.4-1.6T25.8 3q-1.5 0-3 .6t-2.6 2l-2 2-2.3-2q-1.8-1.4-3-2T10.2 3t-2.6.4T5.3 5q-1 .7-1.6 2.4t-.7 3q0 1.4.6 3T5.4 16L18 28l12.4-12zM0 10.5q0-1.7.8-4t2.6-3.8Q5 1.2 6.7.7t3.6-.7q2 0 3.8.8t4 2.7q2-2 4-2.7t4-.8 3.4.6 3.3 2Q34.3 4 35 6.3t1 4-.6 4-3 4L18 32 3.4 18.2Q1 16 .4 13.7T0 10.4z" ></path>
+                        </svg>
+                    </Favorito>
+                    <img src={imagenes(`./${image}`)} alt={tipo} style={{ width: '100%' }} />
+                    <Nombre>{nombre}</Nombre>
+                    <Tipo>{tipo}</Tipo>
+                    <PrecioS>$ <Precio>{precio}</Precio></PrecioS>
+                </CardFigcaption>
+            </CardContainer>
             {isOpen &&
                 <ModalArticle onClick={closeModal}>
                     <ModalContainer key={id} bgColor={bgColor} onClick={handelModalContainerClick}>
@@ -54,7 +53,7 @@ const Card = ({product}) => {
                         <Tipo>{tipo}</Tipo>
                         <PrecioModS colorPrecio={colorPrecio} >$ <Precio>{precio}</Precio></PrecioModS>
                         <Info>{info}</Info>
-                        <Button id={id} bgColorBoton={bgColorBoton} onClick={addToCart} ></Button>
+                        <Button bgColorBoton={bgColorBoton} onClick={addToCart(id)} ></Button>
                     </ModalContainer>
                 </ModalArticle>
             }
@@ -65,7 +64,7 @@ export default Card
 
 
 /**** Styles Container ****/
-const CardContainer= styled.figure`
+const CardContainer = styled.figure`
     width:26rem;
     height:45rem;
     border: 0.15rem solid var(--orange);

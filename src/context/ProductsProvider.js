@@ -13,22 +13,37 @@ const ProductsProvider = ({children}) => {
   const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
   const {products} = state;
-  
-  const addToCart = (id) => {dispatch({type: TYPES.ADD_TO_CART, payload:id})};
 
-  const updateState = async () => {
-    const ENDPOINT = {
+    const updateState = async () => {
+      const ENDPOINT = {
         products: "http://localhost:5000/products",
-        cart: "http://localhost:5000/cart",
-    };
-    const resProducts = await axios.get(ENDPOINT.products),
+        cart:"http://localhost:5000/cart"
+      }
+      const resProducts = await axios.get(ENDPOINT.products),
         resCart = await axios.get(ENDPOINT.cart);
-
-    const productsList = await resProducts.data,
-        cartItems = await resCart.data;
-
-    dispatch({type: TYPES.READ_STATE, payload: [productsList, cartItems] });
+    
+      const productsList= await resProducts.data,
+      cartItems = await resCart.data;
+    
+        dispatch({type: TYPES.READ_STATE, payload: [productsList, cartItems]})
+    }
+  
+  const addToCart = (id) => {
+    dispatch({type: TYPES.ADD_TO_CART, payload: id})
   };
+
+  const delFromCart = (id, all) => {
+    if(all){
+      dispatch({type: TYPES.REMOVE_ALL_PRODUCTS, payload:id})
+    } else {
+      dispatch({type: TYPES.REMOVE_ONE_PRODUCT, payload:id})
+    }
+  };
+  
+  const clearCart = () => {
+
+    
+  }
 
   useEffect(() => {
       updateState();
@@ -37,12 +52,12 @@ const ProductsProvider = ({children}) => {
   const handleModalOpen = () => {dispatch({type: TYPES.OPEN_CARD_MODAL})};
 
   const data = {
-    shoppingInitialState, 
-    shoppingReducer, 
-    TYPES,
     state, 
     dispatch,
+    updateState,
     addToCart,
+    delFromCart,
+    clearCart,
     products,
     handleModalOpen
   }

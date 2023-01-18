@@ -1,8 +1,11 @@
-import React from "react";
+import useContext from "react"
+import ProductsContext from "../../context/ProductsProvider"
 
 
 
-const CartItem = ({item, delFromCart}) => {
+const CartItem = ({item}) => {
+
+    const {delFromCart} = useContext(ProductsContext);
     
     const {id, nombre, precio, quantity} = item
     

@@ -89,7 +89,18 @@
             "info": "Es aromático y pleno, dejando una fresca sensación final de fruta. "
         }
     ],
-    "cart": []
+    "cart": [
+        {
+        "id": 7,
+        "nombre": "G. H. Mumm Cordon",
+        "tipo": "Champagne Rouge Brut",
+        "precio": 12800,
+        "image": "ghMumm.webp",
+        "bgColor": "#f5e8afef",
+        "colorPrecio": "#7A7A78",
+        "bgColorBoton":"#7A7A78" ,
+        "info": "Es delicado y complejo, donde las frutas de la uva se entremezclan con suaves notas de frutos secos."
+    }]
 }
 
 
