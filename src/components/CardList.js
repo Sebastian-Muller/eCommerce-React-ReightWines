@@ -5,19 +5,19 @@ import Card from "./Card";
 
 import { useContext } from "react";
 
-import {ProductsContext} from "../context/ProductsProvider"
+import { ProductsContext } from "../context/ProductsProvider"
 
 
 const CardList = () => {
 
-    const {products} = useContext(ProductsContext);
+    const { products } = useContext(ProductsContext);
 
-  
-   
+
+
     return (
         <CardsContainer>
-            {products.map((product) =>(
-            <Card key={product.id} product={product} /> ))}
+            {products.map((product) => (
+                <Card key={product.id} product={product} />))}
         </CardsContainer>
     );
 };
