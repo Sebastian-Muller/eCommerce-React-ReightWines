@@ -20,24 +20,18 @@ export const shoppingReducer = (state, action) => {
 
         case TYPES.ADD_TO_CART: {
             const newItem = state.products.find(
-                (product) => product.id === action.payload
+                (product) => product.id === action.payload //el action.payload hay que cambiarlo y poner el item completo
             );
 
             const itemInCart = state.cart.find((item) => item.id === newItem.id);
 
             return itemInCart
                 ? {
-                    ...state,
-                    cart: state.cart.map((item) =>
-                        item.id === newItem.id
-                            ? { ...item, quantity: item.quantity + 1 }
-                            : item
-                    ),
+                //Acá va la petición PUT, se conserva el estado y se hace PUT del newItem.quantity++
                 }
                 : {
-                    ...state,
-                    cart: [...state.cart, { ...newItem, quantity: 1 }],
-                };
+                //Acá va el POST, se hace un POST de newItem en el endpoint http://localhost:5000/${newItem.id}
+                }
         }
         case TYPES.REMOVE_ONE_PRODUCT: {
             const itemToDelete = state.cart.find(
@@ -46,29 +40,18 @@ export const shoppingReducer = (state, action) => {
 
             return itemToDelete.quantity > 1
                 ? {
-                    ...state,
-                    cart: state.cart.map((item) =>
-                        item.id === action.payload
-                            ? { ...item, quantity: item.quantity - 1 }
-                            : item
-                    ),
+                    //aca se hace un PUT subiendo un item.quantity-- o -=1
                 }
                 : {
-                    ...state,
-                    cart: state.cart.filter((item) => item.id !== action.payload),
+                    //aca se hace un DELETE del item usando su id, quizá se pueda pedir una confirmación, opcional
                 };
         }
         case TYPES.REMOVE_ALL_PRODUCTS: {
-            return {
-                ...state,
-                cart: state.cart.filter((item) => item.id !== action.payload),
+            //aca se hace un DELETE usando el id del item
             };
-        }
+
         case TYPES.CLEAR_CART: {
-            return {
-                ...state,
-                cart: []
-            };
+            //aca se limpia el cart del estado y se lo sube vacío al server (se puede ver otra forma)
         }
 
         case TYPES.OPEN_CARD_MODAL: {
