@@ -80,6 +80,7 @@ const CardContainer = styled.figure`
     padding-top: 1rem;
     padding-bottom:4rem;
     box-shadow:rgba(0, 0, 0, 0.3) 6px 8px 5px;
+    cursor: pointer;
     `
 
 /**** Styles Cards ****/
@@ -93,6 +94,10 @@ flex-direction: column;
 align-items: center;
 font-weight: bold;
 padding-bottom: 0.1rem;
+
+&:hover svg{
+    fill: var(--orange);
+}
 `
 const Favorito = styled.div`
     fill: transparent;
@@ -104,15 +109,12 @@ const Favorito = styled.div`
     left: 100px;
     top: 30px;
     z-index: 30;
+    transition: all 300ms;
 
-    :hover {
-        fill: var(--orange);
-        transition: fill .2s;}
-
-    :active {
+    &:active {
         transform: scale(1.25, 1.25);
         transition: transform .2s;
-}
+    }
 `
 const Nombre = styled.h3`
     padding-top: 25px;

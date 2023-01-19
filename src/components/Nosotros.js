@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import atardecerFondo from "../assets/images/atardecerFondo.webp"
 import logo from "../assets/images/logoGrandeConFondo.webp"
+import dante from "../assets/images/team/dante.jpg"
+import facu from "../assets/images/team/facu.jpg"
 
 
 
@@ -138,6 +140,12 @@ border-radius: 10px;
       flex-wrap: wrap;
       justify-content: space-around;
     }
+
+    @media screen and (min-width: 1200px){
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      place-items: center;
+    }
   `
 
   const TeamCard = styled.div`
@@ -147,9 +155,12 @@ border-radius: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    max-width: 350px;
+    width: 350px;
     border: 0.15rem solid var(--orange);
     
+    @media screen and (min-width: 1200px){
+      width: 400px;
+    }
 
     &:hover .person-img{
       scale:1.1;
@@ -157,6 +168,8 @@ border-radius: 10px;
 
     .img-box{
       width: 100%;
+      max-width: 17rem;
+      max-height: 17rem;
       height: 100%;
       margin-right: 4rem;
       border-radius: 20px;
@@ -177,7 +190,7 @@ border-radius: 10px;
       justify-content: center;
 
       .person-name{
-        font-size: 3rem;
+        font-size: 2rem;
         font-weight: 700;
         margin-bottom: .5rem;
       }
@@ -206,16 +219,16 @@ border-radius: 10px;
   const person = [
     {
       id: "1",
-      imagen: `${logo}` ,
-      nombre: "Nombre Apellido" ,
+      imagen: `${dante}` ,
+      nombre: "Dante Sandoval" ,
       info: "Web Developer" ,
-      linkedin: "https://ar.linkedin.com/" ,
-      github: "https://github.com/"
+      linkedin: "https://www.linkedin.com/in/dantesanddev" ,
+      github: "https://github.com/DanteSandDev"
     },
     {
       id: "2",
       imagen: `${logo}` ,
-      nombre: "Nombre Apellido" ,
+      nombre: "Graciela Faria" ,
       info: "Web Developer" ,
       linkedin: "https://ar.linkedin.com/" ,
       github: "https://github.com/"
@@ -223,7 +236,7 @@ border-radius: 10px;
     {
       id: "3",
       imagen: `${logo}` ,
-      nombre: "Nombre Apellido" ,
+      nombre: "Sebastian Muller" ,
       info: "Web Developer" ,
       linkedin: "https://ar.linkedin.com/" ,
       github: "https://github.com/"
@@ -231,23 +244,23 @@ border-radius: 10px;
     {
       id: "4",
       imagen: `${logo}` ,
-      nombre: "Nombre Apellido" ,
+      nombre: "Antonela Bonaglia" ,
       info: "Web Developer" ,
       linkedin: "https://ar.linkedin.com/" ,
       github: "https://github.com/"
     },
     {
       id: "5",
-      imagen: `${logo}` ,
-      nombre: "Nombre Apellido" ,
+      imagen: `${facu}` ,
+      nombre: "Facundo De los Rios" ,
       info: "Web Developer" ,
-      linkedin: "https://ar.linkedin.com/" ,
-      github: "https://github.com/"
+      linkedin: "https://www.linkedin.com/in/facundo-delosrios" ,
+      github: "https://github.com/FacundoDLR"
     },
     {
       id: "6",
       imagen: `${logo}` ,
-      nombre: "Nombre Apellido" ,
+      nombre: "Florencia Staricco" ,
       info: "Web Developer" ,
       linkedin: "https://ar.linkedin.com/" ,
       github: "https://github.com/"

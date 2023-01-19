@@ -14,7 +14,7 @@ const handleAddtoCart = () => {
 
   return (
     <>
-      <BotonCard bgColorBoton={bgColorBoton} onClick={handleAddtoCart}>
+      <BotonCard bgColorBoton={bgColorBoton = "#7A7A78"} onClick={handleAddtoCart}>
         Agregar al Carrito
       </BotonCard>
     </>
