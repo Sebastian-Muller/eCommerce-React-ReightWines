@@ -11,8 +11,7 @@ export const ProductsContext = createContext();
 const ProductsProvider = ({children}) => {
 
   const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
-  
-    const delay = 100  
+   
 
     const getData = async () => {
       const ENDPOINT = {

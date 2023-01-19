@@ -20,103 +20,7 @@ import SocialsBar from './SocialsBar'
 
 const Footer = () => {
     
-    const ContainerFooter = styled.div`
-        background-color: var(--dark);
-        color: rgb(255, 255, 255);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 1em;
-        font-size: 1.2rem;
-
-
-        @media (min-width:768px){
-            display: grid;
-            grid-template-columns: repeat(2, 300px);
-            grid-gap: 20px;
-            padding-top: 35px;
-            align-items: start;
-            justify-content: center;
-            justify-items: center;
-
-        }
-        @media (min-width:1200px){
-            display: flex;
-            flex-direction: row;
-            gap: 5rem;
-            align-items:flex-start;
-            justify-content: center;
-            font-size: 1.5rem;
-
-        }
-    `;
-
-    const logoFooter = {
-        width: "25rem",
-    }
-
-    const BoxFooter = styled.div`
-        margin: 1.5rem 0;
-        width: 25rem;
-    `;
-    const Anchor = styled.a`
-        color: #fff;
-        text-decoration: none;
-
-        &:hover{
-            color: #fff;
-            text-decoration: underline;
-        }
-    `;
-
-    const FooterContact = styled.div`
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    `;
-    const BoxTitle = styled.div`
-        font-family: var(--title-font);
-        border-bottom: 1px solid;
-        margin-bottom: 2rem;
-    `;
-    const BoxContent = styled.div`
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.3rem;
-    `;
-    const BoxText = styled.div`
-        display: flex;
-        align-items: center;
-
-        .payText{
-            line-height: 3rem;
-        }
-    `;
-    const BoxImg = styled.div`
-        background-image: ${(props) => props.background};
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin-right: 1rem;
-        width: 2rem;
-        height: 2rem;
-    `;
-
-    const ContentPayment = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    `;
-    const PayImg = styled.div`
-        width: 7rem;
-        height: 6rem;
-        background-image: ${(props) => props.background};
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-    `;
-
-
+    
   return (
     <footer>
         <SocialsBar/>
@@ -242,3 +146,94 @@ const paySecure = [
 ]
 
 export default Footer
+
+const ContainerFooter = styled.div`
+        background-color: var(--dark);
+        color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 1em;
+        font-size: 1.2rem;
+
+
+        @media (min-width:768px){
+            display: grid;
+            grid-template-columns: repeat(2, 300px);
+            grid-gap: 20px;
+            padding-top: 35px;
+            align-items: start;
+            justify-content: center;
+            justify-items: center;
+
+        }
+        @media (min-width:1200px){
+            display: flex;
+            flex-direction: row;
+            gap: 5rem;
+            align-items:flex-start;
+            justify-content: center;
+            font-size: 1.5rem;
+
+        }
+    `;
+
+    const logoFooter = {
+        width: "25rem",
+    }
+
+    const BoxFooter = styled.div`
+        margin: 1.5rem 0;
+        width: 25rem;
+    `;
+    const Anchor = styled.a`
+        color: #fff;
+        text-decoration: none;
+
+        &:hover{
+            color: #fff;
+            text-decoration: underline;
+        }
+    `;
+
+    const BoxTitle = styled.div`
+        font-family: var(--title-font);
+        border-bottom: 1px solid;
+        margin-bottom: 2rem;
+    `;
+    const BoxContent = styled.div`
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.3rem;
+    `;
+    const BoxText = styled.div`
+        display: flex;
+        align-items: center;
+
+        .payText{
+            line-height: 3rem;
+        }
+    `;
+    const BoxImg = styled.div`
+        background-image: ${(props) => props.background};
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-right: 1rem;
+        width: 2rem;
+        height: 2rem;
+    `;
+
+    const ContentPayment = styled.div`
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    `;
+    const PayImg = styled.div`
+        width: 7rem;
+        height: 6rem;
+        background-image: ${(props) => props.background};
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    `;

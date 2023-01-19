@@ -21,7 +21,6 @@ max-width:100vw;
 height: inherit; 
 max-height: inherit;
 position: relative;
-botton: 100px;
 `
 
 

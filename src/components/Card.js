@@ -1,9 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import styled from "styled-components";
-import { useContext, useState, useEffect } from "react";
-import { ProductsContext } from "../context/ProductsProvider"
-
+import { useState, useEffect } from "react";
 
 
 const Card = ({ product }) => {
@@ -14,7 +12,6 @@ const Card = ({ product }) => {
 
     const handelModalContainerClick = (e) => e.stopPropagation();
 
-    const {addToCart } = useContext(ProductsContext);
 
     const [isOpen, setIsOpen] = useState(false)
     const openModal = () => setIsOpen(true)

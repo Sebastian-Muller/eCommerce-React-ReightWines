@@ -4,8 +4,6 @@ import facebook from "../../assets/icons/footerFb.png"
 import instagram from "../../assets/icons/footerIg.png"
 import twit from "../../assets/icons/footerTwitter.png"
 import link from "../../assets/icons/footerLink.png"
-import Line from "../../assets/icons/lineRedes.png"
-
 
 /*
 import Fb from "../../assets/icons/facebook.svg"

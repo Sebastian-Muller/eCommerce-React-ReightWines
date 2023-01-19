@@ -2,7 +2,6 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import '../owl.css';
-import { useState } from 'react';
 
 import img1 from '../assets/carousel/img1.webp';
 import img2 from '../assets/carousel/img2.webp';
@@ -55,16 +54,16 @@ const OwlCarrousel = () => {
                 <OwlCarousel
                     className="owl-theme"
                     {...options} >
-                    <div ><img className="img" src={img1} /></div>
-                    <div ><img className="img" src={img2} /></div>
-                    <div ><img className="img" src={img3} /></div>
-                    <div ><img className="img" src={img4} /></div>
-                    <div ><img className="img" src={img5} /></div>
-                    <div ><img className="img" src={img6} /></div>
-                    <div ><img className="img" src={img7} /></div>
-                    <div ><img className="img" src={img8} /></div>
-                    <div ><img className="img" src={img9} /></div>
-                    <div ><img className="img" src={img10} /></div>
+                    <div ><img className="img" src={img1} alt="img1"/></div>
+                    <div ><img className="img" src={img2} alt="img2"/></div>
+                    <div ><img className="img" src={img3} alt="img3"/></div>
+                    <div ><img className="img" src={img4} alt="img4"/></div>
+                    <div ><img className="img" src={img5} alt="img5"/></div>
+                    <div ><img className="img" src={img6} alt="img6"/></div>
+                    <div ><img className="img" src={img7} alt="img7"/></div>
+                    <div ><img className="img" src={img8} alt="img8"/></div>
+                    <div ><img className="img" src={img9} alt="img9"/></div>
+                    <div ><img className="img" src={img10} alt="img10"/></div>
                 </OwlCarousel>
             </div>
 
