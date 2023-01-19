@@ -4,11 +4,17 @@ import { ProductsContext } from "../context/ProductsProvider";
 
 
 
-const Button = ({id, bgColorBoton}) => {
+const Button = ({product, bgColorBoton}) => {
+
+  const {addToCart} = useContext(ProductsContext);
+
+const handleAddtoCart = () => {
+  addToCart(product.id)
+}
 
   return (
     <>
-      <BotonCard bgColorBoton={bgColorBoton}>
+      <BotonCard bgColorBoton={bgColorBoton} onClick={handleAddtoCart}>
         Agregar al Carrito
       </BotonCard>
     </>

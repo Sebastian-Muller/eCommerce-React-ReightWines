@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext} from 'react'
 import { ProductsContext } from '../../context/ProductsProvider'
 import styled from 'styled-components'
 import CartItem from "./CartItem"
@@ -7,11 +7,9 @@ import CartItem from "./CartItem"
 
 const ShoppingCart = () => {
 
-const {updateState, clearCart, cart, state} = useContext(ProductsContext);
+const {updateState, clearCart, state} = useContext(ProductsContext);
 
-  useEffect(() => {
-    updateState()
-  }, [state])
+  // updateState();
 
   return (
     <section>
@@ -20,7 +18,7 @@ const {updateState, clearCart, cart, state} = useContext(ProductsContext);
           <h1>Carrito de compras</h1>
         </div>
         <div>
-          {!cart ? "No tenes productos en tu carrito" : cart.map((item) => <CartItem key={item.id} item={item} />)}
+          {!state.cart ? "No tenes productos en tu carrito" : state.cart.map((item) => <CartItem key={item.id} item={item} />)}
         <div>
           <button onClick={clearCart}>Limpiar Carrito</button>
 

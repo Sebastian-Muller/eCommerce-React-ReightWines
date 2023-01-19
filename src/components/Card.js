@@ -53,7 +53,7 @@ const Card = ({ product }) => {
                         <Tipo>{tipo}</Tipo>
                         <PrecioModS colorPrecio={colorPrecio} >$ <Precio>{precio}</Precio></PrecioModS>
                         <Info>{info}</Info>
-                        <Button bgColorBoton={bgColorBoton} onClick={addToCart(id)} ></Button>
+                        <Button bgColorBoton={bgColorBoton} product={product}></Button>
                     </ModalContainer>
                 </ModalArticle>
             }

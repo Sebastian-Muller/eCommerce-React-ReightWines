@@ -1,17 +1,12 @@
 import styled from "styled-components";
 import Card from "./Card";
-
-
-
 import { useContext } from "react";
-
 import { ProductsContext } from "../context/ProductsProvider"
 
 
 const CardList = () => {
 
     const { products } = useContext(ProductsContext);
-
 
 
     return (

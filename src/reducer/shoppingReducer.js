@@ -19,19 +19,22 @@ export const shoppingReducer = (state, action) => {
         }
 
         case TYPES.ADD_TO_CART: {
+
             const newItem = state.products.find(
-                (product) => product.id === action.payload //el action.payload hay que cambiarlo y poner el item completo
-            );
+                (product) => product.id === action.payload);
 
             const itemInCart = state.cart.find((item) => item.id === newItem.id);
+            
+            return (!itemInCart) 
+                ?{
+                    ...state,
+                    cart: [...state.cart, {newItem}] 
+                }
+                :{
+                    ...state,
+                    cart: [...state.cart]
+                }
 
-            return itemInCart
-                ? {
-                //Acá va la petición PUT, se conserva el estado y se hace PUT del newItem.quantity++
-                }
-                : {
-                //Acá va el POST, se hace un POST de newItem en el endpoint http://localhost:5000/${newItem.id}
-                }
         }
         case TYPES.REMOVE_ONE_PRODUCT: {
             const itemToDelete = state.cart.find(
@@ -48,7 +51,7 @@ export const shoppingReducer = (state, action) => {
         }
         case TYPES.REMOVE_ALL_PRODUCTS: {
             //aca se hace un DELETE usando el id del item
-            };
+        };
 
         case TYPES.CLEAR_CART: {
             //aca se limpia el cart del estado y se lo sube vacío al server (se puede ver otra forma)
@@ -56,13 +59,13 @@ export const shoppingReducer = (state, action) => {
 
         case TYPES.OPEN_CARD_MODAL: {
             return state.openCardModal === false
-                ? {openCardModal: state.openCardModal = true}
-                : {...state} ;
+                ? { openCardModal: state.openCardModal = true }
+                : { ...state };
         }
         case TYPES.CLOSE_CARD_MODAL: {
             return state.openCardModal === true
-                ? {openCardModal: state.openCardModal = false}
-                : {...state} ;
+                ? { openCardModal: state.openCardModal = false }
+                : { ...state };
         }
 
         default:
