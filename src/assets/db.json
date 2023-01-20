@@ -100,7 +100,19 @@
       "colorPrecio": "#7A7A78",
       "bgColorBoton": "#7A7A78",
       "info": "Un vino delicado en boca, con una acidez refrescante y aromas a frutas rojas y dejos florales al paladar.",
-      "quantity": 9
+      "quantity": 14
+    },
+    {
+      "id": 1,
+      "nombre": "Sexy Fish",
+      "tipo": "Malbec",
+      "precio": 2100,
+      "image": "malbec.webp",
+      "bgColor": "#ffefe1ef;",
+      "colorPrecio": "#737272",
+      "bgColorBoton": "#737272",
+      "info": "Un vino con presencia de taninos maduros, con dejos dulces de vainilla y chocolate.",
+      "quantity": 7
     }
   ]
 }
