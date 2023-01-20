@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 
 
 const Card = ({ product }) => {
+    console.log(product)
 
     const { id, nombre, tipo, precio, image, info, bgColor, colorPrecio, bgColorBoton } = product;
     const imagenes = require.context("../assets/images", true);

@@ -8,7 +8,6 @@ const CardList = () => {
 
     const { products } = useContext(ProductsContext);
 
-
     return (
         <CardsContainer>
             {products.map((product) => (

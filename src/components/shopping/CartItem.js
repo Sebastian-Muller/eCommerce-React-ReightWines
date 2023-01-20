@@ -1,10 +1,14 @@
+import {useContext} from "react"
+import {ProductsContext} from "../../context/ProductsProvider"
+
 
 
 const CartItem = ({item}) => {
 
+    const {delFromCart} = useContext(ProductsContext)
+
     const imagenes = require.context("../../assets/images", true);
-    const {newItem} = item
-    const {nombre, precio, quantity, tipo, image} = newItem
+    const {nombre, precio, quantity, tipo, image} = item
     
     return (
         <>
