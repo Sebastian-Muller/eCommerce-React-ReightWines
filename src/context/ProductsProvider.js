@@ -33,13 +33,22 @@ const ProductsProvider = ({children}) => {
   
   
     const addToCart = async (id) => {
-      const { resProducts, resCart } = await getData();
-  
-      const newItem = resProducts.data.find((product) => product.id === id),
-        itemInCart = resCart.data.find((item) => item.id === id);
+      const delay = 100;
+      const endpoints = {
+        products: "http://localhost:5000/products",
+        cart: "http://localhost:5000/cart",
+      };
+        const resProducts = await axios.get(endpoints.products),
+        resCart = await axios.get(endpoints.cart);
+
+        const productsList = resProducts.data,
+        cartItems = resCart.data;
+
+      const newItem = productsList.find((product) => product.id === id),
+        itemInCart = cartItems.find((item) => item.id === id);
   
       let endpoint 
-      let options = {
+      const options = {
         headers: "content-type: application/json",
       };
   
@@ -51,16 +60,17 @@ const ProductsProvider = ({children}) => {
       } else {
         options.method = "PUT"
         endpoint = `http://localhost:5000/cart/${itemInCart.id}`
-        itemInCart.quantity = itemInCart.quantity ++
-        options.data = JSON.strigify(itemInCart)
+        itemInCart.quantity = itemInCart.quantity +=1
+        options.data = JSON.stringify(itemInCart)
+        console.log(itemInCart.quantity)
       }
-      await axios(endpoint, products) 
+      await axios(endpoint, options);
   
       dispatch({type: TYPES.ADD_TO_CART, payload: id});
   
-      // setTimeout(async ()=>{
-      //   await updateState()
-      //   }, delay)
+      setTimeout(async ()=>{
+        await updateState()
+        }, delay)
     };
     
     const delFromCart = (id, all) => {

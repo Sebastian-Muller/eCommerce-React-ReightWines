@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
-import styled from "styled-components";
+import { useContext } from "react";
 import { ProductsContext } from "../context/ProductsProvider";
+import styled from "styled-components";
 
 
 
@@ -8,14 +8,16 @@ const Button = ({product, bgColorBoton}) => {
 
   const {addToCart} = useContext(ProductsContext);
 
+  const {id} = product;
+
 const handleAddtoCart = () => {
   addToCart(product.id)
 }
 
   return (
     <>
-      <BotonCard bgColorBoton={bgColorBoton = "#7A7A78"} onClick={handleAddtoCart}>
-        Agregar al Carrito
+      <BotonCard bgColorBoton={bgColorBoton = "#7A7A78"} onClick={console.log(id)}>
+      Agregar al Carrito
       </BotonCard>
     </>
   )
