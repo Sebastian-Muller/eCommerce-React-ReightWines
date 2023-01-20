@@ -8,61 +8,59 @@ import Button from './Button';
 
 
 const Oportunidades = () => {
-    
-  return (
-    <ConteinerOportunidades>    
-        <Titulo>
-            <div className='titulo'>
-                <div className='lineLeft'>
-                    <img src={line} alt="linea" width="100%"/>
-                </div>
-                <div className='tituloOportunidades'>
-                    <h1>OPORTUNIDADES</h1>
-                </div>
-                <div className='lineRight'>
-                    <img src={line} alt="linea" width="100%"/>
-                </div>
-            </div>
-        </Titulo>
-        <ContenedorCards>
-            <Card>
-                <ImageContainer><img src={promo1} alt="promo" width="220px" height="220px"/></ImageContainer>
-                <Caption>   
-                    <h3>Promoción 1:</h3>
-                    <p>C. Piel de Lobo - P. Toso - E. Gascón -<br></br>Dv Catena - Desquiciado - Elementos</p>
-                    <div className='precio'>
-                        <div className='precioTachado'>
-                                <p>$ 46.700.-</p>
-                        </div>
-                        <div className='precioOferta'>
-                                <p>$ 38.900.-</p>
-                        </div>
-                    </div>
-                </Caption>   
-                <Button/>
-            </Card>
 
-            <Card>
-                <ImageContainer><img src={promo5} alt="promo" width="220px" height="210px"/></ImageContainer>
-                <Caption>   
-                    <h3>Promoción 2:</h3>
-                    <p>Miguel Minni - Cafayate - Vallisto -<br></br> Mariflor - Trumpeter - Gauchezco</p>
-                    <div className='precio'>
-                        <div className='precioTachado'>
-                                <p>$ 39.400.-</p>
-                        </div>
-                        <div className='precioOferta'>
-                                <p>$ 33.700.-</p>
-                        </div>
+    return (
+        <ConteinerOportunidades>
+            <Titulo>
+                <div className='titulo'>
+                    <div className='lineLeft'>
+                        <img src={line} alt="linea" width="100%" />
                     </div>
-                </Caption>   
-                <Button/>
-            </Card>
-        </ContenedorCards>
-   
-    </ConteinerOportunidades>
-   
-  )
+                    <div className='tituloOportunidades'>
+                        <h1>OPORTUNIDADES</h1>
+                    </div>
+                    <div className='lineRight'>
+                        <img src={line} alt="linea" width="100%" />
+                    </div>
+                </div>
+            </Titulo>
+            <ContenedorCards>
+                <Card>
+                    <ImageContainer><img src={promo1} alt="promo" width="220px" height="220px" /></ImageContainer>
+                    <Caption>
+                        <h3>Promoción 1:</h3>
+                        <p>C. Piel de Lobo - P. Toso - E. Gascón -<br></br>Dv Catena - Desquiciado - Elementos</p>
+                        <div className='precio'>
+                            <div className='precioTachado'>
+                                <p>$ 46.700.-</p>
+                            </div>
+                            <div className='precioOferta'>
+                                <p>$ 38.900.-</p>
+                            </div>
+                        </div>
+                    </Caption>
+                </Card>
+
+                <Card>
+                    <ImageContainer><img src={promo5} alt="promo" width="220px" height="210px" /></ImageContainer>
+                    <Caption>
+                        <h3>Promoción 2:</h3>
+                        <p>Miguel Minni - Cafayate - Vallisto -<br></br> Mariflor - Trumpeter - Gauchezco</p>
+                        <div className='precio'>
+                            <div className='precioTachado'>
+                                <p>$ 39.400.-</p>
+                            </div>
+                            <div className='precioOferta'>
+                                <p>$ 33.700.-</p>
+                            </div>
+                        </div>
+                    </Caption>
+                </Card>
+            </ContenedorCards>
+
+        </ConteinerOportunidades>
+
+    )
 }
 
 export default Oportunidades
