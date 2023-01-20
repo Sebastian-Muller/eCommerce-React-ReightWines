@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { ProductsContext } from "../context/ProductsProvider";
-
+import {BsCart4} from "react-icons/bs"
 
 
 const Button = ({product, bgColorBoton}) => {
@@ -15,7 +15,7 @@ const handleAddtoCart = () => {
   return (
     <>
       <BotonCard bgColorBoton={bgColorBoton = "#7A7A78"} onClick={handleAddtoCart}>
-        Agregar al Carrito
+        <BsCart4 style={{fontSize: 20, display:"flex", flexDirection:"row" , justifyContent:"center", margin: "0px 7px" }} /> Agregar al Carrito
       </BotonCard>
     </>
   )
@@ -44,4 +44,5 @@ const BotonCard = styled.button`
     background-color: var(--orange) !important;
     box-shadow: none;
     transform: translateY(4px);}
+    display: flex;
 `
