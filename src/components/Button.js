@@ -46,4 +46,5 @@ const BotonCard = styled.button`
     background-color: var(--orange) !important;
     box-shadow: none;
     transform: translateY(4px);}
+    display: flex;
 `

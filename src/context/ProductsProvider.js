@@ -64,7 +64,7 @@ const ProductsProvider = ({children}) => {
         options.data = JSON.stringify(itemInCart)
         console.log(itemInCart.quantity)
       }
-      await axios(endpoint, options);
+      await axios(endpoint, options) 
   
       dispatch({type: TYPES.ADD_TO_CART, payload: id});
   
