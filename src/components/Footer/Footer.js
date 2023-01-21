@@ -19,57 +19,57 @@ import SocialsBar from './SocialsBar'
 
 
 const Footer = () => {
-    
-    
-  return (
-    <footer>
-        <SocialsBar/>
-        <ContainerFooter>
 
-            <div className="footer__img">
-                <img style={logoFooter} src={logo} alt="logo reight" />
-            </div>
-            <BoxFooter>
-                <BoxTitle><h3>Atencion al Cliente</h3></BoxTitle>
-                <BoxContent>
-                    {footerList.map(({background, text, href, target}, index) => (
-                        <BoxText key={index}>
-                            <BoxImg background={background}></BoxImg>
-                            <Anchor href={href} target={target}>{text}</Anchor>
-                        </BoxText>
-                    )) }
-                </BoxContent>
-            </BoxFooter>
 
-            <BoxFooter>
-                <BoxTitle><h3>Para Saber</h3></BoxTitle>
-                <BoxContent>
-                    {toKwnowBox.map(({text, href, target}, index) => (
-                        <BoxText key={index}>
-                            <Anchor href={href} target={target}>{text}</Anchor>
-                        </BoxText>
-                    )) }
-                </BoxContent>
-            </BoxFooter>
+    return (
+        <footer>
+            <SocialsBar />
+            <ContainerFooter>
 
-            <BoxFooter>
-                <BoxTitle><h3>Sitio Seguro</h3></BoxTitle>
-                <BoxContent>
-                    <BoxText>
-                    <p className='payText'>A través de todos los medios de pago y promociones bancarias de Mercado Pago</p>
-                    </BoxText>
-                    <ContentPayment>
-                        {paySecure.map(({background}, index) => (
-                            <PayImg key={index} background={background}></PayImg>
+                <div className="footer__img">
+                    <img style={logoFooter} src={logo} alt="logo reight" />
+                </div>
+                <BoxFooter>
+                    <BoxTitle><h3>Atencion al Cliente</h3></BoxTitle>
+                    <BoxContent>
+                        {footerList.map(({ background, text, href, target }, index) => (
+                            <BoxText key={index}>
+                                <BoxImg background={background}></BoxImg>
+                                <Anchor href={href} target={target}>{text}</Anchor>
+                            </BoxText>
                         ))}
-                    </ContentPayment>
-                </BoxContent>
-            </BoxFooter>
+                    </BoxContent>
+                </BoxFooter>
 
-        </ContainerFooter>
+                <BoxFooter>
+                    <BoxTitle><h3>Para Saber</h3></BoxTitle>
+                    <BoxContent>
+                        {toKwnowBox.map(({ text, href, target }, index) => (
+                            <BoxText key={index}>
+                                <Anchor href={href} target={target}>{text}</Anchor>
+                            </BoxText>
+                        ))}
+                    </BoxContent>
+                </BoxFooter>
 
-    </footer>
-  )
+                <BoxFooter>
+                    <BoxTitle><h3>Sitio Seguro</h3></BoxTitle>
+                    <BoxContent>
+                        <BoxText>
+                            <p className='payText'>A través de todos los medios de pago y promociones bancarias de Mercado Pago</p>
+                        </BoxText>
+                        <ContentPayment>
+                            {paySecure.map(({ background }, index) => (
+                                <PayImg key={index} background={background}></PayImg>
+                            ))}
+                        </ContentPayment>
+                    </BoxContent>
+                </BoxFooter>
+
+            </ContainerFooter>
+
+        </footer>
+    )
 }
 
 const footerList = [
@@ -178,15 +178,15 @@ const ContainerFooter = styled.div`
         }
     `;
 
-    const logoFooter = {
-        width: "25rem",
-    }
+const logoFooter = {
+    width: "25rem",
+}
 
-    const BoxFooter = styled.div`
+const BoxFooter = styled.div`
         margin: 1.5rem 0;
         width: 25rem;
     `;
-    const Anchor = styled.a`
+const Anchor = styled.a`
         color: #fff;
         text-decoration: none;
 
@@ -196,18 +196,18 @@ const ContainerFooter = styled.div`
         }
     `;
 
-    const BoxTitle = styled.div`
+const BoxTitle = styled.div`
         font-family: var(--title-font);
         border-bottom: 1px solid;
         margin-bottom: 2rem;
     `;
-    const BoxContent = styled.div`
+const BoxContent = styled.div`
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 1.3rem;
     `;
-    const BoxText = styled.div`
+const BoxText = styled.div`
         display: flex;
         align-items: center;
 
@@ -215,7 +215,7 @@ const ContainerFooter = styled.div`
             line-height: 3rem;
         }
     `;
-    const BoxImg = styled.div`
+const BoxImg = styled.div`
         background-image: ${(props) => props.background};
         background-repeat: no-repeat;
         background-size: cover;
@@ -224,12 +224,12 @@ const ContainerFooter = styled.div`
         height: 2rem;
     `;
 
-    const ContentPayment = styled.div`
+const ContentPayment = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     `;
-    const PayImg = styled.div`
+const PayImg = styled.div`
         width: 7rem;
         height: 6rem;
         background-image: ${(props) => props.background};

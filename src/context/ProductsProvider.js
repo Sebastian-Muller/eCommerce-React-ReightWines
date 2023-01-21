@@ -1,4 +1,4 @@
-import { useEffect, createContext, useReducer} from "react"
+import { useEffect, createContext, useReducer } from "react"
 import { TYPES } from "../actions/shoppingActions";
 import { shoppingInitialState, shoppingReducer } from "../reducer/shoppingReducer";
 import axios from "axios";
@@ -8,85 +8,128 @@ import axios from "axios";
 export const ProductsContext = createContext();
 
 
-const ProductsProvider = ({children}) => {
+const ProductsProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
-   
 
-    const getData = async () => {
-      const ENDPOINT = {
-        products: "http://localhost:5000/products",
-        cart: "http://localhost:5000/cart",
-      };
-      return {
-        resProducts: await axios.get(ENDPOINT.products),
-        resCart: await axios.get(ENDPOINT.cart),
-      };
+
+  const getData = async () => {
+    const ENDPOINT = {
+      products: "http://localhost:5000/products",
+      cart: "http://localhost:5000/cart",
     };
-  
-    const updateState = async () => {
-      const { resProducts, resCart } = await getData();
-  
-      dispatch({type: TYPES.READ_STATE, payload: [resProducts.data, resCart.data]});
+    return {
+      resProducts: await axios.get(ENDPOINT.products),
+      resCart: await axios.get(ENDPOINT.cart),
+    };
+  };
+
+  const updateState = async () => {
+    const { resProducts, resCart } = await getData();
+
+    dispatch({ type: TYPES.READ_STATE, payload: [resProducts.data, resCart.data] });
+  };
+
+
+
+  const addToCart = async (id) => {
+    const delay = 100;
+    const endpoints = {
+      products: "http://localhost:5000/products",
+      cart: "http://localhost:5000/cart",
+    };
+    const resProducts = await axios.get(endpoints.products),
+      resCart = await axios.get(endpoints.cart);
+
+    const productsList = resProducts.data,
+      cartItems = resCart.data;
+
+    const newItem = productsList.find((product) => product.id === id),
+      itemInCart = cartItems.find((item) => item.id === id);
+
+    let endpoint
+    const options = {
+      headers: "content-type: application/json",
     };
 
-  
-  
-    const addToCart = async (id) => {
-      const { resProducts, resCart } = await getData();
-  
-      const newItem = resProducts.data.find((product) => product.id === id),
-        itemInCart = resCart.data.find((item) => item.id === id);
-  
-      let endpoint 
-      let options = {
-        headers: "content-type: application/json",
-      };
-  
-      if (!itemInCart) {
-        options.method = "POST"
-        endpoint = `http://localhost:5000/cart`
-        newItem.quantity = 1
-        options.data = JSON.stringify(newItem)
-      } else {
-        options.method = "PUT"
-        endpoint = `http://localhost:5000/cart/${itemInCart.id}`
-        itemInCart.quantity = itemInCart.quantity ++
-        options.data = JSON.strigify(itemInCart)
-      }
-      await axios(endpoint, products) 
-  
-      dispatch({type: TYPES.ADD_TO_CART, payload: id});
-  
-      // setTimeout(async ()=>{
-      //   await updateState()
-      //   }, delay)
-    };
-    
-    const delFromCart = (id, all) => {
-      if(all){
-        dispatch({type: TYPES.REMOVE_ALL_PRODUCTS, payload:id})
-      } else {
-        dispatch({type: TYPES.REMOVE_ONE_PRODUCT, payload:id})
-      }
-    };
-    
-    const clearCart = () => {
-  
-      
+    if (!itemInCart) {
+      options.method = "POST"
+      endpoint = `http://localhost:5000/cart`
+      newItem.quantity = 1
+      options.data = JSON.stringify(newItem)
+    } else {
+      options.method = "PUT"
+      endpoint = `http://localhost:5000/cart/${itemInCart.id}`
+      itemInCart.quantity = itemInCart.quantity += 1
+      options.data = JSON.stringify(itemInCart)
+      console.log(itemInCart.quantity)
     }
-  
-    useEffect(() => {
-        updateState();
-    }, []);
-  
-    const handleModalOpen = () => {dispatch({type: TYPES.OPEN_CARD_MODAL})};
+    await axios(endpoint, options)
 
-    const products = state.products,
+    dispatch({ type: TYPES.ADD_TO_CART, payload: id });
+
+    setTimeout(async () => {
+      await updateState()
+    }, delay)
+  };
+
+  const delFromCart = async (id, all) => {
+
+    let delay = 100;
+    const resCart = await axios.get("http://localhost:5000/cart")
+    const cartItems = resCart.data
+
+    const itemToDelete = cartItems.find((item) => item.id === id)
+
+    if (itemToDelete) {
+
+      let endpoint = `http://localhost:5000/cart/${itemToDelete.id}`
+
+      if (!all) {
+
+        const options = {
+          headers: "content-type: application/json",
+        };
+
+        if (itemToDelete.quantity > 1) {
+          options.method = "PUT";
+          itemToDelete.quantity = itemToDelete.quantity - 1;
+          options.data = JSON.stringify(itemToDelete)
+        } else {
+          options.method = "DELETE"
+        }
+        await axios(endpoint, options)
+      } else {
+        const options = {
+          method: "DELETE",
+          headers: "content-type: application/json"
+        }
+        await axios(endpoint, options)
+      }
+    }
+
+    setTimeout(async () => {
+      await updateState()
+    }, delay)
+
+  };
+
+  const clearCart = () => {
+
+
+  }
+
+  useEffect(() => {
+    updateState();
+  }, []);
+
+  const handleModalOpen = () => { dispatch({ type: TYPES.OPEN_CARD_MODAL }) };
+
+  const products = state.products,
     cart = state.cart
 
   const data = {
-    state, 
+    state,
     dispatch,
     updateState,
     addToCart,

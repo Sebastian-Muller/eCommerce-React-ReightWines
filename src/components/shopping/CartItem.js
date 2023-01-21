@@ -1,10 +1,15 @@
+import { getAllByDisplayValue } from "@testing-library/react";
+import {useContext} from "react"
+import {ProductsContext} from "../../context/ProductsProvider"
+
 
 
 const CartItem = ({item}) => {
 
+    const {delFromCart} = useContext(ProductsContext)
+
     const imagenes = require.context("../../assets/images", true);
-    const {newItem} = item
-    const {nombre, precio, quantity, tipo, image} = newItem
+    const {nombre, precio, quantity, tipo, image} = item
     
     return (
         <>
@@ -20,8 +25,8 @@ const CartItem = ({item}) => {
             </div>
             <h4>{nombre}</h4>
             <h5>{`${precio} x ${quantity} = ${precio*quantity}`}</h5>
-            <button>Eliminar uno</button>
-            <button>Eliminar todos</button>
+            <button onClick={()=>delFromCart(item.id)}>Eliminar uno</button>
+            <button onClick={()=>delFromCart(item.id, true)}>Eliminar todos</button>
             </div>
         </>
     )

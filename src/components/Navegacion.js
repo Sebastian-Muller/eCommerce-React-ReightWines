@@ -9,33 +9,33 @@ import BotonDropdown from "../components/BotonDropdown"
 
 
 const Navegacion = () => {
-  
+
   const [expand, setExpand] = useState(false)
 
   return (
     <NavContenedor>
 
       <LogoContenedor>
-        <NavLink to="/" className="navItem" onClick={()=> setExpand (!expand)}>
+        <NavLink to="/" className="navItem" onClick={() => setExpand(!expand)}>
           <img src={logoNav} alt="Reight" height="90px" width="100px" /></NavLink>
       </LogoContenedor>
-      
+
       <LinksContenedor open={expand}>
-  
-          <NavLink to="/bebidas" className="navItem" onClick={()=> setExpand (!expand)}>
-           Bebidas</NavLink>
 
-          <NavLink to="/nosotros" className="navItem" onClick={()=> setExpand (!expand)}>
-           Nosotros</NavLink>
-      
-          <NavLink to="/gift" className="navItem" onClick={()=> setExpand (!expand)}>
-           Gift</NavLink>
+        <NavLink to="/bebidas" className="navItem" onClick={() => setExpand(!expand)}>
+          Bebidas</NavLink>
 
-          <NavLink to="/contacto" className="navItem" onClick={()=> setExpand (!expand)}>
-           Contacto</NavLink>
+        <NavLink to="/nosotros" className="navItem" onClick={() => setExpand(!expand)}>
+          Nosotros</NavLink>
+
+        <NavLink to="/gift" className="navItem" onClick={() => setExpand(!expand)}>
+          Gift</NavLink>
+
+        <NavLink to="/contacto" className="navItem" onClick={() => setExpand(!expand)}>
+          Contacto</NavLink>
 
       </LinksContenedor>
-  
+
 
       <IconosContenedor >
         <NavLink to="/login"><i className="fa-solid fa-user" onClick={()=> setExpand (!expand)}></i></NavLink>
@@ -48,14 +48,14 @@ const Navegacion = () => {
           <BotonHamburguesa />
         </div>
       </IconosContenedor>
-      
+
     </NavContenedor>
   )
 }
 
 export default Navegacion
 
-  const NavContenedor = styled.nav`
+const NavContenedor = styled.nav`
     background-color: var(--orange);
     width: 100%;
     height: 15vh;
@@ -66,17 +66,17 @@ export default Navegacion
     position: relative;
   `;
 
-  const LogoContenedor = styled.div`
+const LogoContenedor = styled.div`
     padding: 1%;
     width:15%;
   `;
 
-  const LinksContenedor = styled.div`
+const LinksContenedor = styled.div`
 
     background-color: var(--orange);
     position: absolute;
     top: 15vh;
-    left: ${({open}) => (open ? "0" : "-100%")};
+    left: ${({ open }) => (open ? "0" : "-100%")};
     width: 100%;
     height: 85vh;
     display: flex;

@@ -1,12 +1,16 @@
-import React from "react";
 import Button from "./Button";
 import styled from "styled-components";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { ProductsContext } from "../context/ProductsProvider";
 
 
 const Card = ({ product }) => {
 
+
+    const { addToCart } = useContext(ProductsContext)
+
     const { id, nombre, tipo, precio, image, info, bgColor, colorPrecio, bgColorBoton } = product;
+
     const imagenes = require.context("../assets/images", true);
 
 
@@ -50,7 +54,8 @@ const Card = ({ product }) => {
                         <Tipo>{tipo}</Tipo>
                         <PrecioModS colorPrecio={colorPrecio} >$ <Precio>{precio}</Precio></PrecioModS>
                         <Info>{info}</Info>
-                        <Button bgColorBoton={bgColorBoton} product={product}></Button>
+                        {/* <Button bgColorBoton={bgColorBoton} product={product}></Button> */}
+                        <button onClick={()=>addToCart(id)}>Agregar al Carrito</button>
                     </ModalContainer>
                 </ModalArticle>
             }
