@@ -91,16 +91,28 @@
   ],
   "cart": [
     {
-      "id": 4,
-      "nombre": "Jonnie Walker",
-      "tipo": "Double Black Whisky",
-      "precio": 11300,
-      "image": "jonniewalker.webp",
-      "bgColor": "#fae0a9ef",
+      "id": 2,
+      "nombre": "Pedriel",
+      "tipo": "Rosado de Malbec",
+      "precio": 3600,
+      "image": "rosado.webp",
+      "bgColor": "#f4f3f1ef",
       "colorPrecio": "#7A7A78",
       "bgColorBoton": "#7A7A78",
-      "info": " Se destacan aromas frutales a naranja dulce y melocotón, acompañado por notas de mazapán y nuez.",
+      "info": "Un vino delicado en boca, con una acidez refrescante y aromas a frutas rojas y dejos florales al paladar.",
       "quantity": 3
+    },
+    {
+      "id": 3,
+      "nombre": "Antigal Uno",
+      "tipo": "Sauvignon Blanc",
+      "precio": 3000,
+      "image": "sauvBlanc.webp",
+      "bgColor": "#ece9aeef",
+      "colorPrecio": "#7A7A78",
+      "bgColorBoton": "#7A7A78",
+      "info": "Fresco, con leve sensación de dulzura, con aromas tropicales y cítricos, de volumen y estructura media.",
+      "quantity": 1
     }
   ]
 }

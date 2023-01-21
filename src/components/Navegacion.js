@@ -7,11 +7,10 @@ import BotonHamburguesa from "./BotonHamburguesa"
 
 
 
+
 const Navegacion = () => {
 
   const [expand, setExpand] = useState(false)
-
-
 
   return (
     <NavContenedor>
@@ -39,13 +38,13 @@ const Navegacion = () => {
 
 
       <IconosContenedor >
-        <NavLink to="/login"><i className="fa-solid fa-user"></i></NavLink>
+        <NavLink to="/login"><i className="fa-solid fa-user" onClick={()=> setExpand (!expand)}></i></NavLink>
         <div>
-          <NavLink to="/carro"><i className="fa-solid fa-cart-shopping"></i></NavLink>
+        <NavLink to="/carro"><i className="fa-solid fa-cart-shopping carrito" onClick={()=> setExpand (!expand)}></i></NavLink>
           <div className="badge">0</div>
         </div>
-
-        <div onClick={() => setExpand(!expand)}>
+        
+        <div onClick={()=> setExpand (!expand)}>
           <BotonHamburguesa />
         </div>
       </IconosContenedor>
@@ -59,7 +58,7 @@ export default Navegacion
 const NavContenedor = styled.nav`
     background-color: var(--orange);
     width: 100%;
-    height: 15vh;
+    height: 13vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -76,7 +75,7 @@ const LinksContenedor = styled.div`
 
     background-color: var(--orange);
     position: absolute;
-    top: 15vh;
+    top: 13vh;
     left: ${({ open }) => (open ? "0" : "-100%")};
     width: 100%;
     height: 85vh;
@@ -92,15 +91,17 @@ const LinksContenedor = styled.div`
     
     @media screen and (min-width: 768px){
       position: initial;
-      height: 15vh;
+      height: 13vh;
       flex-direction: row;
       justify-content: space-evenly;
-      padding: 1rem;
+      padding: 0.5rem;
       top: 0vh;
     }
-    
-  `;
 
+    @media screen and (min-width: 1200px){
+      padding: 0.8rem;
+    }
+  `;
 
 
 const IconosContenedor = styled.div`
@@ -113,7 +114,14 @@ const IconosContenedor = styled.div`
   i{
     color: var(--beige);
     font-size: 2.8rem;
-    
+
+    @media screen and (min-width: 768px){
+      font-size: 2.5rem;
+    }
+
+    @media screen and (min-width: 1200px){
+      font-size: 2.8rem;
+    }
   }
 
   .badge{
@@ -128,6 +136,4 @@ const IconosContenedor = styled.div`
     right: 10px;
     // visibility: hidden;
   }
-
   `
-
