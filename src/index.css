@@ -80,6 +80,13 @@ FIN ESTILOS OWL-CAROUSEL  */
   @media (min-width:768px){
     .navItem{
       padding: 25px 0;
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (min-width:1200px){
+    .navItem{
+      font-size: 2.8rem;
     }
   }
   
