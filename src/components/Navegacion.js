@@ -3,6 +3,7 @@ import { useState } from "react"
 import styled from "styled-components"
 import logoNav from "../assets/images/logoNav.webp"
 import BotonHamburguesa from "./BotonHamburguesa"
+import BotonDropdown from "../components/BotonDropdown"
 
 
 
@@ -10,8 +11,6 @@ import BotonHamburguesa from "./BotonHamburguesa"
 const Navegacion = () => {
   
   const [expand, setExpand] = useState(false)
-
-
 
   return (
     <NavContenedor>
@@ -39,12 +38,12 @@ const Navegacion = () => {
   
 
       <IconosContenedor >
-        <NavLink to="/login"><i className="fa-solid fa-user"></i></NavLink>
+        <NavLink to="/login"><i className="fa-solid fa-user" onClick={()=> setExpand (!expand)}></i></NavLink>
         <div>
-        <NavLink to="/carro"><i className="fa-solid fa-cart-shopping"></i></NavLink>
+        <NavLink to="/carro"><i className="fa-solid fa-cart-shopping carrito" onClick={()=> setExpand (!expand)}></i></NavLink>
           <div className="badge">0</div>
         </div>
-
+        
         <div onClick={()=> setExpand (!expand)}>
           <BotonHamburguesa />
         </div>
@@ -130,4 +129,3 @@ const IconosContenedor = styled.div`
   }
 
   `
-

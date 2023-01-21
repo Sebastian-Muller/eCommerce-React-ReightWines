@@ -69,7 +69,7 @@ export default ShoppingCart
 // background: rgb(255, 255, 255);
 // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 // border-radius: 10px;
-// border-color: aqua;
+// border-color: var(--dark);
 // box-shadow: 0 3px 5px 0 rgba(31, 38, 135, 0.37);
 // display: flex;
 // flex-direction: column;
