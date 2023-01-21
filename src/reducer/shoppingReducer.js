@@ -34,27 +34,13 @@ export const shoppingReducer = (state, action) => {
                     ...state,
                     cart: [...state.cart]
                 }
-
         }
-        case TYPES.REMOVE_ONE_PRODUCT: {
-            const itemToDelete = state.cart.find(
-                (item) => item.id === action.payload
-            );
-
-            return itemToDelete.quantity > 1
-                ? {
-                    //aca se hace un PUT subiendo un item.quantity-- o -=1
-                }
-                : {
-                    //aca se hace un DELETE del item usando su id, quizá se pueda pedir una confirmación, opcional
-                };
-        }
-        case TYPES.REMOVE_ALL_PRODUCTS: {
-            //aca se hace un DELETE usando el id del item
-        };
+        
 
         case TYPES.CLEAR_CART: {
-            //aca se limpia el cart del estado y se lo sube vacío al server (se puede ver otra forma)
+            return {...state,
+            cart: [shoppingInitialState.cart]
+            }
         }
 
         case TYPES.OPEN_CARD_MODAL: {

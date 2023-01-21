@@ -7,7 +7,7 @@ import CartItem from "./CartItem"
 
 const ShoppingCart = () => {
 
-const {updateState, clearCart, state} = useContext(ProductsContext);
+const {clearCart, state} = useContext(ProductsContext);
 
   // useEffect(() => {
   //   updateState()
@@ -23,7 +23,7 @@ const {updateState, clearCart, state} = useContext(ProductsContext);
         <div>
           {!state.cart[0] ? "No tienes productos en tu carrito" : state.cart.map((item) => <CartItem key={item.id} item={item} />)}
         <div>
-          <button onClick={clearCart}>Limpiar Carrito</button>
+          <button onClick={()=>clearCart()}>Limpiar Carrito</button>
 
           <button>Finalizar Compra</button>
         </div>

@@ -62,7 +62,6 @@ const ProductsProvider = ({ children }) => {
       endpoint = `http://localhost:5000/cart/${itemInCart.id}`
       itemInCart.quantity = itemInCart.quantity += 1
       options.data = JSON.stringify(itemInCart)
-      console.log(itemInCart.quantity)
     }
     await axios(endpoint, options)
 
@@ -114,10 +113,27 @@ const ProductsProvider = ({ children }) => {
 
   };
 
-  const clearCart = () => {
+  const clearCart = async () => {
+    let resCart = await axios.get("http://localhost:5000/")
+    let cartItems = resCart.data[1]
+
+    cartItems = [];
+
+    let endpoint = `http://localhost:5000/cart`
+    
+    const options = {
+      headers: "content-type: application/json"
+    }
+    options.method = "PUT"
+    options.data = JSON.stringify(cartItems)
+    await axios(endpoint, options)
 
 
-  }
+    let delay = 100;
+    setTimeout(async () => {
+      await updateState()
+    }, delay)
+}
 
   useEffect(() => {
     updateState();
