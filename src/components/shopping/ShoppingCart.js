@@ -5,10 +5,9 @@ import CartItem from "./CartItem"
 import {HiOutlineShoppingCart} from 'react-icons/hi';
 
 
-
 const ShoppingCart = () => {
-
-  const {clearCart,delFromCart, cart} = useContext(ProductsContext);
+ 
+  const {clearCart, delFromCart, cart, state} = useContext(ProductsContext);
 
   return (
     <CarritoContainer>
@@ -31,20 +30,19 @@ const ShoppingCart = () => {
       </CarritoContainer>
   )
 }
-
 export default ShoppingCart
-
-
+ 
 
 const CarritoContainer = styled.div`
   width: 100%;
-  height: 100%; 
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(251,243,232);
+  background: rgb(251, 243, 232);
   gap: 50px;
-`
+`;
+
 
 
 const FondoBlanco = styled.div` width: 80vw;
@@ -146,6 +144,15 @@ const ButtonFinalizarCompra = styled.button`
   }
 `
 
+// const CounterContainer = styled.div`
+//   height: 20%;
+//   text-align: center;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   gap: 0.3px;
+//   padding-top: 15px;
+// `;
 
 /******CODIGO ANTERIOR ********/
 // const ShoppingCart = () => {

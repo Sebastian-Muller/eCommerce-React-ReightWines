@@ -114,22 +114,23 @@ const ProductsProvider = ({ children }) => {
   };
 
   const clearCart = async () => {
-    let resCart = await axios.get("http://localhost:5000/")
-    let cartItems = resCart.data[1]
-
-    cartItems = [];
-
-    let endpoint = `http://localhost:5000/cart`
-    
-    const options = {
-      headers: "content-type: application/json"
-    }
-    options.method = "PUT"
-    options.data = JSON.stringify(cartItems)
-    await axios(endpoint, options)
 
 
-    let delay = 100;
+let endpoint = "http://localhost:5000/cart"
+
+let delay = 100;
+
+const test = null;
+
+const options = {
+  method: "DELETE",
+  headers: "content-type: application/json",
+  data: JSON.stringify(test)
+}
+
+await axios(endpoint, options)
+
+
     setTimeout(async () => {
       await updateState()
     }, delay)

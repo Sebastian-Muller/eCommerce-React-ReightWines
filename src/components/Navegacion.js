@@ -3,6 +3,7 @@ import { useState } from "react"
 import styled from "styled-components"
 import logoNav from "../assets/images/logoNav.webp"
 import BotonHamburguesa from "./BotonHamburguesa"
+import Contador from "./Contador"
 
 
 
@@ -16,7 +17,7 @@ const Navegacion = () => {
     <NavContenedor>
 
       <LogoContenedor>
-        <NavLink to="/" className="navItem" onClick={() => setExpand(!expand)}>
+        <NavLink to="/" className="navItem">
           <img src={logoNav} alt="Reight" height="90px" width="100px" /></NavLink>
       </LogoContenedor>
 
@@ -38,10 +39,10 @@ const Navegacion = () => {
 
 
       <IconosContenedor >
-        <NavLink to="/login"><i className="fa-solid fa-user" onClick={()=> setExpand (!expand)}></i></NavLink>
+        <NavLink to="/login"><i className="fa-solid fa-user" ></i></NavLink>
         <div>
-        <NavLink to="/carro"><i className="fa-solid fa-cart-shopping carrito" onClick={()=> setExpand (!expand)}></i></NavLink>
-          <div className="badge">0</div>
+        <NavLink to="/carro"><i className="fa-solid fa-cart-shopping carrito" ></i></NavLink>
+          <Contador></Contador>
         </div>
         
         <div onClick={()=> setExpand (!expand)}>
@@ -58,7 +59,7 @@ export default Navegacion
 const NavContenedor = styled.nav`
     background-color: var(--orange);
     width: 100%;
-    height: 13vh;
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,18 +68,23 @@ const NavContenedor = styled.nav`
   `;
 
 const LogoContenedor = styled.div`
-    padding: 1%;
-    width:15%;
+    width: 10rem;
+    height: 7rem;
+
+    img{
+      object-fit: contain;
+      height: 100%;
+    }
   `;
 
 const LinksContenedor = styled.div`
 
     background-color: var(--orange);
     position: absolute;
-    top: 13vh;
+    top: 10vh;
     left: ${({ open }) => (open ? "0" : "-100%")};
     width: 100%;
-    height: 85vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -91,7 +97,7 @@ const LinksContenedor = styled.div`
     
     @media screen and (min-width: 768px){
       position: initial;
-      height: 13vh;
+      height: 100%;
       flex-direction: row;
       justify-content: space-evenly;
       padding: 0.5rem;
@@ -124,16 +130,4 @@ const IconosContenedor = styled.div`
     }
   }
 
-  .badge{
-    position: relative;
-    top: -20px;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background-color: black;
-    padding: .5rem;
-    font-size: 1rem;
-    right: 10px;
-    // visibility: hidden;
-  }
   `

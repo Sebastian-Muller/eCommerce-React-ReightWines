@@ -5,7 +5,9 @@ import dante from "../assets/images/team/dante.jpg"
 import facu from "../assets/images/team/facu.jpg"
 import anto from "../assets/images/team/anto.jpg"
 
-
+import flor from "../assets/images/team/flor.jpeg"
+import gracy from "../assets/images/team/gracy.jpeg"
+import seba from "../assets/images/team/seba.jpeg"
 
 
 
@@ -162,6 +164,7 @@ border-radius: 10px;
     
     @media screen and (min-width: 1200px){
       width: 400px;
+      height: 200px;
     }
 
     &:hover .person-img{
@@ -180,7 +183,7 @@ border-radius: 10px;
       .person-img{
         width: 100%;
         height: 100%;
-        object-fit:contain;
+        object-fit: cover;
         background-color: #000;
         transition: 300ms all;
       }
@@ -229,19 +232,19 @@ border-radius: 10px;
     },
     {
       id: "2",
-      imagen: `${logo}` ,
+      imagen: `${gracy}` ,
       nombre: "Graciela Faria" ,
       info: "Web Developer" ,
-      linkedin: "https://ar.linkedin.com/" ,
-      github: "https://github.com/"
+      linkedin: "https://www.linkedin.com/in/graciela-faria-5b0389130" ,
+      github: "https://github.com/gracy94"
     },
     {
       id: "3",
-      imagen: `${logo}` ,
-      nombre: "Sebastian Muller" ,
+      imagen: `${seba}` ,
+      nombre: "Sebastian Müller" ,
       info: "Web Developer" ,
-      linkedin: "www.linkedin.com/in/anto-bonaglia" ,
-      github: "https://github.com/AntoBonaglia"
+      linkedin: "https://ar.linkedin.com/" ,
+      github: "https://github.com/"
     },
     {
       id: "4",
@@ -261,11 +264,11 @@ border-radius: 10px;
     },
     {
       id: "6",
-      imagen: `${logo}` ,
+      imagen: `${flor}` ,
       nombre: "Florencia Staricco" ,
       info: "Web Developer" ,
-      linkedin: "https://ar.linkedin.com/" ,
-      github: "https://github.com/"
+      linkedin: "https://www.linkedin.com/in/florencia-staricco" ,
+      github: "https://github.com/FlorStaricco"
     },
     
   ]

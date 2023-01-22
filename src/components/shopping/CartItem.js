@@ -1,4 +1,4 @@
-// import { getAllByDisplayValue } from "@testing-library/react";
+import { getAllByDisplayValue } from "@testing-library/react";
 import {useContext} from "react"
 import {ProductsContext} from "../../context/ProductsProvider"
 import styled from 'styled-components'
@@ -135,7 +135,6 @@ const CounterContainer = styled.div`
   justify-content: center;
   gap: 0.3px;
   padding-top: 15px;
-
   div {
     display: flex;
     flex-direction: row;
