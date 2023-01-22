@@ -1,26 +1,24 @@
-import Button from "./Button";
+import {HiOutlineShoppingCart} from 'react-icons/hi';
 import styled from "styled-components";
 import { useState, useEffect, useContext } from "react";
 import { ProductsContext } from "../context/ProductsProvider";
+import Modal from 'react-bootstrap/Modal';
+import { Link } from "react-router-dom"
+
 
 
 const Card = ({ product }) => {
-
-
-    const { addToCart } = useContext(ProductsContext)
-
-    const { id, nombre, tipo, precio, image, info, bgColor, colorPrecio, bgColorBoton } = product;
+    const { addToCart, cart} = useContext(ProductsContext)
+    const { id, nombre, tipo, precio, image, info,  bgColor, colorPrecio, bgColorBoton } = product;
+  
 
     const imagenes = require.context("../assets/images", true);
-
-
+    
     const handelModalContainerClick = (e) => e.stopPropagation();
-
 
     const [isOpen, setIsOpen] = useState(false)
     const openModal = () => setIsOpen(true)
     const closeModal = () => setIsOpen(false)
-
 
     useEffect(() => {
         if (isOpen === true) {
@@ -29,6 +27,13 @@ const Card = ({ product }) => {
             document.body.style.overflow = 'auto'
         }
     }, [isOpen])
+
+    /* ***** Estados del ModalAddCart ***** */
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+  
+    
 
     return (
         <>
@@ -54,16 +59,138 @@ const Card = ({ product }) => {
                         <Tipo>{tipo}</Tipo>
                         <PrecioModS colorPrecio={colorPrecio} >$ <Precio>{precio}</Precio></PrecioModS>
                         <Info>{info}</Info>
-                        {/* <Button bgColorBoton={bgColorBoton} product={product}></Button> */}
-                        <button onClick={()=>addToCart(id)}>Agregar al Carrito</button>
+
+                        <ButtAddProduct onClick={()=>{addToCart(id); handleShow(); closeModal()}} bgColorBoton={bgColorBoton}>
+                            <HiOutlineShoppingCart style={{fontSize:"20", margin:"0px 8px" }}/> Agregar al Carrito
+                        </ButtAddProduct>
                     </ModalContainer>
                 </ModalArticle>
             }
+            <Modal key={id} show={show} onHide={handleClose} backdrop="static" keyboard={false} 
+                style={{height: '370px', position:'absolute', top:60 }}>
+                    <ModHeader  closeButton>
+                    ¡El producto fue añadido con éxito!
+                    </ModHeader>
+                    <Modal.Body>
+                        <ModBody>
+                            <ModImg src={imagenes(`./${image}`)} alt={tipo} />
+                            <ModText>
+                                <Nombre><ModText>{nombre}</ModText></Nombre>
+                                <Tipo><ModText>{tipo} -750ml</ModText></Tipo>
+                                <ModPrecio>$<p>{`${precio} x 1`}</p></ModPrecio>
+                            </ModText>
+                        </ModBody>
+                    </Modal.Body>
+                    <Modal.Footer >
+                        <Link to="/carro" className="modCart" onClick={handleClose} >
+                            <ButtonCart variant="secondary" >
+                                VER CARRITO
+                            </ButtonCart>
+                        </Link>
+                        <Link to="/bebidas" className="modCart" onClick={handleClose} >
+                            <ButtonShop variant="primary" >
+                                CONTINUAR COMPRANDO
+                            </ButtonShop>
+                        </Link>
+                    </Modal.Footer>
+            </Modal>
         </>
     )
 }
 export default Card
 
+
+/**** Styles ModalAddCart ****/
+const ModHeader = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 15px;
+    color: var(--orange75);
+    font-family: "Carter One", cursive;
+    font-size: 20px;
+    
+`
+const ModBody = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    text-align: center;
+    margin: 0px 30px;
+`
+const ModText = styled.p`
+    text-align: center;
+    padding: auto;
+    margin: auto;
+    color: var(--dark65);
+`
+const ModPrecio = styled.p`
+    font-family:'Satisfy', cursive;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+   p{
+    font-size: 18px;
+    padding: 5px;
+    position: relative;
+    top: -5px;
+   }
+`
+const ModImg = styled.img`
+    width: 180px;
+    height: auto;
+` 
+const ButtonCart = styled.button`
+    color:white;
+    background-color: var(--orange);
+    margin: 10px;
+    padding: 5px;
+    border-radius: 0.5rem;
+    border: none;
+    font-family: "Nunito", sans-serif;
+    font-size: 12px;
+    text-align: center;
+    width:auto;
+    height: 28px;
+    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2), 0 6px 12px 0 rgba(0,0,0,0.19);
+
+  @media screen and (min-width: 1024px){
+  &:hover{background-color: #999898 !important;}}
+
+  &:active {
+    background-color: var(--orange) !important;
+    box-shadow: none;
+    transform: translateY(4px);}
+`
+const ButtonShop = styled.button`
+    margin: 10px;
+    padding: 5px;
+    border-radius: 0.5rem;
+    border: 1px solid var(--orange);
+    color: var(--orange) ;
+    background-color: var(--beige);
+    font-family: "Nunito", sans-serif;
+    font-size: 12px;
+    text-align: center;
+    width:auto;
+    height: 28px;
+    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2), 0 6px 12px 0 rgba(0,0,0,0.19);
+
+  @media screen and (min-width: 1024px){
+  &:hover{background-color: #999898 !important;
+   color: var(--beige) ;
+   border: 1px solid #999898;}
+
+  &:active {
+    background-color: var(--orange) !important;
+    box-shadow: none;
+    transform: translateY(4px);
+    display: flex;}
+  }
+`
 
 /**** Styles Container ****/
 const CardContainer = styled.figure`
@@ -208,4 +335,28 @@ const Info = styled.p`
     font-size: 16px;
     font-family: 'Satisfy', cursive;
     margin: 0px 30px;
+`
+const ButtAddProduct= styled.button`
+  color:white;
+  background-color: ${props => props.bgColorBoton};
+  padding: 1rem 2rem;
+  position: relative;
+  top: -10px;
+  border-radius: 0.5rem;
+  border: none;
+  font-family: 'Righteous', cursive;
+  font-size: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  width:70%;
+  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2), 0 6px 12px 0 rgba(0,0,0,0.19);
+
+  @media screen and (min-width: 1024px){
+  &:hover{background-color: #999898 !important;}}
+
+  &:active {
+    background-color: var(--orange) !important;
+    box-shadow: none;
+    display: flex;
+    transform: translateY(4px);}
 `

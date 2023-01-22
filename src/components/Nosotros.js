@@ -3,6 +3,8 @@ import atardecerFondo from "../assets/images/atardecerFondo.webp"
 import logo from "../assets/images/logoGrandeConFondo.webp"
 import dante from "../assets/images/team/dante.jpg"
 import facu from "../assets/images/team/facu.jpg"
+import anto from "../assets/images/team/anto.jpg"
+
 
 
 
@@ -238,12 +240,12 @@ border-radius: 10px;
       imagen: `${logo}` ,
       nombre: "Sebastian Muller" ,
       info: "Web Developer" ,
-      linkedin: "https://ar.linkedin.com/" ,
-      github: "https://github.com/"
+      linkedin: "www.linkedin.com/in/anto-bonaglia" ,
+      github: "https://github.com/AntoBonaglia"
     },
     {
       id: "4",
-      imagen: `${logo}` ,
+      imagen: `${anto}` ,
       nombre: "Antonela Bonaglia" ,
       info: "Web Developer" ,
       linkedin: "https://ar.linkedin.com/" ,
