@@ -5,7 +5,7 @@ import dante from "../assets/images/team/dante.jpg"
 import facu from "../assets/images/team/facu.jpg"
 import flor from "../assets/images/team/flor.jpeg"
 import gracy from "../assets/images/team/gracy.jpeg"
-
+import seba from "../assets/images/team/seba.jpeg"
 
 
 
@@ -238,11 +238,11 @@ border-radius: 10px;
     },
     {
       id: "3",
-      imagen: `${logo}` ,
-      nombre: "Sebastian Muller" ,
+      imagen: `${seba}` ,
+      nombre: "Sebastian Müller" ,
       info: "Web Developer" ,
-      linkedin: "https://ar.linkedin.com/" ,
-      github: "https://github.com/"
+      linkedin: "https://www.linkedin.com/in/sebastian-alejandro-muller" ,
+      github: "https://github.com/Sebastian-Muller"
     },
     {
       id: "4",
