@@ -55,7 +55,7 @@ const ProductItem = styled.div`
     background-color: whitesmoke;
 
     .product__img{
-        width: 20rem;
+        max-width: 20rem;
         margin: auto;
     }
 

@@ -191,7 +191,7 @@ const ButtonsContainer = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   gap: 20px;
-  padding-top: 5px;
+  padding: 1rem;
   margin-bottom: 25px;
 
   @media screen and (min-width: 1200px) {
@@ -200,19 +200,25 @@ const ButtonsContainer = styled.div`
 `;
 const ButtonLimpiarCarro = styled.button`
   width: 200px;
-  height: 55px;
+  min-height: 55px;
   color: var(--orange);
   font-size: 2rem;
   background: rgb(255, 255, 255);
   border-radius: 1rem;
   font-family: var(--text-font);
-  font-weight: 400;
+  font-weight: 700;
   margin-top: 10px;
+  transition: all 300ms;
+
+  &:hover{
+    background-color: #636464;
+    color: var(--beige);
+  }
 `;
 
 const ButtonFinalizarCompra = styled.button`
   width: 200px;
-  height: 55px;
+  min-height: 55px;
   background: var(--orange);
   color: white;
   font-size: 2rem;
@@ -220,4 +226,8 @@ const ButtonFinalizarCompra = styled.button`
   font-family: var(--text-font);
   font-weight: 700;
   margin-top: 10px;
+
+  &:hover{
+    background-color: #f0692f;
+  }
 `;

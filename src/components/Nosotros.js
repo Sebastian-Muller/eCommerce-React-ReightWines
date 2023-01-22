@@ -161,6 +161,7 @@ border-radius: 10px;
     
     @media screen and (min-width: 1200px){
       width: 400px;
+      height: 200px;
     }
 
     &:hover .person-img{
@@ -179,7 +180,7 @@ border-radius: 10px;
       .person-img{
         width: 100%;
         height: 100%;
-        object-fit:contain;
+        object-fit: cover;
         background-color: #000;
         transition: 300ms all;
       }

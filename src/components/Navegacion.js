@@ -58,7 +58,7 @@ export default Navegacion
 const NavContenedor = styled.nav`
     background-color: var(--orange);
     width: 100%;
-    height: 13vh;
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,18 +67,23 @@ const NavContenedor = styled.nav`
   `;
 
 const LogoContenedor = styled.div`
-    padding: 1%;
-    width:15%;
+    width: 10rem;
+    height: 100%;
+
+    img{
+      object-fit: contain;
+      height: 100%;
+    }
   `;
 
 const LinksContenedor = styled.div`
 
     background-color: var(--orange);
     position: absolute;
-    top: 13vh;
+    top: 10vh;
     left: ${({ open }) => (open ? "0" : "-100%")};
     width: 100%;
-    height: 85vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -91,7 +96,7 @@ const LinksContenedor = styled.div`
     
     @media screen and (min-width: 768px){
       position: initial;
-      height: 13vh;
+      height: 100%;
       flex-direction: row;
       justify-content: space-evenly;
       padding: 0.5rem;
