@@ -3,6 +3,7 @@ import { useState } from "react"
 import styled from "styled-components"
 import logoNav from "../assets/images/logoNav.webp"
 import BotonHamburguesa from "./BotonHamburguesa"
+import Contador from "./Contador"
 
 
 
@@ -41,7 +42,7 @@ const Navegacion = () => {
         <NavLink to="/login"><i className="fa-solid fa-user" onClick={()=> setExpand (!expand)}></i></NavLink>
         <div>
         <NavLink to="/carro"><i className="fa-solid fa-cart-shopping carrito" onClick={()=> setExpand (!expand)}></i></NavLink>
-          <div className="badge">0</div>
+          <Contador></Contador>
         </div>
         
         <div onClick={()=> setExpand (!expand)}>
@@ -129,16 +130,4 @@ const IconosContenedor = styled.div`
     }
   }
 
-  .badge{
-    position: relative;
-    top: -20px;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background-color: black;
-    padding: .5rem;
-    font-size: 1rem;
-    right: 10px;
-    // visibility: hidden;
-  }
   `

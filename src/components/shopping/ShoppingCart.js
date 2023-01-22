@@ -63,6 +63,8 @@ const FondoBlanco = styled.div`
 
   div{
     width: 100%;
+    text-align: center;
+    font-size: 2rem;
   }
 `;
 
