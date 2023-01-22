@@ -60,6 +60,10 @@ const FondoBlanco = styled.div`
   gap: 8px;
   margin-bottom: 10%;
   margin-top: 10%;
+
+  div{
+    width: 100%;
+  }
 `;
 
 const Titulo = styled.div`

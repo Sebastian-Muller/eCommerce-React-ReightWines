@@ -101,6 +101,42 @@
       "bgColorBoton": "#7A7A78",
       "info": "Un vino delicado en boca, con una acidez refrescante y aromas a frutas rojas y dejos florales al paladar.",
       "quantity": 1
+    },
+    {
+      "id": 3,
+      "nombre": "Antigal Uno",
+      "tipo": "Sauvignon Blanc",
+      "precio": 3000,
+      "image": "sauvBlanc.webp",
+      "bgColor": "#ece9aeef",
+      "colorPrecio": "#7A7A78",
+      "bgColorBoton": "#7A7A78",
+      "info": "Fresco, con leve sensación de dulzura, con aromas tropicales y cítricos, de volumen y estructura media.",
+      "quantity": 5
+    },
+    {
+      "id": 7,
+      "nombre": "G. H. Mumm Cordon",
+      "tipo": "Champagne Rouge Brut",
+      "precio": 12800,
+      "image": "ghMumm.webp",
+      "bgColor": "#f5e8afef",
+      "colorPrecio": "#7A7A78",
+      "bgColorBoton": "#7A7A78",
+      "info": "Es delicado y complejo, donde las frutas de la uva se entremezclan con suaves notas de frutos secos.",
+      "quantity": 2
+    },
+    {
+      "id": 5,
+      "nombre": "Chivas Regal 12",
+      "tipo": "Blended Scotch Whisky",
+      "precio": 11000,
+      "image": "chivas.webp",
+      "bgColor": "#dac2c9ef",
+      "colorPrecio": "#7A7A78",
+      "bgColorBoton": "#7A7A78",
+      "info": "Los olores son suaves, una unión de fragancias florales, hierbas y flores, con algo de miel y vainilla.",
+      "quantity": 1
     }
   ]
 }
