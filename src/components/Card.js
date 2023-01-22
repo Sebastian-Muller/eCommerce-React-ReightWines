@@ -8,7 +8,7 @@ import { Link } from "react-router-dom"
 
 
 const Card = ({ product }) => {
-    const { addToCart, cart} = useContext(ProductsContext)
+    const { addToCart, state} = useContext(ProductsContext)
     const { id, nombre, tipo, precio, image, info,  bgColor, colorPrecio, bgColorBoton } = product;
   
 
@@ -20,13 +20,13 @@ const Card = ({ product }) => {
     const openModal = () => setIsOpen(true)
     const closeModal = () => setIsOpen(false)
 
-    useEffect(() => {
-        if (isOpen === true) {
-            document.body.style.overflow = 'hidden'
-        } else if (isOpen === false) {
-            document.body.style.overflow = 'auto'
-        }
-    }, [isOpen])
+    // useEffect(() => {
+    //     if (isOpen === true) {
+    //         document.body.style.overflow = 'hidden'
+    //     } else if (isOpen === false) {
+    //         document.body.style.overflow = 'auto'
+    //     }
+    // }, [isOpen])
 
     /* ***** Estados del ModalAddCart ***** */
     const [show, setShow] = useState(false);

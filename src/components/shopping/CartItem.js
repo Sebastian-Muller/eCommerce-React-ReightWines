@@ -7,10 +7,10 @@ import { Link } from "react-router-dom"
 
 const CartItem = ({item}) => {
 
-  
+  const {delFromCart} = useContext(ProductsContext)
 
     const imagenes = require.context("../../assets/images", true);
-    const {nombre, precio, quantity, tipo, image} = item
+    const {id, nombre, precio, quantity, tipo, image} = item
 
 
     return (
@@ -29,11 +29,10 @@ const CartItem = ({item}) => {
             <CounterContainer>
                 <ButtonContainer>
                     <ButtonMenos>-</ButtonMenos>
-                    <ButtonCero>0</ButtonCero>
                     <ButtonMas>+</ButtonMas>
                 </ButtonContainer>
                 <Link to="/carro" className="modCart">
-                    <ButtonClear>
+                    <ButtonClear onClick={(all)=>delFromCart(id, all)}>
                         Eliminar Todos
                     </ButtonClear>
                 </Link>
@@ -142,75 +141,77 @@ const CounterContainer = styled.div`
 `
 const ButtonContainer = styled.div`
     position: relative;
-    left: 35px;
-    display: flex;
-    align-items: baseline;
-   
+    bottom: 10px;
+    left: 45px;
+    display: flex; 
 `
 const ButtonMenos = styled.button`
-    background: transparent;
-    color: var(--orange);
+    background: var(--dark10);
+    color: var(--dark80);
     font-size: 2rem;
     width: 25px;
     height: 25px;
     margin: 5px;
     border-radius: 0.5rem;
-    border: solid 2px  var(--dark80) ;
+    border: solid 1px  var(--dark80) ;
     font-family: "Nunito", sans-serif;
     font-size: 15px;
     text-align: center;
-    font-weight: bold;
     position: relative;
     top: 15px;
-`
-
-const ButtonCero = styled.button`
-    background: transparent;
-    color: var(--orange);
-    font-size: 2rem;
-    width: 25px;
-    height: 25px;
-    margin: 5px;
-    border-radius: 0.5rem;
-    border: solid 2px  var(--dark80) ;
-    font-family: "Nunito", sans-serif;
-    font-size: 15px;
-    text-align: center;
-    font-weight: bold;
-    position: relative;
-    top: 15px;
+    
+    @media screen and (min-width: 1024px){
+    &:active {
+    background-color: var(--dark35) !important;
+    color: var(--beige);
+    box-shadow: none;
+    transform: translateY(4px);
+    transition: 0.15s;
+    }
+  }
 `
 
 const ButtonMas = styled.button`
-    background: transparent;
-    color: var(--orange);
+    background: var(--dark10);
+    color: var(--dark80);
     font-size: 2rem;
     width: 25px;
     height: 25px;
     margin: 5px;
     border-radius: 0.5rem;
-    border: solid 2px  var(--dark80) ;
+    border: solid 1px  var(--dark80) ;
     font-family: "Nunito", sans-serif;
     font-size: 15px;
     text-align: center;
-    font-weight: bold;
     position: relative;
     top: 15px;
+    left: 10px;
+    
+    @media screen and (min-width: 1024px){
+    &:active {
+    background-color: var(--dark35) !important;
+    color: var(--beige);
+    box-shadow: none;
+    transform: translateY(4px);
+    transition: 0.15s;
+    }
+  }
 `
+
 const ButtonClear = styled.div`
     color:white;
     background-color: var(--orange);
-    margin: 10px;
-    padding: 5px;
+    padding: 5px 10px;
     position: relative;
     top: 25px;
-    left: 35px;
+    left: 30px;
     border-radius: 0.5rem;
     border: none;
     font-family: "Nunito", sans-serif;
-    font-size: 12px;
+    font-size: 11px;
+    text-transform: uppercase;
     text-align: center;
-    width:auto;
+    width:115px;
     height: 28px;
     box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 5px 5px 0 rgba(0,0,0,0.19);
 

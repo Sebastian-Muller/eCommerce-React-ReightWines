@@ -1,13 +1,17 @@
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { ProductsContext } from '../../context/ProductsProvider'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import CartItem from "./CartItem"
 import {HiOutlineShoppingCart} from 'react-icons/hi';
+import {GiCheckMark} from 'react-icons/gi';
+import { useState } from 'react';
+
 
 
 const ShoppingCart = () => {
  
-  const {clearCart, delFromCart, cart, state} = useContext(ProductsContext);
+  const {clearCart, state} = useContext(ProductsContext);
+const [first, setfirst] = useState()
 
   return (
     <CarritoContainer>
@@ -17,9 +21,12 @@ const ShoppingCart = () => {
             <h1>Carrito de Compras</h1>
           </Titulo>
 
-          <div>
-              {cart.map((item, i) => <CartItem key={i} item={item} delFromCart={delFromCart} />)}
-          </div>
+          <ContainerText>
+            {!state.cart[0] ? "Tu carrito esta vacío, pero puedes ir a ver nuestros productos...": state.cart.map((item) => <CartItem key={item.id} item={item} />)}
+            <button>
+              <GiCheckMark />Seguir Comprando
+            </button>
+          </ContainerText>
 
           <ButtonsContainer>
               <ButtonLimpiarCarro onClick={clearCart}>Limpiar Carrito</ButtonLimpiarCarro>
@@ -33,7 +40,17 @@ const ShoppingCart = () => {
 export default ShoppingCart
  
 
+const fadeIn = keyframes`
+0% {
+    opacity:0;
+}
+100% {
+    opacity:1
+}
+`
+
 const CarritoContainer = styled.div`
+  animation: ${fadeIn} 1s ease-out;
   width: 100%;
   height: 100%;
   display: flex;
@@ -42,8 +59,6 @@ const CarritoContainer = styled.div`
   background: rgb(251, 243, 232);
   gap: 50px;
 `;
-
-
 
 const FondoBlanco = styled.div` width: 80vw;
   height: 90%;
@@ -78,7 +93,13 @@ h1{
   font-weight: 600;
   font-family:'EB Garamond', serif;
 }
- `
+`
+const ContainerText = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
 const ButtonsContainer = styled.div`
   height: 30%;
   text-align: center;

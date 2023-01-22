@@ -8,6 +8,7 @@
   --dark: #252827;
   --dark80: #252827CC;
   --dark35: #2629285a;
+  --dark10: #2629281a;
   --dark65: #262928a6;
   --green: #75A971;
   --violet: #9073A9;
@@ -91,4 +92,5 @@ FIN ESTILOS OWL-CAROUSEL  */
 .modCart {
   height: 100%;
   text-decoration: none;
+  text-align: center;
 }
