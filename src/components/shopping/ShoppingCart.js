@@ -22,7 +22,7 @@ const ShoppingCart = () => {
           </div>
 
           <ButtonsContainer>
-              <ButtonLimpiarCarro onClick={clearCart}>Limpiar Carrito</ButtonLimpiarCarro>
+              <ButtonLimpiarCarro onClick={() => clearCart()}>Limpiar Carrito</ButtonLimpiarCarro>
 
               <ButtonFinalizarCompra>Finalizar Compra</ButtonFinalizarCompra>
           </ButtonsContainer>
