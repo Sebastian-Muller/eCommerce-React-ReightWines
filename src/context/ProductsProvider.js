@@ -115,26 +115,26 @@ const ProductsProvider = ({ children }) => {
 
   const clearCart = async () => {
 
+    let delay = 100;
+    const resCart = await axios.get("http://localhost:5000/cart")
+    const cartItems = resCart.data
 
-let endpoint = "http://localhost:5000/cart"
+    cartItems.forEach(async item => {
 
-let delay = 100;
+      let endpoint = `http://localhost:5000/cart/${item.id}`
 
-const test = null;
+      const options = {
+        method: "DELETE",
+        headers: "content-type: application/json",
+      }
 
-const options = {
-  method: "DELETE",
-  headers: "content-type: application/json",
-  data: JSON.stringify(test)
-}
-
-await axios(endpoint, options)
-
+      await axios(endpoint, options)
+    });
 
     setTimeout(async () => {
       await updateState()
     }, delay)
-}
+  }
 
   useEffect(() => {
     updateState();
