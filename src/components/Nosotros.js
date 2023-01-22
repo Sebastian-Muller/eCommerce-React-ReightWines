@@ -3,6 +3,7 @@ import atardecerFondo from "../assets/images/atardecerFondo.webp"
 import logo from "../assets/images/logoGrandeConFondo.webp"
 import dante from "../assets/images/team/dante.jpg"
 import facu from "../assets/images/team/facu.jpg"
+import flor from "../assets/images/team/flor.jpeg"
 
 
 
@@ -259,11 +260,11 @@ border-radius: 10px;
     },
     {
       id: "6",
-      imagen: `${logo}` ,
+      imagen: `${flor}` ,
       nombre: "Florencia Staricco" ,
       info: "Web Developer" ,
-      linkedin: "https://ar.linkedin.com/" ,
-      github: "https://github.com/"
+      linkedin: "https://www.linkedin.com/in/florencia-staricco" ,
+      github: "https://github.com/FlorStaricco"
     },
     
   ]
