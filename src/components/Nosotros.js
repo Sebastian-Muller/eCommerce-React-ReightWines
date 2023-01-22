@@ -4,6 +4,7 @@ import logo from "../assets/images/logoGrandeConFondo.webp"
 import dante from "../assets/images/team/dante.jpg"
 import facu from "../assets/images/team/facu.jpg"
 import flor from "../assets/images/team/flor.jpeg"
+import gracy from "../assets/images/team/gracy.jpeg"
 
 
 
@@ -229,11 +230,11 @@ border-radius: 10px;
     },
     {
       id: "2",
-      imagen: `${logo}` ,
+      imagen: `${gracy}` ,
       nombre: "Graciela Faria" ,
       info: "Web Developer" ,
-      linkedin: "https://ar.linkedin.com/" ,
-      github: "https://github.com/"
+      linkedin: "https://www.linkedin.com/in/graciela-faria-5b0389130" ,
+      github: "https://github.com/gracy94"
     },
     {
       id: "3",
