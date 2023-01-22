@@ -17,7 +17,7 @@ const Navegacion = () => {
     <NavContenedor>
 
       <LogoContenedor>
-        <NavLink to="/" className="navItem" onClick={() => setExpand(!expand)}>
+        <NavLink to="/" className="navItem">
           <img src={logoNav} alt="Reight" height="90px" width="100px" /></NavLink>
       </LogoContenedor>
 
@@ -39,9 +39,9 @@ const Navegacion = () => {
 
 
       <IconosContenedor >
-        <NavLink to="/login"><i className="fa-solid fa-user" onClick={()=> setExpand (!expand)}></i></NavLink>
+        <NavLink to="/login"><i className="fa-solid fa-user" ></i></NavLink>
         <div>
-        <NavLink to="/carro"><i className="fa-solid fa-cart-shopping carrito" onClick={()=> setExpand (!expand)}></i></NavLink>
+        <NavLink to="/carro"><i className="fa-solid fa-cart-shopping carrito" ></i></NavLink>
           <Contador></Contador>
         </div>
         
@@ -69,7 +69,7 @@ const NavContenedor = styled.nav`
 
 const LogoContenedor = styled.div`
     width: 10rem;
-    height: 100%;
+    height: 7rem;
 
     img{
       object-fit: contain;
