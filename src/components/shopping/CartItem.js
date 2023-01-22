@@ -1,4 +1,3 @@
-import { getAllByDisplayValue } from "@testing-library/react";
 import {useContext} from "react"
 import {ProductsContext} from "../../context/ProductsProvider"
 
