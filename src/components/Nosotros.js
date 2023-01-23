@@ -23,7 +23,7 @@ const Nosotros = () => {
 
       <FraseContainer>
         <p>Brindamos el servicio de enólogia a destacados Hoteles y Restaurants de Argentina. <br></br>
-           A través de nuestra página web les acercamos una variedad de bebidas, accesorios y delicatessen que fueron seleccionados especialmente para que puedan disfrutarlos.
+          A través de nuestra página web les acercamos una variedad de bebidas, accesorios y delicatessen que fueron seleccionados especialmente para que puedan disfrutarlos.
         </p>
       </FraseContainer>
       

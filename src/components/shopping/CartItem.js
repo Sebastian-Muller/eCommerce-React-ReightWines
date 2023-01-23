@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 
 const CartItem = ({item}) => {
 
-  const {delFromCart} = useContext(ProductsContext)
+  const {delFromCart, addToCart} = useContext(ProductsContext)
 
     const imagenes = require.context("../../assets/images", true);
     const {id, nombre, precio, quantity, tipo, image} = item
@@ -40,26 +40,7 @@ const CartItem = ({item}) => {
               </CounterContainer>
 
         </ItemCarrito>
-    )    
-    // return (
-    //     <>
-    //     <div style={{
-    //         margin:"20px 20px"
-    //     }}>
-    //         <div style={{
-    //             width:"100px",
-    //             height:"100px",
-    //             backgroundColor:"whitesmoke",
-    //             margin:"20px 20px",
-    //             }}><img src={imagenes(`./${image}`)} alt={tipo} style={{ width: '100%' }} />
-    //         </div>
-    //         <h4>{nombre}</h4>
-    //         <h5>{`${precio} x ${quantity} = ${precio*quantity}`}</h5>
-    //         <button onClick={()=>delFromCart(item.id)}>Eliminar uno</button>
-    //         <button onClick={()=>delFromCart(item.id, true)}>Eliminar todos</button>
-    //         </div>
-    //     </>
-    // )
+    )
 }
 
 export default CartItem
@@ -195,7 +176,7 @@ const ButtonMenos = styled.button`
     position: relative;
     top: 15px;
     
-    @media screen and (min-width: 1024px){
+    @media screen and (max-width: 1024px){
     &:active {
     background-color: var(--dark35) !important;
     color: var(--beige);
@@ -222,14 +203,14 @@ const ButtonMas = styled.button`
     top: 15px;
     left: 10px;
     
-    @media screen and (min-width: 1024px){
+   
     &:active {
     background-color: var(--dark35) !important;
     color: var(--beige);
     box-shadow: none;
     transform: translateY(4px);
     transition: 0.15s;
-    }
+    
   }
 `
 
@@ -250,14 +231,14 @@ const ButtonClear = styled.div`
     height: 28px;
     box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 5px 5px 0 rgba(0,0,0,0.19);
 
-  @media screen and (min-width: 1024px){
+  
   &:active {
     background-color: var(--orange) !important;
     color: var(--beige);
     box-shadow: none;
     transform: translateY(4px);
     transition: 0.15s;
-    }
+    
   }
 `
 
