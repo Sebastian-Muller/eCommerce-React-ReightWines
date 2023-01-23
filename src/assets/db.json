@@ -89,30 +89,5 @@
       "info": "Es aromático y pleno, dejando una fresca sensación final de fruta. "
     }
   ],
-  "cart": [
-    {
-      "id": 6,
-      "nombre": "Veuve Clicquot",
-      "tipo": "Champagne Rosé",
-      "precio": 45900,
-      "image": "veuveClicquot.webp",
-      "bgColor": "#fddbbcef",
-      "colorPrecio": "#7A7A78",
-      "bgColorBoton": "#7A7A78",
-      "info": "Encantadora frescura en boca, de una gran expresión aromótica a moras y guindas silvestres.",
-      "quantity": 3
-    },
-    {
-      "id": 2,
-      "nombre": "Pedriel",
-      "tipo": "Rosado de Malbec",
-      "precio": 3600,
-      "image": "rosado.webp",
-      "bgColor": "#f4f3f1ef",
-      "colorPrecio": "#7A7A78",
-      "bgColorBoton": "#7A7A78",
-      "info": "Un vino delicado en boca, con una acidez refrescante y aromas a frutas rojas y dejos florales al paladar.",
-      "quantity": 2
-    }
-  ]
+  "cart": []
 }

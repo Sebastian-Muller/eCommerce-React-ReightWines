@@ -1,4 +1,3 @@
-import { getAllByDisplayValue } from "@testing-library/react";
 import {useContext} from "react"
 import {ProductsContext} from "../../context/ProductsProvider"
 import styled from 'styled-components'
@@ -7,7 +6,7 @@ import { Link } from "react-router-dom"
 
 const CartItem = ({item}) => {
 
-  const {delFromCart, addToCart} = useContext(ProductsContext)
+  const {delFromCart, addToCart } = useContext(ProductsContext)
 
     const imagenes = require.context("../../assets/images", true);
     const {id, nombre, precio, quantity, tipo, image} = item
@@ -29,8 +28,8 @@ const CartItem = ({item}) => {
               </Precio>
               <CounterContainer>
                   <ButtonContainer>
-                      <ButtonMenos>-</ButtonMenos>
-                      <ButtonMas>+</ButtonMas>
+                      <ButtonMenos onClick={()=>delFromCart(id)}>-</ButtonMenos>
+                      <ButtonMas onClick={()=>addToCart(id)}>+</ButtonMas>
                   </ButtonContainer>
                   <Link to="/carro" className="modCart">
                       <ButtonClear onClick={(all)=>delFromCart(id, all)}>
