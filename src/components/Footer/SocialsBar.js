@@ -5,11 +5,6 @@ import instagram from "../../assets/icons/footerIg.png"
 import twit from "../../assets/icons/footerTwitter.png"
 import link from "../../assets/icons/footerLink.png"
 
-/*
-import Fb from "../../assets/icons/facebook.svg"
-import Ig from "../../assets/icons/instagram.svg"
-import LinkedIn from "../../assets/icons/linkedin.svg"
-import Twitter from "../../assets/icons/twitter.svg"*/
 
 const SocialsContainer = styled.div`
     background-color: var(--dark);

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import line from "../assets/images/line.webp"
 import promo1 from "../assets/images/promo1.webp";
 import promo5 from "../assets/images/promo5.webp";
-import Button from './Button';
 
 
 

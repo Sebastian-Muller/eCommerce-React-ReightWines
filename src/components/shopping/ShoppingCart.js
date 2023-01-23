@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 
 const ShoppingCart = () => {
- 
+
   const {clearCart, state} = useContext(ProductsContext);
 const [first, setfirst] = useState()
 
