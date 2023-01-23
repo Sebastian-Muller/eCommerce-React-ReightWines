@@ -251,8 +251,8 @@ border-radius: 10px;
       imagen: `${anto}` ,
       nombre: "Antonela Bonaglia" ,
       info: "Web Developer" ,
-      linkedin: "https://ar.linkedin.com/" ,
-      github: "https://github.com/"
+      linkedin: "www.linkedin.com/in/anto-bonaglia" ,
+      github: "https://github.com/AntonelaBonaglia"
     },
     {
       id: "5",

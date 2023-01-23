@@ -54,7 +54,7 @@ const fadeIn = keyframes`
 }
 `
 const CarritoContainer = styled.div`
-  animation: ${fadeIn} 0.8s ease-out;
+  animation: ${fadeIn} 0.9s ease-out;
   width: 100%;
   height: 100%;
   display: flex;
