@@ -1,16 +1,17 @@
 import {HiOutlineShoppingCart} from 'react-icons/hi';
 import styled from "styled-components";
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { ProductsContext } from "../context/ProductsProvider";
 import Modal from 'react-bootstrap/Modal';
 import { Link } from "react-router-dom"
 
 
 
+
 const Card = ({ product }) => {
-    const { addToCart, state} = useContext(ProductsContext)
+
+    const { addToCart} = useContext(ProductsContext)
     const { id, nombre, tipo, precio, image, info,  bgColor, colorPrecio, bgColorBoton } = product;
-  
 
     const imagenes = require.context("../assets/images", true);
     
@@ -20,20 +21,11 @@ const Card = ({ product }) => {
     const openModal = () => setIsOpen(true)
     const closeModal = () => setIsOpen(false)
 
-    // useEffect(() => {
-    //     if (isOpen === true) {
-    //         document.body.style.overflow = 'hidden'
-    //     } else if (isOpen === false) {
-    //         document.body.style.overflow = 'auto'
-    //     }
-    // }, [isOpen])
-
     /* ***** Estados del ModalAddCart ***** */
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
   
-    
 
     return (
         <>
@@ -67,7 +59,7 @@ const Card = ({ product }) => {
                 </ModalArticle>
             }
             <Modal key={id} show={show} onHide={handleClose} backdrop="static" keyboard={false} 
-                style={{height: '370px', position:'absolute', top:60 }}>
+                style={{height: '370px', position:'absolute', top:"60px" }}>
                     <ModHeader  closeButton>
                     ¡El producto fue añadido con éxito!
                     </ModHeader>
@@ -206,11 +198,10 @@ const CardContainer = styled.figure`
     border-radius:1rem;
     overflow:hidden;
     margin:3rem;
-    padding-top: 1rem;
     padding-bottom:4rem;
     box-shadow:rgba(0, 0, 0, 0.3) 6px 8px 5px;
     cursor: pointer;
-    `
+`
 
 /**** Styles Cards ****/
 const CardFigcaption = styled.figcaption`

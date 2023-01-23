@@ -5,13 +5,15 @@ import CartItem from "./CartItem"
 import {HiOutlineShoppingCart} from 'react-icons/hi';
 import {GiCheckMark} from 'react-icons/gi';
 import { useState } from 'react';
+import { Link } from "react-router-dom"
+
 
 
 
 const ShoppingCart = () => {
  
   const {clearCart, state} = useContext(ProductsContext);
-const [first, setfirst] = useState()
+
 
   return (
     <CarritoContainer>
@@ -22,17 +24,20 @@ const [first, setfirst] = useState()
           </Titulo>
 
           <ContainerText>
-            {!state.cart[0] ? "Tu carrito esta vacío, pero puedes ir a ver nuestros productos...": state.cart.map((item) => <CartItem key={item.id} item={item} />)}
-            <button>
-              <GiCheckMark />Seguir Comprando
-            </button>
+            {!state.cart[0] 
+              ? (<p className="empty" >Tu carrito esta vacío, pero puedes ir a ver nuestros productos aquí!</p>) 
+              : state.cart.map((item) => <CartItem key={item.id} item={item} />)
+            }
+            {!state.cart[0] 
+              ? (<Link to="/bebidas" className="modCart" style={{padding:"50px"}}>
+                  <ButtonComprando ><GiCheckMark style={{position:"relative", bottom: "2px"}} /> Seguir Comprando </ButtonComprando>
+                </Link>)
+              : (<ButtonsContainer>
+                  <ButtonLimpiarCarro onClick={() => clearCart()}>Limpiar Carrito</ButtonLimpiarCarro>  
+                  <ButtonFinalizarCompra>Finalizar Compra</ButtonFinalizarCompra>
+                </ButtonsContainer>)
+            }
           </ContainerText>
-
-          <ButtonsContainer>
-              <ButtonLimpiarCarro onClick={() => clearCart()}>Limpiar Carrito</ButtonLimpiarCarro>
-
-              <ButtonFinalizarCompra>Finalizar Compra</ButtonFinalizarCompra>
-          </ButtonsContainer>
         </FondoBlanco>
       </CarritoContainer>
   )
@@ -48,9 +53,8 @@ const fadeIn = keyframes`
     opacity:1
 }
 `
-
 const CarritoContainer = styled.div`
-  animation: ${fadeIn} 1s ease-out;
+  animation: ${fadeIn} 0.8s ease-out;
   width: 100%;
   height: 100%;
   display: flex;
@@ -99,14 +103,39 @@ const ContainerText = styled.div`
   flex-direction: column;
   align-items: center;
 `
+const ButtonComprando = styled.button`
+  padding: 5px;
+  border-radius: 0.5rem;
+  border: 1px solid var(--orange);
+  color: var(--orange) ;
+  background-color: var(--beige);
+  font-family: "Nunito", sans-serif;
+  font-size: 12px;
+  text-align: center;
+  width:auto;
+  height: 28px;
+  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2), 0 6px 12px 0 rgba(0,0,0,0.19);
 
+@media screen and (min-width: 1024px){
+&:hover{background-color: #999898 !important;
+  color: var(--beige) ;
+  border: 1px solid #999898;}
+
+&:active {
+  background-color: var(--orange) !important;
+  box-shadow: none;
+  transform: translateY(4px);
+  display: flex;}
+  }
+`
 const ButtonsContainer = styled.div`
   height: 30%;
   text-align: center;
   display: flex;
   flex-direction: row;
   justify-content:space-evenly;
-  gap: 20px; padding-top: 5px;
+  gap: 20px;
+  padding-top: 5px;
   margin-bottom: 25px;
   @media screen and (min-width: 1200px){
     gap: 150px;
