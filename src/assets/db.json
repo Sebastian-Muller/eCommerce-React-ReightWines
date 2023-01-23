@@ -89,30 +89,5 @@
       "info": "Es aromático y pleno, dejando una fresca sensación final de fruta. "
     }
   ],
-  "cart": [
-    {
-      "id": 1,
-      "nombre": "Sexy Fish",
-      "tipo": "Malbec",
-      "precio": 2100,
-      "image": "malbec.webp",
-      "bgColor": "#ffefe1ef;",
-      "colorPrecio": "#737272",
-      "bgColorBoton": "#737272",
-      "info": "Un vino con presencia de taninos maduros, con dejos dulces de vainilla y chocolate.",
-      "quantity": 3
-    },
-    {
-      "id": 3,
-      "nombre": "Antigal Uno",
-      "tipo": "Sauvignon Blanc",
-      "precio": 3000,
-      "image": "sauvBlanc.webp",
-      "bgColor": "#ece9aeef",
-      "colorPrecio": "#7A7A78",
-      "bgColorBoton": "#7A7A78",
-      "info": "Fresco, con leve sensación de dulzura, con aromas tropicales y cítricos, de volumen y estructura media.",
-      "quantity": 7
-    }
-  ]
+   "cart": []
 }
