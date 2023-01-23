@@ -16,7 +16,7 @@ const ShoppingCart = () => {
 
 
   return (
-	@@ -23,38 +23,23 @@ const ShoppingCart = () => {
+const ShoppingCart = () => {
             <h1>Carrito de Compras</h1>
           </Titulo>
 
