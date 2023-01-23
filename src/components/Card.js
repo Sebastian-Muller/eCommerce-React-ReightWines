@@ -59,7 +59,7 @@ const Card = ({ product }) => {
                 </ModalArticle>
             }
             <Modal key={id} show={show} onHide={handleClose} backdrop="static" keyboard={false} 
-                style={{height: '370px', position:'fixed', top:100, zIndex: 99999 }}>
+                style={{height: '370px', position:'absolute', top:100}}>
                     <ModHeader  closeButton>
                     ¡El producto fue añadido con éxito!
                     </ModHeader>
