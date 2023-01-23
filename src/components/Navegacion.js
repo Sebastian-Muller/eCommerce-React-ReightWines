@@ -79,7 +79,7 @@ const LogoContenedor = styled.div`
 
 const LinksContenedor = styled.div`
 
-    background-color: var(--orange);
+    background-color: var(--orange); 
     position: absolute;
     top: 10vh;
     left: ${({ open }) => (open ? "0" : "-100%")};
@@ -102,6 +102,8 @@ const LinksContenedor = styled.div`
       justify-content: space-evenly;
       padding: 0.5rem;
       top: 0vh;
+      background-color: transparent; 
+     
     }
 
     @media screen and (min-width: 1200px){
