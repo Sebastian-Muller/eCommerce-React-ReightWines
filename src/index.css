@@ -12,10 +12,10 @@
   --green: #75A971;
   --violet: #9073A9;
   --yellow: #E4BD52;
-  --orange: #EF8456;
+  --orange: #ef8456;
   --orange75: #ef8557bf;
   --pink: #EA7472;
-  --beige: #FBF3E8;
+  --beige: rgb(251, 243, 232);
   --title-font: 'Poppins', sans-serif;
   --subtitle-font: 'Roboto', sans-serif;
   --text-font: 'Montserrat', sans-serif;
@@ -70,6 +70,7 @@ FIN ESTILOS OWL-CAROUSEL  */
     z-index: 2;
     transition: all ease-in-out 1s;
   }
+
   .navItem:hover{
     color: var(--beige);
     text-decoration: underline;
@@ -82,6 +83,7 @@ FIN ESTILOS OWL-CAROUSEL  */
   @media (min-width:768px){
     .navItem{
       padding: 25px 0;
+      
     }
   }
 

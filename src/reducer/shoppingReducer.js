@@ -34,14 +34,7 @@ export const shoppingReducer = (state, action) => {
                     ...state,
                     cart: [...state.cart]
                 }
-        }
-        
-
-        case TYPES.CLEAR_CART: {
-            return {...state,
-            cart: [shoppingInitialState.cart]
             }
-        }
 
         case TYPES.OPEN_CARD_MODAL: {
             return state.openCardModal === false

@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import line from "../assets/images/line.webp"
-import promo1 from "../assets/images/promo1.webp";
-import promo5 from "../assets/images/promo5.webp";
-import Button from './Button';
+import {HiOutlineShoppingCart} from 'react-icons/hi';
+import promo1 from "../assets/images/promo1.webp"
+import promo2 from "../assets/images/promo5.webp"
 
 
+const Oportunidades = ({product}) => {
 
-const Oportunidades = () => {
-
+  
     return (
         <ConteinerOportunidades>
             <Titulo>
@@ -28,36 +28,41 @@ const Oportunidades = () => {
                 <Card>
                     <ImageContainer><img src={promo1} alt="promo" width="220px" height="220px" /></ImageContainer>
                     <Caption>
-                        <h3>Promoción 1:</h3>
-                        <p>C. Piel de Lobo - P. Toso - E. Gascón -<br></br>Dv Catena - Desquiciado - Elementos</p>
+                        <h3>Promoción 1</h3>
+                        <p>C. Piel de Lobo - P. Toso - E. Gascón - Dv Catena - Desquiciado - Elementos</p>
                         <div className='precio'>
                             <div className='precioTachado'>
                                 <p>$ 46.700.-</p>
                             </div>
                             <div className='precioOferta'>
-                                <p>$ 38.900.-</p>
+                                <p>$38.900-</p>
                             </div>
                         </div>
+                        <ButtAddProduct >
+                                <HiOutlineShoppingCart style={{fontSize:"20", margin:"0px 8px" }}/> Agregar al Carrito
+                        </ButtAddProduct>
                     </Caption>
                 </Card>
 
                 <Card>
-                    <ImageContainer><img src={promo5} alt="promo" width="220px" height="210px" /></ImageContainer>
+                    <ImageContainer><img src={promo1} alt="promo" width="220px" height="220px" /></ImageContainer>
                     <Caption>
-                        <h3>Promoción 2:</h3>
-                        <p>Miguel Minni - Cafayate - Vallisto -<br></br> Mariflor - Trumpeter - Gauchezco</p>
+                        <h3>Promoción 2</h3>
+                        <p>Miguel Minni - Cafayate - Vallisto - Mariflor - Trumpeter - Gauchezco</p>
                         <div className='precio'>
                             <div className='precioTachado'>
-                                <p>$ 39.400.-</p>
+                                <p>$ 46.700.-</p>
                             </div>
                             <div className='precioOferta'>
-                                <p>$ 33.700.-</p>
+                                <p>$33.700-</p>
                             </div>
                         </div>
+                        <ButtAddProduct >
+                                <HiOutlineShoppingCart style={{fontSize:"20", margin:"0px 8px" }}/> Agregar al Carrito
+                        </ButtAddProduct>
                     </Caption>
                 </Card>
             </ContenedorCards>
-
         </ConteinerOportunidades>
 
     )
@@ -198,3 +203,27 @@ const ImageContainer = styled.div`
 width:100%;
 text-align: center;
 `
+
+const ButtAddProduct= styled.button`
+  color: white;
+  background-color: var(--dark35);
+  padding: 1rem;
+  position: relative;
+  top: -10px;
+  border-radius: 0.5rem;
+  border: none;
+  font-family: 'Righteous', cursive;
+  font-size: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  width:70%;
+  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2), 0 6px 12px 0 rgba(0,0,0,0.19);
+
+  @media screen and (min-width: 1024px){
+  &:hover{background-color: #999898 !important;}}
+
+  &:active {
+    background-color: var(--orange) !important;
+    box-shadow: none;
+    transform: translateY(4px);}
+    `

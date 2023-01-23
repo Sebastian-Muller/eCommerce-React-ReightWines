@@ -11,7 +11,7 @@ import { Link } from "react-router-dom"
 
 
 const ShoppingCart = () => {
- 
+
   const {clearCart, state} = useContext(ProductsContext);
 
 
