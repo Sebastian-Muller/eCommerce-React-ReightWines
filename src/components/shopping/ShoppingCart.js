@@ -16,7 +16,10 @@ const ShoppingCart = () => {
 
 
   return (
-const ShoppingCart = () => {
+    <CarritoContainer>
+        <FondoBlanco>
+          <Titulo>
+            <HiOutlineShoppingCart style={{fontSize:35, margin:"0px 18px", color: "var(--orange75)"}}/>
             <h1>Carrito de Compras</h1>
           </Titulo>
 
@@ -183,61 +186,3 @@ const ButtonFinalizarCompra = styled.button`
   display: flex;}
   }
 `
-// const CounterContainer = styled.div`
-//   height: 20%;
-//   text-align: center;
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: center;
-//   gap: 0.3px;
-//   padding-top: 15px;
-// `;
-/******CODIGO ANTERIOR ********/
-// const ShoppingCart = () => {
-  // const {clearCart, state} = useContext(ProductsContext);
-  
-  //   // useEffect(() => {
-  //   //   updateState()
-  //   // }, [])
-    
-  
-  //   /*  return (
-  //   <section>
-  //       <div>
-  //         <div>
-  //           <h1>Carrito de compras</h1>
-  //         </div>
-  //         <div>
-  //           {!state.cart[0] ? "No tienes productos en tu carrito" : state.cart.map((item) => <CartItem key={item.id} item={item} />)}
-  //         <div>
-  //           <button onClick={()=>clearCart()}>Limpiar Carrito</button>
-  
-  //           <button>Finalizar Compra</button>
-  //         </div>
-  //       </div>
-  //       </div>
-  //     </section>
-  //   )
-  // */
-  //   return (
-  //      <CarritoContainer>
-  //       <FondoBlanco>
-  //          <Titulo>
-  //          <h1>Carrito de compras</h1>
-  //          </Titulo>
-  //          <div>
-  //          {!state.cart[0] ? "No tienes productos en tu carrito" : state.cart.map((item) => <CartItem key={item.id} item={item} />)}
-  //          </div>
-  
-  //        <ButtonsContainer>
-  //           <ButtonLimpiarCarro onClick={clearCart}>Limpiar Carrito</ButtonLimpiarCarro>
-  
-  //            <ButtonFinalizarCompra>Finalizar Compra</ButtonFinalizarCompra>
-  //          </ButtonsContainer>
-  
-  //     </FondoBlanco>
-  //      </CarritoContainer>
-  //    )
-  // }
-  
-  // export default ShoppingCart
